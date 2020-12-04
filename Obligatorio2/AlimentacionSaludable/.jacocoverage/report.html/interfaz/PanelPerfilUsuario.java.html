@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>PanelPerfilUsuario.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">interfaz</a> &gt; <span class="el_source">PanelPerfilUsuario.java</span></div><h1>PanelPerfilUsuario.java</h1><pre class="source lang-java linenums">package interfaz;
+
+import dominio.Sistema;
+ import dominio.Usuario;
+import java.awt.Dimension;
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
+import java.util.ArrayList;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class PanelPerfilUsuario extends javax.swing.JPanel {
+
+    //Atrubutos
+    private Sistema sistema;
+    private Usuario usuarioActual;
+    private PanelHomeDeAdministrador ventana;
+   private PanelUsuariosRegistrados panelUsuarioRegistrados;
+
+    //Constructor
+<span class="nc" id="L22">    public PanelPerfilUsuario(Sistema unSistema, PanelHomeDeAdministrador unaVentana, Usuario usuario, PanelUsuariosRegistrados unPanelUsuariosRegistrados) {</span>
+<span class="nc" id="L23">        initComponents();</span>
+<span class="nc" id="L24">        sistema = unSistema;</span>
+<span class="nc" id="L25">        ventana = unaVentana;</span>
+<span class="nc" id="L26">        this.usuarioActual=usuario;</span>
+<span class="nc" id="L27">        this.usuarioActual.getFotoPerfil();</span>
+<span class="nc" id="L28">        datosDelUsuario.setListData(cargoDatosDelUsuario(this.getUsuario()).toArray());</span>
+<span class="nc" id="L29">        panelUsuarioRegistrados=unPanelUsuariosRegistrados;</span>
+<span class="nc" id="L30">       actualizarFoto();</span>
+<span class="nc" id="L31">    }</span>
+
+    @SuppressWarnings(&quot;unchecked&quot;)
+    // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+<span class="nc" id="L37">        panelHome = new javax.swing.JPanel();</span>
+<span class="nc" id="L38">        etiquetaFoto = new javax.swing.JLabel();</span>
+<span class="nc" id="L39">        jScrollPane1 = new javax.swing.JScrollPane();</span>
+<span class="nc" id="L40">        datosDelUsuario = new javax.swing.JList();</span>
+<span class="nc" id="L41">        etiquetaTitulo = new javax.swing.JLabel();</span>
+<span class="nc" id="L42">        fotoPerfil = new javax.swing.JLabel();</span>
+<span class="nc" id="L43">        btnVolver = new javax.swing.JButton();</span>
+
+<span class="nc" id="L45">        setPreferredSize(new java.awt.Dimension(650, 540));</span>
+
+<span class="nc" id="L47">        panelHome.setBackground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L48">        panelHome.setPreferredSize(new java.awt.Dimension(650, 540));</span>
+<span class="nc" id="L49">        panelHome.setLayout(null);</span>
+
+<span class="nc" id="L51">        etiquetaFoto.setMaximumSize(new java.awt.Dimension(210, 240));</span>
+<span class="nc" id="L52">        etiquetaFoto.setMinimumSize(new java.awt.Dimension(210, 240));</span>
+<span class="nc" id="L53">        etiquetaFoto.setPreferredSize(new java.awt.Dimension(210, 240));</span>
+<span class="nc" id="L54">        panelHome.add(etiquetaFoto);</span>
+<span class="nc" id="L55">        etiquetaFoto.setBounds(80, 140, 130, 130);</span>
+
+<span class="nc" id="L57">        datosDelUsuario.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 14)); // NOI18N</span>
+<span class="nc" id="L58">        datosDelUsuario.setModel(new javax.swing.AbstractListModel() {</span>
+<span class="nc" id="L59">            String[] strings = { &quot;Item 1&quot;, &quot;Item 2&quot;, &quot;Item 3&quot;, &quot;Item 4&quot;, &quot;Item 5&quot; };</span>
+<span class="nc" id="L60">            public int getSize() { return strings.length; }</span>
+<span class="nc" id="L61">            public Object getElementAt(int i) { return strings[i]; }</span>
+        });
+<span class="nc" id="L63">        jScrollPane1.setViewportView(datosDelUsuario);</span>
+
+<span class="nc" id="L65">        panelHome.add(jScrollPane1);</span>
+<span class="nc" id="L66">        jScrollPane1.setBounds(260, 130, 370, 230);</span>
+
+<span class="nc" id="L68">        etiquetaTitulo.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 36)); // NOI18N</span>
+<span class="nc" id="L69">        etiquetaTitulo.setForeground(new java.awt.Color(51, 153, 255));</span>
+<span class="nc" id="L70">        etiquetaTitulo.setText(&quot;Informacion del Usuario&quot;);</span>
+<span class="nc" id="L71">        panelHome.add(etiquetaTitulo);</span>
+<span class="nc" id="L72">        etiquetaTitulo.setBounds(130, 30, 390, 44);</span>
+
+<span class="nc" id="L74">        fotoPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/imagenes/predeterminadaUsuario.jpg&quot;))); // NOI18N</span>
+<span class="nc" id="L75">        fotoPerfil.setMaximumSize(new java.awt.Dimension(210, 240));</span>
+<span class="nc" id="L76">        fotoPerfil.setMinimumSize(new java.awt.Dimension(210, 240));</span>
+<span class="nc" id="L77">        fotoPerfil.setPreferredSize(new java.awt.Dimension(210, 240));</span>
+<span class="nc" id="L78">        panelHome.add(fotoPerfil);</span>
+<span class="nc" id="L79">        fotoPerfil.setBounds(30, 130, 210, 220);</span>
+
+<span class="nc" id="L81">        btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/imagenes/volver.png&quot;))); // NOI18N</span>
+<span class="nc" id="L82">        btnVolver.setToolTipText(&quot;&quot;);</span>
+<span class="nc" id="L83">        btnVolver.setBorderPainted(false);</span>
+<span class="nc" id="L84">        btnVolver.setContentAreaFilled(false);</span>
+<span class="nc" id="L85">        btnVolver.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L87">                btnVolverActionPerformed(evt);</span>
+<span class="nc" id="L88">            }</span>
+        });
+<span class="nc" id="L90">        panelHome.add(btnVolver);</span>
+<span class="nc" id="L91">        btnVolver.setBounds(10, 10, 100, 40);</span>
+
+<span class="nc" id="L93">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);</span>
+<span class="nc" id="L94">        this.setLayout(layout);</span>
+<span class="nc" id="L95">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L96">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L97">            .addGap(0, 752, Short.MAX_VALUE)</span>
+<span class="nc" id="L98">            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L99">                .addComponent(panelHome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
+        );
+<span class="nc" id="L101">        layout.setVerticalGroup(</span>
+<span class="nc" id="L102">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L103">            .addGap(0, 540, Short.MAX_VALUE)</span>
+<span class="nc" id="L104">            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L105">                .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L106">                    .addComponent(panelHome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L107">                    .addGap(0, 0, Short.MAX_VALUE)))</span>
+        );
+<span class="nc" id="L109">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+<span class="nc" id="L112">       ventana.setPanelActual(panelUsuarioRegistrados);</span>
+<span class="nc" id="L113">       ventana.getPanelPrincipal().add(ventana.getPanelActual(), new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 650, 540));</span>
+<span class="nc" id="L114">       ventana.setPreferredSize(new Dimension(400, 400));</span>
+<span class="nc" id="L115">    }//GEN-LAST:event_btnVolverActionPerformed</span>
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnVolver;
+    private javax.swing.JList datosDelUsuario;
+    private javax.swing.JLabel etiquetaFoto;
+    private javax.swing.JLabel etiquetaTitulo;
+    private javax.swing.JLabel fotoPerfil;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPanel panelHome;
+    // End of variables declaration//GEN-END:variables
+
+    public ArrayList&lt;String&gt; cargoDatosDelUsuario(Usuario unUsuario) {
+<span class="nc" id="L129">        String restricciones = imprimoRestricciones(unUsuario);</span>
+<span class="nc" id="L130">        ArrayList&lt;String&gt; datos = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L131">        datos.add(&quot;Nombre: &quot; + unUsuario.getNombre());</span>
+<span class="nc" id="L132">        datos.add(&quot;Apellidos: &quot; + unUsuario.getApellidos());</span>
+<span class="nc" id="L133">        datos.add(&quot;Nombre de usuario: &quot; + unUsuario.getNombreUsuario());</span>
+<span class="nc" id="L134">        datos.add(&quot;Fecha de nacimiento: &quot; + unUsuario.getFechaNacimiento());</span>
+<span class="nc" id="L135">        datos.add(&quot;Nacionalidad: &quot; + unUsuario.getNacionalidad());</span>
+<span class="nc" id="L136">        datos.add(&quot;Altura: &quot; + unUsuario.getAlturaCm());</span>
+<span class="nc" id="L137">        datos.add(&quot;Paso: &quot; + unUsuario.getPesoKg());</span>
+<span class="nc" id="L138">        datos.add(&quot;Sexo: &quot; + unUsuario.getSexo());</span>
+<span class="nc" id="L139">        datos.add(&quot;Restricciones: &quot; + restricciones);</span>
+<span class="nc" id="L140">        datos.add(&quot;Preferencias: &quot; + unUsuario.getPreferenciasAlimentarias());</span>
+<span class="nc" id="L141">        return datos;</span>
+    }
+
+    public String imprimoRestricciones(Usuario unUsuario) {
+<span class="nc" id="L145">        int cantidadDeRestricciones = 0;</span>
+<span class="nc" id="L146">        String retorno = &quot;&quot;;</span>
+<span class="nc" id="L147">        int contador = 0;</span>
+<span class="nc bnc" id="L148" title="All 2 branches missed.">        for (int i = 0; i &lt; unUsuario.getListaRestricciones().length; i++) {</span>
+<span class="nc bnc" id="L149" title="All 2 branches missed.">            if (unUsuario.getListaRestricciones()[i] == true) {</span>
+<span class="nc" id="L150">                cantidadDeRestricciones++;</span>
+            }
+        }
+<span class="nc bnc" id="L153" title="All 2 branches missed.">        if (unUsuario.getListaRestricciones()[Usuario.Restricciones.Celiaco.ordinal()] == true) {</span>
+<span class="nc bnc" id="L154" title="All 2 branches missed.">            if (contador == cantidadDeRestricciones - 1) {</span>
+<span class="nc" id="L155">                retorno += &quot;Celiaco&quot;;</span>
+            } else {
+<span class="nc" id="L157">                retorno += &quot;Celiaco, &quot;;</span>
+<span class="nc" id="L158">                contador++;</span>
+            }
+
+        }
+<span class="nc bnc" id="L162" title="All 2 branches missed.">        if (unUsuario.getListaRestricciones()[Usuario.Restricciones.Diabetico.ordinal()] == true) {</span>
+<span class="nc bnc" id="L163" title="All 2 branches missed.">            if (contador == cantidadDeRestricciones - 1) {</span>
+<span class="nc" id="L164">                retorno += &quot;Diabético&quot;;</span>
+            } else {
+<span class="nc" id="L166">                retorno += &quot;Diabético, &quot;;</span>
+<span class="nc" id="L167">                contador++;</span>
+            }
+        }
+<span class="nc bnc" id="L170" title="All 2 branches missed.">        if (unUsuario.getListaRestricciones()[Usuario.Restricciones.Hipertension.ordinal()] == true) {</span>
+<span class="nc bnc" id="L171" title="All 2 branches missed.">            if (contador == cantidadDeRestricciones - 1) {</span>
+<span class="nc" id="L172">                retorno += &quot;Hipertensión&quot;;</span>
+            } else {
+<span class="nc" id="L174">                retorno += &quot;Hipertensión, &quot;;</span>
+<span class="nc" id="L175">                contador++;</span>
+            }
+        }
+<span class="nc bnc" id="L178" title="All 2 branches missed.">        if (unUsuario.getListaRestricciones()[Usuario.Restricciones.IntoleranteALaLactosa.ordinal()] == true) {</span>
+<span class="nc bnc" id="L179" title="All 2 branches missed.">            if (contador == cantidadDeRestricciones - 1) {</span>
+<span class="nc" id="L180">                retorno += &quot;Intolerancia a la lactosa&quot;;</span>
+            } else {
+<span class="nc" id="L182">                retorno += &quot;Intolerancia a la lactosa, &quot;;</span>
+<span class="nc" id="L183">                contador++;</span>
+            }
+        }
+<span class="nc bnc" id="L186" title="All 2 branches missed.">        if (cantidadDeRestricciones == 0) {</span>
+<span class="nc" id="L187">            retorno += &quot;Ninguna &quot;;</span>
+        }
+<span class="nc" id="L189">        return retorno;</span>
+    }
+private void actualizarFoto() {
+<span class="nc" id="L192">        fotoPerfil.setIcon(this.getUsuario().getFotoPerfil());</span>
+<span class="nc" id="L193">    }</span>
+private Usuario getUsuario(){
+<span class="nc" id="L195">    return this.usuarioActual;</span>
+}
+
+    ImageIcon resizeImageIcon(ImageIcon imageIcon, Integer width, Integer height) {
+<span class="nc" id="L199">        BufferedImage bufferedImage = new BufferedImage(width, height, BufferedImage.TRANSLUCENT);</span>
+
+<span class="nc" id="L201">        Graphics2D graphics2D = bufferedImage.createGraphics();</span>
+<span class="nc" id="L202">        graphics2D.drawImage(imageIcon.getImage(), 0, 0, width, height, null);</span>
+<span class="nc" id="L203">        graphics2D.dispose();</span>
+
+<span class="nc" id="L205">        return new ImageIcon(bufferedImage, imageIcon.getDescription());</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

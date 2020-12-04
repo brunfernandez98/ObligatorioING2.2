@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>PanelDietaDiariaUsuario.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">interfaz</a> &gt; <span class="el_source">PanelDietaDiariaUsuario.java</span></div><h1>PanelDietaDiariaUsuario.java</h1><pre class="source lang-java linenums">package interfaz;
+
+import dominio.Alimento;
+import dominio.ComidaPorDia;
+import dominio.Sistema;
+import dominio.Usuario;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import javax.swing.JFrame;
+
+public class PanelDietaDiariaUsuario extends javax.swing.JPanel {
+
+    //Atrubutos
+    private Sistema sistema;
+    private JFrame ventana;
+
+    private boolean deboActualizar;
+
+    //Constructor
+    public PanelDietaDiariaUsuario(Sistema unSistema,
+<span class="nc" id="L22">            JFrame unaVentana) {</span>
+<span class="nc" id="L23">        initComponents();</span>
+<span class="nc" id="L24">        sistema = unSistema;</span>
+<span class="nc" id="L25">        ventana = unaVentana;</span>
+//        interfaz = unaInterfaz;
+//        LocalDate diaActual = LocalDate.now();
+//        interfaz.getUsuarioActual().setFechaUltimaAdicion(diaActual.toString());
+//        if (interfaz.getUsuarioActual().getHistorialDelDia().getFecha() == null) {
+//            interfaz.getUsuarioActual().getHistorialDelDia().setFecha(diaActual.toString());
+//        } else {
+//            if (!interfaz.getUsuarioActual().getHistorialDelDia().getFecha().equals(interfaz.getUsuarioActual().getFechaUltimaAdicion()) &amp;&amp; !interfaz.getUsuarioActual().getHistorialDelDia().getComidasIngeridas().isEmpty()) {
+//                interfaz.getUsuarioActual().getHistorialComidas().add(interfaz.getUsuarioActual().getHistorialDelDia());
+//                ComidaPorDia nuevoHistorial = new ComidaPorDia();
+//                nuevoHistorial.setFecha(diaActual.toString());
+//                interfaz.getUsuarioActual().setHistorialDelDia(nuevoHistorial);
+//            }
+//        }
+//        listaComidasDiarias.setListData(interfaz.getUsuarioActual().getHistorialDelDia().getComidasIngeridas().toArray());
+<span class="nc" id="L40">    }</span>
+
+    @SuppressWarnings(&quot;unchecked&quot;)
+    // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+<span class="nc" id="L46">        panelDietaDiaria = new javax.swing.JPanel();</span>
+<span class="nc" id="L47">        lstComDiarias = new javax.swing.JScrollPane();</span>
+<span class="nc" id="L48">        listaComidasDiarias = new javax.swing.JList();</span>
+<span class="nc" id="L49">        etiquetaTituloAlim = new javax.swing.JLabel();</span>
+<span class="nc" id="L50">        etiquetaBtnAgregarComidas = new javax.swing.JButton();</span>
+<span class="nc" id="L51">        etiquetaBtnQuitarComida = new javax.swing.JButton();</span>
+
+<span class="nc" id="L53">        panelDietaDiaria.setBackground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L54">        panelDietaDiaria.setPreferredSize(new java.awt.Dimension(650, 540));</span>
+<span class="nc" id="L55">        panelDietaDiaria.setLayout(null);</span>
+
+<span class="nc" id="L57">        listaComidasDiarias.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L58">        lstComDiarias.setViewportView(listaComidasDiarias);</span>
+
+<span class="nc" id="L60">        panelDietaDiaria.add(lstComDiarias);</span>
+<span class="nc" id="L61">        lstComDiarias.setBounds(130, 180, 370, 310);</span>
+
+<span class="nc" id="L63">        etiquetaTituloAlim.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 36)); // NOI18N</span>
+<span class="nc" id="L64">        etiquetaTituloAlim.setForeground(new java.awt.Color(102, 153, 255));</span>
+<span class="nc" id="L65">        etiquetaTituloAlim.setText(&quot;Comidas Ingeridas Diarias&quot;);</span>
+<span class="nc" id="L66">        panelDietaDiaria.add(etiquetaTituloAlim);</span>
+<span class="nc" id="L67">        etiquetaTituloAlim.setBounds(100, 10, 450, 44);</span>
+
+<span class="nc" id="L69">        etiquetaBtnAgregarComidas.setBackground(new java.awt.Color(102, 153, 255));</span>
+<span class="nc" id="L70">        etiquetaBtnAgregarComidas.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 18)); // NOI18N</span>
+<span class="nc" id="L71">        etiquetaBtnAgregarComidas.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L72">        etiquetaBtnAgregarComidas.setText(&quot;Agregar Comida&quot;);</span>
+<span class="nc" id="L73">        etiquetaBtnAgregarComidas.setContentAreaFilled(false);</span>
+<span class="nc" id="L74">        etiquetaBtnAgregarComidas.setOpaque(true);</span>
+<span class="nc" id="L75">        etiquetaBtnAgregarComidas.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L77">                etiquetaBtnAgregarComidasActionPerformed(evt);</span>
+<span class="nc" id="L78">            }</span>
+        });
+<span class="nc" id="L80">        panelDietaDiaria.add(etiquetaBtnAgregarComidas);</span>
+<span class="nc" id="L81">        etiquetaBtnAgregarComidas.setBounds(360, 110, 210, 31);</span>
+
+<span class="nc" id="L83">        etiquetaBtnQuitarComida.setBackground(new java.awt.Color(102, 153, 255));</span>
+<span class="nc" id="L84">        etiquetaBtnQuitarComida.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 18)); // NOI18N</span>
+<span class="nc" id="L85">        etiquetaBtnQuitarComida.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L86">        etiquetaBtnQuitarComida.setText(&quot;Quitar Comida&quot;);</span>
+<span class="nc" id="L87">        etiquetaBtnQuitarComida.setContentAreaFilled(false);</span>
+<span class="nc" id="L88">        etiquetaBtnQuitarComida.setOpaque(true);</span>
+<span class="nc" id="L89">        etiquetaBtnQuitarComida.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L91">                etiquetaBtnQuitarComidaActionPerformed(evt);</span>
+<span class="nc" id="L92">            }</span>
+        });
+<span class="nc" id="L94">        panelDietaDiaria.add(etiquetaBtnQuitarComida);</span>
+<span class="nc" id="L95">        etiquetaBtnQuitarComida.setBounds(50, 110, 190, 31);</span>
+
+<span class="nc" id="L97">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);</span>
+<span class="nc" id="L98">        this.setLayout(layout);</span>
+<span class="nc" id="L99">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L100">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L101">            .addComponent(panelDietaDiaria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+        );
+<span class="nc" id="L103">        layout.setVerticalGroup(</span>
+<span class="nc" id="L104">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L105">            .addComponent(panelDietaDiaria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+        );
+<span class="nc" id="L107">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+
+    private void etiquetaBtnQuitarComidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_etiquetaBtnQuitarComidaActionPerformed
+//        if (listaComidasDiarias.getSelectedValue() != null) {
+//            Alimento alimentoABorrar = (Alimento) listaComidasDiarias.getSelectedValue();
+//            int diaActual = interfaz.getUsuarioActual().getHistorialComidas().size();
+//            interfaz.getUsuarioActual().getHistorialDelDia().getComidasIngeridas().remove(alimentoABorrar);
+//            listaComidasDiarias.setListData(interfaz.getUsuarioActual().getHistorialDelDia().getComidasIngeridas().toArray());
+//        }
+<span class="nc" id="L116">    }//GEN-LAST:event_etiquetaBtnQuitarComidaActionPerformed</span>
+
+    private void etiquetaBtnAgregarComidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_etiquetaBtnAgregarComidasActionPerformed
+        
+        
+        
+        
+//        PanelAgregarComidasADietaDiariaUsuario nuevo = new PanelAgregarComidasADietaDiariaUsuario(sistema, ventana, this);
+//        interfaz.setActual(nuevo);
+//        ventana.add(nuevo);
+//        ventana.pack();
+<span class="nc" id="L127">    }//GEN-LAST:event_etiquetaBtnAgregarComidasActionPerformed</span>
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton etiquetaBtnAgregarComidas;
+    private javax.swing.JButton etiquetaBtnQuitarComida;
+    private javax.swing.JLabel etiquetaTituloAlim;
+    private javax.swing.JList listaComidasDiarias;
+    private javax.swing.JScrollPane lstComDiarias;
+    private javax.swing.JPanel panelDietaDiaria;
+    // End of variables declaration//GEN-END:variables
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

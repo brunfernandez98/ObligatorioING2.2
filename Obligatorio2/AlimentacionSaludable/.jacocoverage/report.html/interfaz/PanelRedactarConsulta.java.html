@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>PanelRedactarConsulta.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">interfaz</a> &gt; <span class="el_source">PanelRedactarConsulta.java</span></div><h1>PanelRedactarConsulta.java</h1><pre class="source lang-java linenums">package interfaz;
+
+import dominio.Mensaje;
+import dominio.Profesional;
+import dominio.Sistema;
+import dominio.Usuario;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+public class PanelRedactarConsulta extends javax.swing.JPanel {
+
+    //Atributos
+    private final Sistema sistema;
+    private final Usuario usuarioActual;
+  
+
+    //Constructor para usuarios
+    public PanelRedactarConsulta(Sistema unSistema,
+<span class="nc" id="L21">            Usuario unUsuario) {</span>
+<span class="nc" id="L22">        initComponents();</span>
+<span class="nc" id="L23">        sistema = unSistema;</span>
+<span class="nc" id="L24">        usuarioActual=unUsuario;</span>
+<span class="nc" id="L25">        listaProfConsulta.setModel(new DefaultComboBoxModel(sistema.getListaProfesionales().toArray()));</span>
+<span class="nc" id="L26">    }</span>
+
+    @SuppressWarnings(&quot;unchecked&quot;)
+    // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+<span class="nc" id="L32">        etiquetaDestinatarioConsulta = new javax.swing.JLabel();</span>
+<span class="nc" id="L33">        listaProfConsulta = new javax.swing.JComboBox&lt;&gt;();</span>
+<span class="nc" id="L34">        jScrollPane1 = new javax.swing.JScrollPane();</span>
+<span class="nc" id="L35">        textoConsultaAEnviar = new javax.swing.JTextArea();</span>
+<span class="nc" id="L36">        btnEnviarConsulta = new javax.swing.JButton();</span>
+<span class="nc" id="L37">        cajaAsunto = new javax.swing.JTextField();</span>
+<span class="nc" id="L38">        etiquetaAsunto = new javax.swing.JLabel();</span>
+<span class="nc" id="L39">        etiquetaMensaje = new javax.swing.JLabel();</span>
+<span class="nc" id="L40">        mensajeAlAceptar = new javax.swing.JLabel();</span>
+<span class="nc" id="L41">        etiquetaTitulo1 = new javax.swing.JLabel();</span>
+
+<span class="nc" id="L43">        setBackground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L44">        setPreferredSize(new java.awt.Dimension(650, 540));</span>
+<span class="nc" id="L45">        setRequestFocusEnabled(false);</span>
+<span class="nc" id="L46">        setLayout(null);</span>
+
+<span class="nc" id="L48">        etiquetaDestinatarioConsulta.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 14)); // NOI18N</span>
+<span class="nc" id="L49">        etiquetaDestinatarioConsulta.setText(&quot;Destinatarios:&quot;);</span>
+<span class="nc" id="L50">        add(etiquetaDestinatarioConsulta);</span>
+<span class="nc" id="L51">        etiquetaDestinatarioConsulta.setBounds(60, 120, 150, 17);</span>
+
+<span class="nc" id="L53">        listaProfConsulta.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 14)); // NOI18N</span>
+<span class="nc" id="L54">        listaProfConsulta.setModel(new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Item 1&quot;, &quot;Item 2&quot;, &quot;Item 3&quot;, &quot;Item 4&quot; }));</span>
+<span class="nc" id="L55">        listaProfConsulta.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L57">                listaProfConsultaActionPerformed(evt);</span>
+<span class="nc" id="L58">            }</span>
+        });
+<span class="nc" id="L60">        add(listaProfConsulta);</span>
+<span class="nc" id="L61">        listaProfConsulta.setBounds(160, 120, 190, 23);</span>
+
+<span class="nc" id="L63">        textoConsultaAEnviar.setColumns(20);</span>
+<span class="nc" id="L64">        textoConsultaAEnviar.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 14)); // NOI18N</span>
+<span class="nc" id="L65">        textoConsultaAEnviar.setRows(5);</span>
+<span class="nc" id="L66">        jScrollPane1.setViewportView(textoConsultaAEnviar);</span>
+
+<span class="nc" id="L68">        add(jScrollPane1);</span>
+<span class="nc" id="L69">        jScrollPane1.setBounds(60, 280, 540, 160);</span>
+
+<span class="nc" id="L71">        btnEnviarConsulta.setBackground(new java.awt.Color(102, 153, 255));</span>
+<span class="nc" id="L72">        btnEnviarConsulta.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 14)); // NOI18N</span>
+<span class="nc" id="L73">        btnEnviarConsulta.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L74">        btnEnviarConsulta.setText(&quot;Enviar&quot;);</span>
+<span class="nc" id="L75">        btnEnviarConsulta.setContentAreaFilled(false);</span>
+<span class="nc" id="L76">        btnEnviarConsulta.setOpaque(true);</span>
+<span class="nc" id="L77">        btnEnviarConsulta.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L79">                btnEnviarConsultaActionPerformed(evt);</span>
+<span class="nc" id="L80">            }</span>
+        });
+<span class="nc" id="L82">        add(btnEnviarConsulta);</span>
+<span class="nc" id="L83">        btnEnviarConsulta.setBounds(460, 480, 170, 30);</span>
+
+<span class="nc" id="L85">        cajaAsunto.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 14)); // NOI18N</span>
+<span class="nc" id="L86">        cajaAsunto.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L88">                cajaAsuntoActionPerformed(evt);</span>
+<span class="nc" id="L89">            }</span>
+        });
+<span class="nc" id="L91">        add(cajaAsunto);</span>
+<span class="nc" id="L92">        cajaAsunto.setBounds(160, 170, 250, 23);</span>
+
+<span class="nc" id="L94">        etiquetaAsunto.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 14)); // NOI18N</span>
+<span class="nc" id="L95">        etiquetaAsunto.setText(&quot;Asunto:&quot;);</span>
+<span class="nc" id="L96">        add(etiquetaAsunto);</span>
+<span class="nc" id="L97">        etiquetaAsunto.setBounds(60, 170, 100, 26);</span>
+
+<span class="nc" id="L99">        etiquetaMensaje.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 14)); // NOI18N</span>
+<span class="nc" id="L100">        etiquetaMensaje.setText(&quot;Mensaje:&quot;);</span>
+<span class="nc" id="L101">        add(etiquetaMensaje);</span>
+<span class="nc" id="L102">        etiquetaMensaje.setBounds(60, 240, 110, 26);</span>
+
+<span class="nc" id="L104">        mensajeAlAceptar.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L105">        add(mensajeAlAceptar);</span>
+<span class="nc" id="L106">        mensajeAlAceptar.setBounds(710, 640, 370, 50);</span>
+
+<span class="nc" id="L108">        etiquetaTitulo1.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 36)); // NOI18N</span>
+<span class="nc" id="L109">        etiquetaTitulo1.setForeground(new java.awt.Color(51, 153, 255));</span>
+<span class="nc" id="L110">        etiquetaTitulo1.setText(&quot;Redactar Consulta&quot;);</span>
+<span class="nc" id="L111">        add(etiquetaTitulo1);</span>
+<span class="nc" id="L112">        etiquetaTitulo1.setBounds(160, 10, 310, 44);</span>
+<span class="nc" id="L113">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+
+    private void listaProfConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaProfConsultaActionPerformed
+        // TODO add your handling code here:
+<span class="nc" id="L117">    }//GEN-LAST:event_listaProfConsultaActionPerformed</span>
+
+    private void btnEnviarConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarConsultaActionPerformed
+<span class="nc" id="L120">        Mensaje mensajeAEnviar = new Mensaje();</span>
+<span class="nc" id="L121">        Profesional destino = (Profesional) listaProfConsulta.getSelectedItem();</span>
+<span class="nc bnc" id="L122" title="All 2 branches missed.">        if(destino!=null){</span>
+<span class="nc" id="L123">        mensajeAEnviar.setOrigen(usuarioActual);</span>
+<span class="nc" id="L124">        mensajeAEnviar.setDestino(destino);</span>
+<span class="nc" id="L125">        mensajeAEnviar.setAsunto(cajaAsunto.getText());</span>
+<span class="nc" id="L126">        mensajeAEnviar.setMensaje(textoConsultaAEnviar.getText());</span>
+<span class="nc bnc" id="L127" title="All 4 branches missed.">        if (!textoConsultaAEnviar.getText().isEmpty() &amp;&amp; !cajaAsunto.getText().isEmpty()) {</span>
+<span class="nc" id="L128">            destino.getCasillaDeEntrada().add(mensajeAEnviar);</span>
+<span class="nc" id="L129">           JOptionPane optionPane = new JOptionPane(&quot;Consulta enviada&quot;, JOptionPane.INFORMATION_MESSAGE);</span>
+<span class="nc" id="L130">            JDialog dialog = optionPane.createDialog(&quot;Consulta&quot;);</span>
+<span class="nc" id="L131">            dialog.setAlwaysOnTop(true);</span>
+<span class="nc" id="L132">            dialog.setVisible(true);</span>
+<span class="nc" id="L133">            limpiarDatos();</span>
+            
+            
+            
+<span class="nc" id="L137">        } else {</span>
+<span class="nc" id="L138">             JOptionPane optionPane = new JOptionPane(&quot;Consulta erronea verique los campos&quot;, JOptionPane.ERROR_MESSAGE);</span>
+<span class="nc" id="L139">            JDialog dialog = optionPane.createDialog(&quot;Consulta&quot;);</span>
+<span class="nc" id="L140">            dialog.setAlwaysOnTop(true);</span>
+<span class="nc" id="L141">            dialog.setVisible(true);</span>
+<span class="nc" id="L142">        }</span>
+        }else{
+<span class="nc" id="L144">             JOptionPane optionPane = new JOptionPane(&quot;Consulta fallida, no existen profesionales disponibles, consulte al administrador&quot;, JOptionPane.ERROR_MESSAGE);</span>
+<span class="nc" id="L145">            JDialog dialog = optionPane.createDialog(&quot;Consulta&quot;);</span>
+<span class="nc" id="L146">            dialog.setAlwaysOnTop(true);</span>
+<span class="nc" id="L147">            dialog.setVisible(true);</span>
+        }
+<span class="nc" id="L149">    }//GEN-LAST:event_btnEnviarConsultaActionPerformed</span>
+
+    void limpiarDatos(){
+<span class="nc" id="L152">        cajaAsunto.setText(&quot;&quot;);</span>
+<span class="nc" id="L153">        textoConsultaAEnviar.setText(&quot;&quot;);</span>
+<span class="nc" id="L154">    }</span>
+    
+    
+    
+    private void cajaAsuntoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaAsuntoActionPerformed
+        // TODO add your handling code here:
+<span class="nc" id="L160">    }//GEN-LAST:event_cajaAsuntoActionPerformed</span>
+
+    
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnEnviarConsulta;
+    private javax.swing.JTextField cajaAsunto;
+    private javax.swing.JLabel etiquetaAsunto;
+    private javax.swing.JLabel etiquetaDestinatarioConsulta;
+    private javax.swing.JLabel etiquetaMensaje;
+    private javax.swing.JLabel etiquetaTitulo1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JComboBox&lt;String&gt; listaProfConsulta;
+    private javax.swing.JLabel mensajeAlAceptar;
+    private javax.swing.JTextArea textoConsultaAEnviar;
+    // End of variables declaration//GEN-END:variables
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

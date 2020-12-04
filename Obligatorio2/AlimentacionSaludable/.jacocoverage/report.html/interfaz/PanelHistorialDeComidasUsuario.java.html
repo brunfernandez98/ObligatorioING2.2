@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>PanelHistorialDeComidasUsuario.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">interfaz</a> &gt; <span class="el_source">PanelHistorialDeComidasUsuario.java</span></div><h1>PanelHistorialDeComidasUsuario.java</h1><pre class="source lang-java linenums">package interfaz;
+
+import dominio.ComidaPorDia;
+import dominio.Sistema;
+import dominio.Usuario;
+import javax.swing.JFrame;
+
+public class PanelHistorialDeComidasUsuario extends javax.swing.JPanel {
+
+    //Atributos
+    private final Sistema sistema;
+    private final JFrame ventana;
+    private final Usuario usuarioActual;
+
+    //Constructor
+    public PanelHistorialDeComidasUsuario(Sistema unSistema,
+<span class="nc" id="L17">            JFrame unaVentana, Usuario usuario) {</span>
+<span class="nc" id="L18">        initComponents();</span>
+<span class="nc" id="L19">        sistema = unSistema;</span>
+<span class="nc" id="L20">        ventana = unaVentana;</span>
+<span class="nc" id="L21">        usuarioActual =usuario;</span>
+<span class="nc" id="L22">        listaHistorialDeComidas.setListData(usuarioActual.getHistorialComidas().toArray());</span>
+<span class="nc" id="L23">    }</span>
+
+    @SuppressWarnings(&quot;unchecked&quot;)
+    // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+<span class="nc" id="L29">        jScrollPane1 = new javax.swing.JScrollPane();</span>
+<span class="nc" id="L30">        listaHistorialDeComidas = new javax.swing.JList();</span>
+<span class="nc" id="L31">        btnVerHistorial = new javax.swing.JButton();</span>
+<span class="nc" id="L32">        etiquetaTitulo = new javax.swing.JLabel();</span>
+<span class="nc" id="L33">        btnVolver = new javax.swing.JButton();</span>
+
+<span class="nc" id="L35">        setBackground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L36">        setPreferredSize(new java.awt.Dimension(1147, 784));</span>
+<span class="nc" id="L37">        setLayout(null);</span>
+
+<span class="nc" id="L39">        listaHistorialDeComidas.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L40">        jScrollPane1.setViewportView(listaHistorialDeComidas);</span>
+
+<span class="nc" id="L42">        add(jScrollPane1);</span>
+<span class="nc" id="L43">        jScrollPane1.setBounds(120, 130, 440, 280);</span>
+
+<span class="nc" id="L45">        btnVerHistorial.setBackground(new java.awt.Color(51, 153, 255));</span>
+<span class="nc" id="L46">        btnVerHistorial.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 18)); // NOI18N</span>
+<span class="nc" id="L47">        btnVerHistorial.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L48">        btnVerHistorial.setText(&quot;Ver Historial&quot;);</span>
+<span class="nc" id="L49">        btnVerHistorial.setContentAreaFilled(false);</span>
+<span class="nc" id="L50">        btnVerHistorial.setOpaque(true);</span>
+<span class="nc" id="L51">        btnVerHistorial.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L53">                btnVerHistorialActionPerformed(evt);</span>
+<span class="nc" id="L54">            }</span>
+        });
+<span class="nc" id="L56">        add(btnVerHistorial);</span>
+<span class="nc" id="L57">        btnVerHistorial.setBounds(390, 460, 210, 30);</span>
+
+<span class="nc" id="L59">        etiquetaTitulo.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 36)); // NOI18N</span>
+<span class="nc" id="L60">        etiquetaTitulo.setForeground(new java.awt.Color(51, 153, 255));</span>
+<span class="nc" id="L61">        etiquetaTitulo.setText(&quot;Historial de Comidas&quot;);</span>
+<span class="nc" id="L62">        add(etiquetaTitulo);</span>
+<span class="nc" id="L63">        etiquetaTitulo.setBounds(160, 30, 330, 40);</span>
+
+<span class="nc" id="L65">        btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/imagenes/volver.png&quot;))); // NOI18N</span>
+<span class="nc" id="L66">        btnVolver.setBorderPainted(false);</span>
+<span class="nc" id="L67">        btnVolver.setContentAreaFilled(false);</span>
+<span class="nc" id="L68">        btnVolver.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L70">                btnVolverActionPerformed(evt);</span>
+<span class="nc" id="L71">            }</span>
+        });
+<span class="nc" id="L73">        add(btnVolver);</span>
+<span class="nc" id="L74">        btnVolver.setBounds(20, 0, 100, 60);</span>
+<span class="nc" id="L75">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+
+    private void btnVerHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerHistorialActionPerformed
+<span class="nc" id="L78">        ComidaPorDia comidaSeleccionada = (ComidaPorDia) listaHistorialDeComidas.getSelectedValue();</span>
+<span class="nc bnc" id="L79" title="All 2 branches missed.">        if (comidaSeleccionada != null) {</span>
+<span class="nc" id="L80">            ventana.remove(this);</span>
+<span class="nc" id="L81">            PanelVerHistorialUsuario nuevo = new PanelVerHistorialUsuario(sistema, ventana, comidaSeleccionada);</span>
+            
+           
+        }
+<span class="nc" id="L85">    }//GEN-LAST:event_btnVerHistorialActionPerformed</span>
+
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+<span class="nc" id="L88">        ventana.remove(this);</span>
+<span class="nc" id="L89">        PanelHomeDeUsuario nuevo = new PanelHomeDeUsuario(sistema, ventana,usuarioActual.getNombreUsuario());</span>
+        
+<span class="nc" id="L91">        ventana.add(nuevo);</span>
+<span class="nc" id="L92">        ventana.pack();</span>
+<span class="nc" id="L93">    }//GEN-LAST:event_btnVolverActionPerformed</span>
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnVerHistorial;
+    private javax.swing.JButton btnVolver;
+    private javax.swing.JLabel etiquetaTitulo;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JList listaHistorialDeComidas;
+    // End of variables declaration//GEN-END:variables
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

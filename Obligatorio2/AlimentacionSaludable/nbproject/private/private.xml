@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/src/interfaz/PanelSeleccionarPlanARealizar.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/src/interfaz/PanelDietaDiariaUsuario.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/test/dominio/SistemaTest.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/src/dominio/Mensaje.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/src/dominio/Persona.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/src/interfaz/PanelRealizarPlanAlimentacion.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/src/interfaz/InterfazBotonesUsuario.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/src/interfaz/PanelAgregarComidasAPlan.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/src/interfaz/PanelHomeProfesional.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/src/interfaz/PanelVerHistorialUsuario.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/src/dominio/Alimento.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/src/dominio/PlanDeAlimentacion.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/src/interfaz/PanelRegistroAlimento.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/src/dominio/Sistema.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/src/interfaz/PanelConsultaProfesional.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/src/interfaz/InterfazBotonesProfesional.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/src/interfaz/PanelHomeDeProfesional.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/src/interfaz/PanelHomeUsuario.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/src/interfaz/PanelGestionUsuario.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/test/dominio/MensajeTest.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/src/interfaz/PanelRegistroProfesional.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/src/interfaz/PanelEditarPerfilProfesional.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/src/interfaz/PanelCambioDeUsuario.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/test/dominio/UsuarioTest.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/src/alimentacionsaludable/AlimentacionSaludable.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/src/dominio/Usuario.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/src/interfaz/PanelHomeDeUsuario.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/src/interfaz/PanelPlanAlimentacionUsuario.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/src/interfaz/PanelRedactarConsulta.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/src/interfaz/InterfazOpcionesDialogo.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/src/interfaz/InterfazLogin.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/src/interfaz/InterfazBotonesAdministrador.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/src/interfaz/PanelPerfilUsuario.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/src/interfaz/PanelPrincipal.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/src/interfaz/PanelEditarPerfilUsuario.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/src/interfaz/PanelHistorialDeComidasUsuario.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/src/interfaz/PanelRedactarConsultaDesdeProfesional.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/src/interfaz/PanelRegistroUsuario.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/src/dominio/Profesional.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/src/servicio/Constante.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/src/interfaz/PanelAgregarComidasADietaDiariaUsuario.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/src/handlers/ValidacionDeDatos.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/src/handlers/GestionLogin.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/src/interfaz/PanelConsultaProfesionalDesdeProfesional.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/src/dominio/ComidaPorDia.java</file>
+            <file>file:/C:/Users/Dell%20Latitude%20e6440/Desktop/Obligatorio2/AlimentacionSaludable/src/interfaz/PanelHomeDeAdministrador.java</file>
+        </group>
+    </open-files>
+</project-private>

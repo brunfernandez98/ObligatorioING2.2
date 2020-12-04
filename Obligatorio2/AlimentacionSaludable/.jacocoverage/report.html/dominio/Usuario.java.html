@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Usuario.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">dominio</a> &gt; <span class="el_source">Usuario.java</span></div><h1>Usuario.java</h1><pre class="source lang-java linenums">package dominio;
+
+import java.util.ArrayList;
+import javax.swing.ImageIcon;
+import java.io.Serializable;
+import java.util.Objects;
+import java.util.Optional;
+
+public class Usuario extends Persona implements Serializable {
+
+    //Atributos
+    private static final long serialVersionUID = 6106269076155338045L;
+    private Nacionalidades nacionalidad;
+    private Nacionalidades[] listaEnumNac;
+    private double pesoKg;
+    private double alturaCm;
+    private Preferencias preferenciasAlimentarias;
+    private Restricciones restricciones;
+    private boolean[] listaRestricciones;
+    private PlanDeAlimentacion plan;
+    private boolean necesitoPlan;
+    private Profesional profesionalAsignado;
+    private String sexo;
+    private ArrayList&lt;ComidaPorDia&gt; historialComidas;
+    private ComidaPorDia historialDelDia;
+    private ArrayList&lt;Mensaje&gt; casillaDeEntrada;
+    private String fechaUltimaAdicion;
+
+    //Costructor
+    public Usuario(Nacionalidades nacionalidad, double pesoKg, double alturaCm,
+            Preferencias preferenciasAlimentarias, Restricciones restricciones,
+            PlanDeAlimentacion plan, String sexo, String nombre,
+            String apellidos, String nombreUsuario, String fechaNacimiento,
+            ImageIcon fotoPerfil) {
+<span class="fc" id="L35">        super(nombre, apellidos, nombreUsuario, fechaNacimiento, fotoPerfil);</span>
+<span class="fc" id="L36">        this.nacionalidad = nacionalidad;</span>
+<span class="fc" id="L37">        this.pesoKg = pesoKg;</span>
+<span class="fc" id="L38">        this.alturaCm = alturaCm;</span>
+<span class="fc" id="L39">        this.preferenciasAlimentarias = preferenciasAlimentarias;</span>
+<span class="fc" id="L40">        this.restricciones = restricciones;</span>
+<span class="fc" id="L41">        this.listaRestricciones = new boolean[5];</span>
+<span class="fc" id="L42">        this.plan = plan;</span>
+<span class="fc" id="L43">        this.necesitoPlan = false;</span>
+<span class="fc" id="L44">        this.profesionalAsignado = new Profesional();</span>
+<span class="fc" id="L45">        this.sexo = sexo;</span>
+<span class="fc" id="L46">        this.historialComidas = new ArrayList&lt;ComidaPorDia&gt;();</span>
+<span class="fc" id="L47">        this.historialDelDia = new ComidaPorDia();</span>
+<span class="fc" id="L48">        this.listaEnumNac = inicializoListaEnum();</span>
+<span class="fc" id="L49">        this.casillaDeEntrada = new ArrayList&lt;Mensaje&gt;();</span>
+<span class="fc" id="L50">        this.fechaUltimaAdicion = &quot;no se ingreso&quot;;</span>
+<span class="fc" id="L51">    }</span>
+
+    public Usuario() {
+<span class="fc" id="L54">        super(&quot;no ingreso nombre&quot;, &quot;no ingreso apellido&quot;, &quot;no ingreso usuario&quot;,</span>
+              &quot;no ingreso fecha nacimiento&quot;, null);
+<span class="fc" id="L56">        this.setFotoPerfil(new javax</span>
+<span class="fc" id="L57">                           .swing.ImageIcon(getClass()</span>
+                           .getResource
+<span class="fc" id="L59">                           (&quot;/imagenes/predeterminadaUsuario.jpg&quot;)));</span>
+<span class="fc" id="L60">        this.nacionalidad = Nacionalidades.Uruguaya;</span>
+<span class="fc" id="L61">        this.pesoKg = 0;</span>
+<span class="fc" id="L62">        this.alturaCm = 0;</span>
+<span class="fc" id="L63">        this.preferenciasAlimentarias = Preferencias.Ninguna;</span>
+<span class="fc" id="L64">        this.restricciones = Restricciones.Ninguna;</span>
+<span class="fc" id="L65">        this.listaRestricciones = new boolean[5];</span>
+<span class="fc" id="L66">        this.necesitoPlan = false;</span>
+<span class="fc" id="L67">        this.profesionalAsignado = new Profesional();</span>
+<span class="fc" id="L68">        this.plan = new PlanDeAlimentacion(this);</span>
+<span class="fc" id="L69">        this.sexo = &quot;no se ingreso&quot;;</span>
+<span class="fc" id="L70">        this.historialComidas = new ArrayList&lt;ComidaPorDia&gt;();</span>
+<span class="fc" id="L71">        this.historialDelDia = new ComidaPorDia();</span>
+<span class="fc" id="L72">        this.listaEnumNac = inicializoListaEnum();</span>
+<span class="fc" id="L73">        this.casillaDeEntrada = new ArrayList&lt;Mensaje&gt;();</span>
+<span class="fc" id="L74">        this.fechaUltimaAdicion = &quot;no se ingreso&quot;;</span>
+<span class="fc" id="L75">    }</span>
+
+    // Metodos de la clase usuario
+    public String getFechaUltimaAdicion() {
+<span class="fc" id="L79">        return fechaUltimaAdicion;</span>
+    }
+
+    public void setFechaUltimaAdicion(String fechaUltimaAdicion) {
+<span class="fc" id="L83">        this.fechaUltimaAdicion = fechaUltimaAdicion;</span>
+<span class="fc" id="L84">    }</span>
+
+    public ComidaPorDia getHistorialDelDia() {
+<span class="fc" id="L87">        return historialDelDia;</span>
+    }
+
+    public void setHistorialDelDia(ComidaPorDia historialDelDia) {
+<span class="fc" id="L91">        this.historialDelDia = historialDelDia;</span>
+<span class="fc" id="L92">    }</span>
+
+    public Profesional getProfesionalAsignado() {
+<span class="nc" id="L95">        return profesionalAsignado;</span>
+    }
+
+    public void setProfesionalAsignado(Profesional profesionalAsignado) {
+<span class="nc" id="L99">        this.profesionalAsignado = profesionalAsignado;</span>
+<span class="nc" id="L100">    }</span>
+
+    public ArrayList&lt;Mensaje&gt; getCasillaDeEntrada() {
+<span class="nc" id="L103">        return casillaDeEntrada;</span>
+    }
+
+    public void setCasillaDeEntrada(ArrayList&lt;Mensaje&gt; casillaDeEntrada) {
+<span class="nc" id="L107">        this.casillaDeEntrada = casillaDeEntrada;</span>
+<span class="nc" id="L108">    }</span>
+
+    public Nacionalidades getNacionalidad() {
+<span class="fc" id="L111">        return nacionalidad;</span>
+    }
+
+    public void setNacionalidad(Nacionalidades nacionalidad) {
+<span class="fc" id="L115">        this.nacionalidad = nacionalidad;</span>
+<span class="fc" id="L116">    }</span>
+
+    public Nacionalidades[] getListaEnumNac() {
+<span class="fc" id="L119">        Nacionalidades[] lista = listaEnumNac;</span>
+<span class="fc" id="L120">        return lista;</span>
+    }
+
+    public void setListaEnumNac(Nacionalidades[] listaEnumNac) {
+<span class="fc" id="L124">        this.listaEnumNac = Optional</span>
+<span class="fc" id="L125">                .ofNullable(listaEnumNac)</span>
+<span class="fc" id="L126">                .orElse(null);</span>
+<span class="fc" id="L127">    }</span>
+
+    public double getPesoKg() {
+<span class="fc" id="L130">        return pesoKg;</span>
+    }
+
+    public void setPesoKg(double pesoKg) {
+<span class="pc bpc" id="L134" title="3 of 4 branches missed.">        if(pesoKg &gt; 0 &amp;&amp; pesoKg &lt; 501){</span>
+<span class="nc" id="L135">            this.pesoKg = pesoKg;</span>
+        }
+        
+<span class="fc" id="L138">    }</span>
+
+    public double getAlturaCm() {
+<span class="nc" id="L141">        return alturaCm;</span>
+    }
+
+    public void setAlturaCm(double alturaCm) {
+<span class="nc bnc" id="L145" title="All 4 branches missed.">        if(alturaCm &gt; 0 &amp;&amp; alturaCm &lt; 266){</span>
+<span class="nc" id="L146">            this.alturaCm = alturaCm;</span>
+        }
+<span class="nc" id="L148">    }</span>
+
+    public Preferencias getPreferenciasAlimentarias() {
+<span class="nc" id="L151">        return preferenciasAlimentarias;</span>
+    }
+
+    public void setPreferenciasAlimentarias(Preferencias
+                                            preferenciasAlimentarias) {
+<span class="nc" id="L156">        this.preferenciasAlimentarias = preferenciasAlimentarias;</span>
+<span class="nc" id="L157">    }</span>
+
+    public Restricciones getRestricciones() {
+<span class="nc" id="L160">        return restricciones;</span>
+    }
+
+    public void setRestricciones(Restricciones restricciones) {
+<span class="nc" id="L164">        this.restricciones = restricciones;</span>
+<span class="nc" id="L165">    }</span>
+
+    public PlanDeAlimentacion getPlan() {
+<span class="nc" id="L168">        return plan;</span>
+    }
+
+    public void setPlan(PlanDeAlimentacion plan) {
+<span class="nc" id="L172">        this.plan = plan;</span>
+<span class="nc" id="L173">    }</span>
+
+    public String getSexo() {
+<span class="fc" id="L176">        return sexo;</span>
+    }
+
+    public void setSexo(String sexo) {
+<span class="pc bpc" id="L180" title="2 of 4 branches missed.">        if(sexo.equals(&quot;Masculino&quot;) || sexo.equals(&quot;Femenino&quot;)){</span>
+<span class="fc" id="L181">            this.sexo = sexo;</span>
+        }
+<span class="fc" id="L183">    }</span>
+
+    public boolean[] getListaRestricciones() {
+<span class="fc" id="L186">        boolean[] lista = listaRestricciones;</span>
+<span class="fc" id="L187">        return lista;</span>
+    }
+
+    public void setListaRestricciones(boolean[] listaRestricciones) {
+<span class="fc" id="L191">        this.listaRestricciones = Optional</span>
+<span class="fc" id="L192">                .ofNullable(listaRestricciones)</span>
+<span class="fc" id="L193">                .orElse(null);</span>
+<span class="fc" id="L194">    }</span>
+
+    public boolean isNecesitoPlan() {
+<span class="fc" id="L197">        return necesitoPlan;</span>
+    }
+
+    public void setNecesitoPlan(boolean necesitoPlan) {
+<span class="fc" id="L201">        this.necesitoPlan = necesitoPlan;</span>
+<span class="fc" id="L202">    }</span>
+
+    public ArrayList&lt;ComidaPorDia&gt; getHistorialComidas() {
+<span class="fc" id="L205">        return historialComidas;</span>
+    }
+
+    public void setHistorialComidas(ArrayList&lt;ComidaPorDia&gt; historialComidas) {
+<span class="fc" id="L209">        this.historialComidas = historialComidas;</span>
+<span class="fc" id="L210">    }</span>
+
+<span class="pc" id="L212">    public enum Nacionalidades {</span>
+<span class="fc" id="L213">        Alemana, Argentina, Australiana, Austriaca, Brasileña, Canadiense,</span>
+<span class="fc" id="L214">        Chilena, China, Colombiana, Cubana, Ecuatoriana, Egipcia,</span>
+<span class="fc" id="L215">        Española, EstadoUnidense, Francesa, Griega, Holandesa, India, Inglesa,</span>
+<span class="fc" id="L216">        Israeli, Italiana, Japonesa, Méxicana, Paraguaya, Peruana, Portuguesa,</span>
+<span class="fc" id="L217">        Rusa, Sudáfricana, Surcoreana, Uruguaya, Venezolana</span>
+    }
+
+    String[] inicializoListaNacionalidades() {
+<span class="nc" id="L221">        String[] listaPaisesPivot = {&quot;Alemana&quot;, &quot;Australiana&quot;, &quot;Austriaca&quot;,</span>
+            &quot;Brasileña&quot;,&quot;Canadiense&quot;, &quot;Chilena&quot;, &quot;China&quot;, &quot;Colombiana&quot;,
+            &quot;Surcoreana&quot;, &quot;Cubana&quot;, &quot;Ecuatoriana&quot;, &quot;Egipcia&quot;,
+            &quot;Española&quot;, &quot;EstadoUnidense&quot;, &quot;Francesa&quot;, &quot;Griega&quot;,
+            &quot;Holandesa&quot;, &quot;India&quot;, &quot;Inglesa&quot;, &quot;Israeli&quot;, &quot;Italiana&quot;,
+            &quot;Japonesa&quot;, &quot;Méxicana&quot;, &quot;Paraguaya&quot;, &quot;Peruana&quot;,
+            &quot;Portuguesa&quot;, &quot;Rusa&quot;, &quot;Sudáfricana&quot;, &quot;Uruguaya&quot;,
+            &quot;Venezolana&quot;};
+<span class="nc" id="L229">        return listaPaisesPivot;</span>
+    }
+
+    public Nacionalidades[] inicializoListaEnum() {
+<span class="fc" id="L233">        Nacionalidades[] listaEnumPivot = {</span>
+            Nacionalidades.Alemana, Nacionalidades.Argentina,
+            Nacionalidades.Australiana, Nacionalidades.Austriaca,
+            Nacionalidades.Brasileña, Nacionalidades.Canadiense,
+            Nacionalidades.Chilena, Nacionalidades.China,
+            Nacionalidades.Colombiana, Nacionalidades.Surcoreana,
+            Nacionalidades.Cubana, Nacionalidades.Ecuatoriana, 
+            Nacionalidades.Egipcia, Nacionalidades.Española, 
+            Nacionalidades.EstadoUnidense, Nacionalidades.Francesa,
+            Nacionalidades.Griega, Nacionalidades.Holandesa,
+            Nacionalidades.India, Nacionalidades.Inglesa,
+            Nacionalidades.Israeli, Nacionalidades.Italiana,
+            Nacionalidades.Japonesa, Nacionalidades.Méxicana,
+            Nacionalidades.Paraguaya, Nacionalidades.Peruana,
+            Nacionalidades.Portuguesa, Nacionalidades.Rusa,
+            Nacionalidades.Sudáfricana, Nacionalidades.Uruguaya,
+            Nacionalidades.Venezolana
+        };
+<span class="fc" id="L251">        return listaEnumPivot;</span>
+    }
+
+<span class="pc" id="L254">    public enum Preferencias {</span>
+<span class="fc" id="L255">        Vegano, Vegetariano, Macrobiotico, Organico, Ninguna</span>
+    }
+
+<span class="pc" id="L258">    public enum Restricciones {</span>
+<span class="fc" id="L259">        Celiaco, IntoleranteALaLactosa, Diabetico, Hipertension, Ninguna</span>
+    }
+ @Override
+    public String getPassword()
+    {
+<span class="fc" id="L264">        return super.getPassword();</span>
+    }
+    
+    
+    @Override
+    public String toString() {
+<span class="fc" id="L270">        return &quot;Usuario: &quot; + this.getNombreUsuario();</span>
+    }
+    
+     @Override
+    public boolean equals(Object obj) {
+<span class="fc" id="L275">      return super.equals(obj);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

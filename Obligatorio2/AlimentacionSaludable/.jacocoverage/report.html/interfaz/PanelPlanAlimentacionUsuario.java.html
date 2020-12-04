@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>PanelPlanAlimentacionUsuario.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">interfaz</a> &gt; <span class="el_source">PanelPlanAlimentacionUsuario.java</span></div><h1>PanelPlanAlimentacionUsuario.java</h1><pre class="source lang-java linenums">package interfaz;
+
+import dominio.Profesional;
+import dominio.Sistema;
+import dominio.Usuario;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+public class PanelPlanAlimentacionUsuario extends javax.swing.JPanel {
+
+    //Atributos
+    private Sistema sistema;
+    private JFrame ventana;
+    private Usuario usuarioActual;
+
+    //Constructor
+    public PanelPlanAlimentacionUsuario(Sistema unSistema,
+<span class="nc" id="L20">            JFrame unaVentana,Usuario unUsuario) {</span>
+<span class="nc" id="L21">        initComponents();</span>
+<span class="nc" id="L22">        sistema = unSistema;</span>
+<span class="nc" id="L23">        ventana = unaVentana;</span>
+<span class="nc" id="L24">        usuarioActual=unUsuario;</span>
+<span class="nc" id="L25">        listaProfesionalesAlim.setModel(new DefaultComboBoxModel(sistema.getListaProfesionales().toArray()));</span>
+<span class="nc" id="L26">    }</span>
+
+    @SuppressWarnings(&quot;unchecked&quot;)
+    // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+<span class="nc" id="L32">        panelPlan = new javax.swing.JPanel();</span>
+<span class="nc" id="L33">        etiquetaProfesionalACargo = new javax.swing.JLabel();</span>
+<span class="nc" id="L34">        listaProfesionalesAlim = new javax.swing.JComboBox();</span>
+<span class="nc" id="L35">        btnAceptarPlan = new javax.swing.JButton();</span>
+<span class="nc" id="L36">        etiquetaPlanDeAlimentacion = new javax.swing.JLabel();</span>
+<span class="nc" id="L37">        mensajeAlAceptar = new javax.swing.JLabel();</span>
+
+<span class="nc" id="L39">        setPreferredSize(new java.awt.Dimension(650, 540));</span>
+
+<span class="nc" id="L41">        panelPlan.setBackground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L42">        panelPlan.setPreferredSize(new java.awt.Dimension(650, 540));</span>
+<span class="nc" id="L43">        panelPlan.setRequestFocusEnabled(false);</span>
+<span class="nc" id="L44">        panelPlan.setLayout(null);</span>
+
+<span class="nc" id="L46">        etiquetaProfesionalACargo.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 14)); // NOI18N</span>
+<span class="nc" id="L47">        etiquetaProfesionalACargo.setText(&quot;Profesional a cargo:&quot;);</span>
+<span class="nc" id="L48">        panelPlan.add(etiquetaProfesionalACargo);</span>
+<span class="nc" id="L49">        etiquetaProfesionalACargo.setBounds(30, 200, 170, 30);</span>
+
+<span class="nc" id="L51">        listaProfesionalesAlim.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 14)); // NOI18N</span>
+<span class="nc" id="L52">        panelPlan.add(listaProfesionalesAlim);</span>
+<span class="nc" id="L53">        listaProfesionalesAlim.setBounds(190, 200, 240, 30);</span>
+
+<span class="nc" id="L55">        btnAceptarPlan.setBackground(new java.awt.Color(102, 153, 255));</span>
+<span class="nc" id="L56">        btnAceptarPlan.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 14)); // NOI18N</span>
+<span class="nc" id="L57">        btnAceptarPlan.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L58">        btnAceptarPlan.setText(&quot;Aceptar&quot;);</span>
+<span class="nc" id="L59">        btnAceptarPlan.setContentAreaFilled(false);</span>
+<span class="nc" id="L60">        btnAceptarPlan.setOpaque(true);</span>
+<span class="nc" id="L61">        btnAceptarPlan.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L63">                btnAceptarPlanActionPerformed(evt);</span>
+<span class="nc" id="L64">            }</span>
+        });
+<span class="nc" id="L66">        panelPlan.add(btnAceptarPlan);</span>
+<span class="nc" id="L67">        btnAceptarPlan.setBounds(470, 200, 150, 30);</span>
+
+<span class="nc" id="L69">        etiquetaPlanDeAlimentacion.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 36)); // NOI18N</span>
+<span class="nc" id="L70">        etiquetaPlanDeAlimentacion.setForeground(new java.awt.Color(102, 153, 255));</span>
+<span class="nc" id="L71">        etiquetaPlanDeAlimentacion.setText(&quot;Plan de Alimentación&quot;);</span>
+<span class="nc" id="L72">        panelPlan.add(etiquetaPlanDeAlimentacion);</span>
+<span class="nc" id="L73">        etiquetaPlanDeAlimentacion.setBounds(150, 10, 350, 50);</span>
+
+<span class="nc" id="L75">        mensajeAlAceptar.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L76">        panelPlan.add(mensajeAlAceptar);</span>
+<span class="nc" id="L77">        mensajeAlAceptar.setBounds(140, 240, 460, 30);</span>
+
+<span class="nc" id="L79">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);</span>
+<span class="nc" id="L80">        this.setLayout(layout);</span>
+<span class="nc" id="L81">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L82">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L83">            .addComponent(panelPlan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+        );
+<span class="nc" id="L85">        layout.setVerticalGroup(</span>
+<span class="nc" id="L86">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L87">            .addComponent(panelPlan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+        );
+<span class="nc" id="L89">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+
+    private void btnAceptarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarPlanActionPerformed
+<span class="nc" id="L92">        Profesional profesionalActivo = (Profesional) listaProfesionalesAlim.getSelectedItem();</span>
+<span class="nc" id="L93">        usuarioActual.setProfesionalAsignado(profesionalActivo);</span>
+<span class="nc" id="L94">        usuarioActual.setNecesitoPlan(true);</span>
+<span class="nc" id="L95">         JOptionPane optionPane</span>
+                    = new JOptionPane(&quot;Se ha pedido un plan &quot;
+                            + &quot;correctamente&quot;, JOptionPane.INFORMATION_MESSAGE);
+<span class="nc" id="L98">            JDialog dialog = optionPane.createDialog(&quot;Plan de Alimentacion&quot;);</span>
+<span class="nc" id="L99">            dialog.setAlwaysOnTop(true);</span>
+<span class="nc" id="L100">            dialog.setVisible(true);</span>
+<span class="nc" id="L101">    }//GEN-LAST:event_btnAceptarPlanActionPerformed</span>
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAceptarPlan;
+    private javax.swing.JLabel etiquetaPlanDeAlimentacion;
+    private javax.swing.JLabel etiquetaProfesionalACargo;
+    private javax.swing.JComboBox listaProfesionalesAlim;
+    private javax.swing.JLabel mensajeAlAceptar;
+    private javax.swing.JPanel panelPlan;
+    // End of variables declaration//GEN-END:variables
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>PanelConsultaProfesionalDesdeProfesional.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">interfaz</a> &gt; <span class="el_source">PanelConsultaProfesionalDesdeProfesional.java</span></div><h1>PanelConsultaProfesionalDesdeProfesional.java</h1><pre class="source lang-java linenums">package interfaz;
+
+import dominio.Mensaje;
+import dominio.Profesional;
+import dominio.Sistema;
+import javax.swing.JFrame;
+
+public class PanelConsultaProfesionalDesdeProfesional extends javax.swing.JPanel {
+
+    //Atrubutos
+    private Sistema sistema;
+    private Profesional profesional;
+    private JFrame ventana;
+    private Mensaje mensajeSeleccionado;
+
+    //Constructor
+    public PanelConsultaProfesionalDesdeProfesional(Sistema unSistema,
+<span class="nc" id="L18">             JFrame unaVentana, Profesional unProfesional) {</span>
+<span class="nc" id="L19">        initComponents();</span>
+<span class="nc" id="L20">        sistema = unSistema;</span>
+<span class="nc" id="L21">        profesional=unProfesional;</span>
+<span class="nc" id="L22">        ventana = unaVentana;</span>
+<span class="nc" id="L23">        listaMensajes.setListData(profesional.getCasillaDeEntrada().toArray());</span>
+<span class="nc" id="L24">        textoLeerMensaje.setEditable(false);</span>
+<span class="nc" id="L25">        mensajeSeleccionado = null;</span>
+        
+<span class="nc" id="L27">    }</span>
+
+    @SuppressWarnings(&quot;unchecked&quot;)
+    // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+<span class="nc" id="L33">        panelConsultaProf = new javax.swing.JPanel();</span>
+<span class="nc" id="L34">        jScrollPane2 = new javax.swing.JScrollPane();</span>
+<span class="nc" id="L35">        listaMensajes = new javax.swing.JList();</span>
+<span class="nc" id="L36">        etiquetaTituloConsultas = new javax.swing.JLabel();</span>
+<span class="nc" id="L37">        etiquetaBandejaDeEntrada = new javax.swing.JLabel();</span>
+<span class="nc" id="L38">        jScrollPane1 = new javax.swing.JScrollPane();</span>
+<span class="nc" id="L39">        textoLeerMensaje = new javax.swing.JTextArea();</span>
+<span class="nc" id="L40">        btnBorrarCons = new javax.swing.JButton();</span>
+<span class="nc" id="L41">        etiquetaBandejaDeEntrada1 = new javax.swing.JLabel();</span>
+<span class="nc" id="L42">        etiquetaBandejaDeEntrada2 = new javax.swing.JLabel();</span>
+
+<span class="nc" id="L44">        setPreferredSize(new java.awt.Dimension(650, 540));</span>
+
+<span class="nc" id="L46">        panelConsultaProf.setBackground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L47">        panelConsultaProf.setPreferredSize(new java.awt.Dimension(650, 540));</span>
+<span class="nc" id="L48">        panelConsultaProf.setLayout(null);</span>
+
+<span class="nc" id="L50">        listaMensajes.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 12)); // NOI18N</span>
+<span class="nc" id="L51">        listaMensajes.addListSelectionListener(new javax.swing.event.ListSelectionListener() {</span>
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+<span class="nc" id="L53">                listaMensajesValueChanged(evt);</span>
+<span class="nc" id="L54">            }</span>
+        });
+<span class="nc" id="L56">        jScrollPane2.setViewportView(listaMensajes);</span>
+
+<span class="nc" id="L58">        panelConsultaProf.add(jScrollPane2);</span>
+<span class="nc" id="L59">        jScrollPane2.setBounds(340, 110, 290, 350);</span>
+
+<span class="nc" id="L61">        etiquetaTituloConsultas.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 36)); // NOI18N</span>
+<span class="nc" id="L62">        etiquetaTituloConsultas.setForeground(new java.awt.Color(102, 153, 255));</span>
+<span class="nc" id="L63">        etiquetaTituloConsultas.setText(&quot;Bandeja de Entrada&quot;);</span>
+<span class="nc" id="L64">        panelConsultaProf.add(etiquetaTituloConsultas);</span>
+<span class="nc" id="L65">        etiquetaTituloConsultas.setBounds(160, 10, 320, 44);</span>
+
+<span class="nc" id="L67">        etiquetaBandejaDeEntrada.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L68">        etiquetaBandejaDeEntrada.setText(&quot;Bandeja de entrada&quot;);</span>
+<span class="nc" id="L69">        panelConsultaProf.add(etiquetaBandejaDeEntrada);</span>
+<span class="nc" id="L70">        etiquetaBandejaDeEntrada.setBounds(680, 110, 220, 30);</span>
+
+<span class="nc" id="L72">        textoLeerMensaje.setColumns(20);</span>
+<span class="nc" id="L73">        textoLeerMensaje.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 12)); // NOI18N</span>
+<span class="nc" id="L74">        textoLeerMensaje.setRows(5);</span>
+<span class="nc" id="L75">        jScrollPane1.setViewportView(textoLeerMensaje);</span>
+
+<span class="nc" id="L77">        panelConsultaProf.add(jScrollPane1);</span>
+<span class="nc" id="L78">        jScrollPane1.setBounds(20, 110, 270, 347);</span>
+
+<span class="nc" id="L80">        btnBorrarCons.setBackground(new java.awt.Color(102, 153, 255));</span>
+<span class="nc" id="L81">        btnBorrarCons.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 12)); // NOI18N</span>
+<span class="nc" id="L82">        btnBorrarCons.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L83">        btnBorrarCons.setText(&quot;Borrar&quot;);</span>
+<span class="nc" id="L84">        btnBorrarCons.setContentAreaFilled(false);</span>
+<span class="nc" id="L85">        btnBorrarCons.setOpaque(true);</span>
+<span class="nc" id="L86">        btnBorrarCons.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L88">                btnBorrarConsActionPerformed(evt);</span>
+<span class="nc" id="L89">            }</span>
+        });
+<span class="nc" id="L91">        panelConsultaProf.add(btnBorrarCons);</span>
+<span class="nc" id="L92">        btnBorrarCons.setBounds(450, 470, 90, 30);</span>
+
+<span class="nc" id="L94">        etiquetaBandejaDeEntrada1.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 14)); // NOI18N</span>
+<span class="nc" id="L95">        etiquetaBandejaDeEntrada1.setText(&quot;Mensaje:&quot;);</span>
+<span class="nc" id="L96">        panelConsultaProf.add(etiquetaBandejaDeEntrada1);</span>
+<span class="nc" id="L97">        etiquetaBandejaDeEntrada1.setBounds(130, 70, 60, 30);</span>
+
+<span class="nc" id="L99">        etiquetaBandejaDeEntrada2.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 14)); // NOI18N</span>
+<span class="nc" id="L100">        etiquetaBandejaDeEntrada2.setText(&quot;Bandeja de entrada&quot;);</span>
+<span class="nc" id="L101">        panelConsultaProf.add(etiquetaBandejaDeEntrada2);</span>
+<span class="nc" id="L102">        etiquetaBandejaDeEntrada2.setBounds(410, 70, 180, 30);</span>
+
+<span class="nc" id="L104">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);</span>
+<span class="nc" id="L105">        this.setLayout(layout);</span>
+<span class="nc" id="L106">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L107">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L108">            .addComponent(panelConsultaProf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+        );
+<span class="nc" id="L110">        layout.setVerticalGroup(</span>
+<span class="nc" id="L111">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L112">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L113">                .addComponent(panelConsultaProf, javax.swing.GroupLayout.PREFERRED_SIZE, 544, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L114">                .addGap(0, 0, Short.MAX_VALUE))</span>
+        );
+<span class="nc" id="L116">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+
+    private void listaMensajesValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaMensajesValueChanged
+<span class="nc" id="L119">        mensajeSeleccionado = (Mensaje) listaMensajes.getSelectedValue();</span>
+<span class="nc bnc" id="L120" title="All 2 branches missed.">        if (mensajeSeleccionado != null) {</span>
+<span class="nc" id="L121">            textoLeerMensaje.setText(mensajeSeleccionado.getMensaje());</span>
+        }
+<span class="nc" id="L123">    }//GEN-LAST:event_listaMensajesValueChanged</span>
+
+    private void btnBorrarConsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarConsActionPerformed
+<span class="nc bnc" id="L126" title="All 2 branches missed.">        if (mensajeSeleccionado != null) {</span>
+<span class="nc" id="L127">            mensajeSeleccionado = (Mensaje) listaMensajes.getSelectedValue();</span>
+<span class="nc" id="L128">            textoLeerMensaje.setText(&quot;&quot;);</span>
+<span class="nc" id="L129">            profesional.getCasillaDeEntrada().remove(mensajeSeleccionado);</span>
+<span class="nc" id="L130">            mensajeSeleccionado = null;</span>
+<span class="nc" id="L131">            listaMensajes.setListData(profesional.getCasillaDeEntrada().toArray());</span>
+        }
+<span class="nc" id="L133">    }//GEN-LAST:event_btnBorrarConsActionPerformed</span>
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBorrarCons;
+    private javax.swing.JLabel etiquetaBandejaDeEntrada;
+    private javax.swing.JLabel etiquetaBandejaDeEntrada1;
+    private javax.swing.JLabel etiquetaBandejaDeEntrada2;
+    private javax.swing.JLabel etiquetaTituloConsultas;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JList listaMensajes;
+    private javax.swing.JPanel panelConsultaProf;
+    private javax.swing.JTextArea textoLeerMensaje;
+    // End of variables declaration//GEN-END:variables
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

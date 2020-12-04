@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>PanelSeleccionarPlanARealizar.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">interfaz</a> &gt; <span class="el_source">PanelSeleccionarPlanARealizar.java</span></div><h1>PanelSeleccionarPlanARealizar.java</h1><pre class="source lang-java linenums">package interfaz;
+
+
+import dominio.Profesional;
+import dominio.Sistema;
+import dominio.Usuario;
+import java.awt.Dimension;
+import java.util.ArrayList;
+import javax.swing.JFrame;
+
+public final class PanelSeleccionarPlanARealizar extends javax.swing.JPanel {
+
+    private final Sistema sistema;
+    private final PanelHomeDeProfesional ventana;
+    private final Profesional usuarioActivo;
+
+    public PanelSeleccionarPlanARealizar(Sistema unSistema,
+            
+<span class="nc" id="L19">            PanelHomeDeProfesional unaVentana, Profesional profesional) {</span>
+<span class="nc" id="L20">        initComponents();</span>
+       
+<span class="nc" id="L22">        sistema = unSistema;</span>
+<span class="nc" id="L23">        ventana = unaVentana;</span>
+<span class="nc" id="L24">        usuarioActivo=profesional;</span>
+<span class="nc" id="L25">        listaUsuarios.setListData(listaConPlanARealizar().toArray());</span>
+<span class="nc" id="L26">    }</span>
+
+    
+    private Profesional getUsuarioActivo(){
+<span class="nc" id="L30">        return usuarioActivo;</span>
+    }
+    @SuppressWarnings(&quot;unchecked&quot;)
+    // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+<span class="nc" id="L36">        etiquetaTitulo = new javax.swing.JLabel();</span>
+<span class="nc" id="L37">        jScrollPane1 = new javax.swing.JScrollPane();</span>
+<span class="nc" id="L38">        listaUsuarios = new javax.swing.JList();</span>
+<span class="nc" id="L39">        btnRealizarPlan = new javax.swing.JButton();</span>
+
+<span class="nc" id="L41">        setBackground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L42">        setPreferredSize(new java.awt.Dimension(650, 540));</span>
+<span class="nc" id="L43">        setLayout(null);</span>
+
+<span class="nc" id="L45">        etiquetaTitulo.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 32)); // NOI18N</span>
+<span class="nc" id="L46">        etiquetaTitulo.setForeground(new java.awt.Color(102, 153, 255));</span>
+<span class="nc" id="L47">        etiquetaTitulo.setText(&quot;Seleccionar Plan de Alimentacion a Realizar&quot;);</span>
+<span class="nc" id="L48">        add(etiquetaTitulo);</span>
+<span class="nc" id="L49">        etiquetaTitulo.setBounds(20, 10, 720, 40);</span>
+
+<span class="nc" id="L51">        listaUsuarios.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L52">        jScrollPane1.setViewportView(listaUsuarios);</span>
+
+<span class="nc" id="L54">        add(jScrollPane1);</span>
+<span class="nc" id="L55">        jScrollPane1.setBounds(130, 80, 390, 370);</span>
+
+<span class="nc" id="L57">        btnRealizarPlan.setBackground(new java.awt.Color(102, 153, 255));</span>
+<span class="nc" id="L58">        btnRealizarPlan.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 14)); // NOI18N</span>
+<span class="nc" id="L59">        btnRealizarPlan.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L60">        btnRealizarPlan.setText(&quot;Realizar Plan&quot;);</span>
+<span class="nc" id="L61">        btnRealizarPlan.setContentAreaFilled(false);</span>
+<span class="nc" id="L62">        btnRealizarPlan.setOpaque(true);</span>
+<span class="nc" id="L63">        btnRealizarPlan.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L65">                btnRealizarPlanActionPerformed(evt);</span>
+<span class="nc" id="L66">            }</span>
+        });
+<span class="nc" id="L68">        add(btnRealizarPlan);</span>
+<span class="nc" id="L69">        btnRealizarPlan.setBounds(440, 490, 180, 30);</span>
+<span class="nc" id="L70">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+
+    private void btnRealizarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPlanActionPerformed
+<span class="nc bnc" id="L73" title="All 2 branches missed.">        if (listaUsuarios.getSelectedValue() != null) {</span>
+<span class="nc" id="L74">            Usuario usuarioAModificar = sistema.getListaUsuarios().get(listaUsuarios.getSelectedIndex());</span>
+<span class="nc" id="L75">            ventana.remove(this);</span>
+<span class="nc" id="L76">            PanelRealizarPlanAlimentacion nuevoPanel = new PanelRealizarPlanAlimentacion(sistema,ventana, usuarioAModificar);</span>
+            
+<span class="nc" id="L78">            ventana.setPanelActual(nuevoPanel);</span>
+      
+<span class="nc" id="L80">      ventana.getPanelPrincipal().add(ventana.getPanelActual(), new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 650, 540));</span>
+<span class="nc" id="L81">      ventana.setPreferredSize(new Dimension(400, 400));</span>
+            
+          
+        }
+
+<span class="nc" id="L86">    }//GEN-LAST:event_btnRealizarPlanActionPerformed</span>
+
+    ArrayList&lt;Usuario&gt; listaConPlanARealizar() {
+<span class="nc" id="L89">        ArrayList&lt;Usuario&gt; retorno = new ArrayList&lt;Usuario&gt;();</span>
+<span class="nc bnc" id="L90" title="All 2 branches missed.">        for (int i = 0; i &lt; sistema.getListaUsuarios().size(); i++) {</span>
+<span class="nc bnc" id="L91" title="All 4 branches missed.">            if (sistema.getListaUsuarios().get(i).isNecesitoPlan() &amp;&amp; sistema.getListaUsuarios().get(i).getProfesionalAsignado().equals(getUsuarioActivo())) {</span>
+<span class="nc" id="L92">                retorno.add(sistema.getListaUsuarios().get(i));</span>
+            }
+        }
+<span class="nc" id="L95">        return retorno;</span>
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnRealizarPlan;
+    private javax.swing.JLabel etiquetaTitulo;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JList listaUsuarios;
+    // End of variables declaration//GEN-END:variables
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>
