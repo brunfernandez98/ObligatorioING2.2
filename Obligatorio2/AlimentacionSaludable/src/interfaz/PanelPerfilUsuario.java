@@ -88,7 +88,7 @@ public class PanelPerfilUsuario extends javax.swing.JPanel {
             }
         });
         panelHome.add(btnVolver);
-        btnVolver.setBounds(10, 10, 100, 40);
+        btnVolver.setBounds(20, 10, 90, 40);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

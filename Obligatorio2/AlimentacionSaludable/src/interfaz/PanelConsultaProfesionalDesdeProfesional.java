@@ -56,7 +56,7 @@ public class PanelConsultaProfesionalDesdeProfesional extends javax.swing.JPanel
         jScrollPane2.setViewportView(listaMensajes);
 
         panelConsultaProf.add(jScrollPane2);
-        jScrollPane2.setBounds(340, 110, 290, 350);
+        jScrollPane2.setBounds(340, 100, 290, 350);
 
         etiquetaTituloConsultas.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         etiquetaTituloConsultas.setForeground(new java.awt.Color(102, 153, 255));
@@ -75,7 +75,7 @@ public class PanelConsultaProfesionalDesdeProfesional extends javax.swing.JPanel
         jScrollPane1.setViewportView(textoLeerMensaje);
 
         panelConsultaProf.add(jScrollPane1);
-        jScrollPane1.setBounds(20, 110, 270, 347);
+        jScrollPane1.setBounds(30, 100, 270, 347);
 
         btnBorrarCons.setBackground(new java.awt.Color(102, 153, 255));
         btnBorrarCons.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -89,17 +89,17 @@ public class PanelConsultaProfesionalDesdeProfesional extends javax.swing.JPanel
             }
         });
         panelConsultaProf.add(btnBorrarCons);
-        btnBorrarCons.setBounds(450, 470, 90, 30);
+        btnBorrarCons.setBounds(510, 470, 100, 30);
 
         etiquetaBandejaDeEntrada1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         etiquetaBandejaDeEntrada1.setText("Mensaje:");
         panelConsultaProf.add(etiquetaBandejaDeEntrada1);
-        etiquetaBandejaDeEntrada1.setBounds(130, 70, 60, 30);
+        etiquetaBandejaDeEntrada1.setBounds(120, 60, 60, 30);
 
         etiquetaBandejaDeEntrada2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         etiquetaBandejaDeEntrada2.setText("Bandeja de entrada");
         panelConsultaProf.add(etiquetaBandejaDeEntrada2);
-        etiquetaBandejaDeEntrada2.setBounds(410, 70, 180, 30);
+        etiquetaBandejaDeEntrada2.setBounds(390, 60, 180, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

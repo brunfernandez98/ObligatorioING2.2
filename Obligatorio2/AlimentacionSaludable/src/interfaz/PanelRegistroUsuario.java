@@ -146,27 +146,27 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
         etiquetaNombre.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         etiquetaNombre.setText("Nombre:");
         panelRegUsuario.add(etiquetaNombre);
-        etiquetaNombre.setBounds(150, 70, 70, 15);
+        etiquetaNombre.setBounds(300, 80, 70, 15);
 
         etiquetaApellidos.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         etiquetaApellidos.setText("Apellidos:");
         panelRegUsuario.add(etiquetaApellidos);
-        etiquetaApellidos.setBounds(150, 110, 130, 26);
+        etiquetaApellidos.setBounds(290, 110, 60, 26);
 
         etiquetaNombUsuario.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         etiquetaNombUsuario.setText("Contraseña:");
         panelRegUsuario.add(etiquetaNombUsuario);
-        etiquetaNombUsuario.setBounds(150, 180, 100, 26);
+        etiquetaNombUsuario.setBounds(280, 180, 70, 26);
 
         etiquetaFDNaciomiento.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         etiquetaFDNaciomiento.setText("Fecha de Nacimiento:");
         panelRegUsuario.add(etiquetaFDNaciomiento);
-        etiquetaFDNaciomiento.setBounds(150, 260, 250, 26);
+        etiquetaFDNaciomiento.setBounds(220, 260, 250, 26);
 
         etiquetaFotoPerfil.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         etiquetaFotoPerfil.setText("Foto de Perfil:");
         panelRegUsuario.add(etiquetaFotoPerfil);
-        etiquetaFotoPerfil.setBounds(30, 130, 90, 30);
+        etiquetaFotoPerfil.setBounds(70, 110, 90, 30);
 
         cajaNombre.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cajaNombre.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -180,7 +180,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
             }
         });
         panelRegUsuario.add(cajaNombre);
-        cajaNombre.setBounds(280, 70, 180, 20);
+        cajaNombre.setBounds(350, 70, 180, 30);
 
         cajaApellidos.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cajaApellidos.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -194,7 +194,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
             }
         });
         panelRegUsuario.add(cajaApellidos);
-        cajaApellidos.setBounds(280, 110, 180, 20);
+        cajaApellidos.setBounds(350, 107, 180, 23);
 
         cajaPassword.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cajaPassword.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -208,17 +208,17 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
             }
         });
         panelRegUsuario.add(cajaPassword);
-        cajaPassword.setBounds(280, 180, 180, 20);
+        cajaPassword.setBounds(350, 180, 180, 30);
 
         etiquetaPeso.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         etiquetaPeso.setText("Peso:");
         panelRegUsuario.add(etiquetaPeso);
-        etiquetaPeso.setBounds(150, 340, 80, 26);
+        etiquetaPeso.setBounds(310, 340, 40, 26);
 
         etiquetaAltura.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         etiquetaAltura.setText("Altura:");
         panelRegUsuario.add(etiquetaAltura);
-        etiquetaAltura.setBounds(150, 300, 90, 26);
+        etiquetaAltura.setBounds(300, 300, 40, 26);
 
         cajaAltura.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cajaAltura.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -232,7 +232,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
             }
         });
         panelRegUsuario.add(cajaAltura);
-        cajaAltura.setBounds(280, 300, 180, 20);
+        cajaAltura.setBounds(350, 300, 180, 30);
 
         cajaPeso.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cajaPeso.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -241,15 +241,15 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
             }
         });
         panelRegUsuario.add(cajaPeso);
-        cajaPeso.setBounds(280, 340, 180, 20);
+        cajaPeso.setBounds(350, 340, 180, 30);
 
         etiquetaMedidaPeso.setText("Kg");
         panelRegUsuario.add(etiquetaMedidaPeso);
-        etiquetaMedidaPeso.setBounds(470, 340, 40, 14);
+        etiquetaMedidaPeso.setBounds(540, 340, 40, 16);
 
         etiquetaMedidaAltura.setText("Cm");
         panelRegUsuario.add(etiquetaMedidaAltura);
-        etiquetaMedidaAltura.setBounds(470, 300, 20, 20);
+        etiquetaMedidaAltura.setBounds(540, 300, 20, 20);
 
         btnAceptarUsuario.setBackground(new java.awt.Color(102, 153, 255));
         btnAceptarUsuario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -274,7 +274,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
         etiquetaNacionalidadUsuario.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         etiquetaNacionalidadUsuario.setText("Nacionalidad:");
         panelRegUsuario.add(etiquetaNacionalidadUsuario);
-        etiquetaNacionalidadUsuario.setBounds(150, 220, 180, 20);
+        etiquetaNacionalidadUsuario.setBounds(270, 220, 70, 20);
 
         listaNacionalidadesUsuario.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         listaNacionalidadesUsuario.addActionListener(new java.awt.event.ActionListener() {
@@ -283,12 +283,12 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
             }
         });
         panelRegUsuario.add(listaNacionalidadesUsuario);
-        listaNacionalidadesUsuario.setBounds(280, 220, 180, 20);
+        listaNacionalidadesUsuario.setBounds(350, 220, 180, 30);
 
         etiquetaSexo.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         etiquetaSexo.setText("Sexo:");
         panelRegUsuario.add(etiquetaSexo);
-        etiquetaSexo.setBounds(150, 380, 90, 15);
+        etiquetaSexo.setBounds(300, 380, 40, 15);
 
         rBtnMasculinoUsuario.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         rBtnMasculinoUsuario.setText("Masculino");
@@ -299,7 +299,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
             }
         });
         panelRegUsuario.add(rBtnMasculinoUsuario);
-        rBtnMasculinoUsuario.setBounds(270, 370, 110, 35);
+        rBtnMasculinoUsuario.setBounds(340, 370, 110, 35);
 
         rBtnFemeninoUsuario.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         rBtnFemeninoUsuario.setText("Femenino");
@@ -310,7 +310,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
             }
         });
         panelRegUsuario.add(rBtnFemeninoUsuario);
-        rBtnFemeninoUsuario.setBounds(370, 370, 110, 35);
+        rBtnFemeninoUsuario.setBounds(440, 370, 110, 35);
 
         etiquetaRestricciones.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         etiquetaRestricciones.setText("Restricciones:");
@@ -337,7 +337,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
             }
         });
         panelRegUsuario.add(checkBoxIntoleranteLactosa);
-        checkBoxIntoleranteLactosa.setBounds(390, 430, 149, 23);
+        checkBoxIntoleranteLactosa.setBounds(390, 430, 152, 24);
 
         checkBoxDiabetico.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         checkBoxDiabetico.setText("Diabético");
@@ -364,34 +364,34 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
         etiquetaErrorNombre.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         etiquetaErrorNombre.setPreferredSize(new java.awt.Dimension(100, 20));
         panelRegUsuario.add(etiquetaErrorNombre);
-        etiquetaErrorNombre.setBounds(470, 70, 190, 20);
+        etiquetaErrorNombre.setBounds(540, 70, 190, 20);
 
         etiquetaErrorApellido.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         etiquetaErrorApellido.setPreferredSize(new java.awt.Dimension(100, 20));
         panelRegUsuario.add(etiquetaErrorApellido);
-        etiquetaErrorApellido.setBounds(470, 110, 190, 20);
+        etiquetaErrorApellido.setBounds(540, 110, 190, 20);
 
         etiquetaErrorNombreUsuario.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         etiquetaErrorNombreUsuario.setPreferredSize(new java.awt.Dimension(100, 20));
         panelRegUsuario.add(etiquetaErrorNombreUsuario);
-        etiquetaErrorNombreUsuario.setBounds(470, 150, 190, 20);
+        etiquetaErrorNombreUsuario.setBounds(540, 150, 190, 20);
 
         etiquetaErrorAltura.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         etiquetaErrorAltura.setPreferredSize(new java.awt.Dimension(100, 20));
         panelRegUsuario.add(etiquetaErrorAltura);
-        etiquetaErrorAltura.setBounds(490, 300, 170, 20);
+        etiquetaErrorAltura.setBounds(560, 300, 170, 20);
 
         etiquetaErrorPeso.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         etiquetaErrorPeso.setPreferredSize(new java.awt.Dimension(100, 20));
         panelRegUsuario.add(etiquetaErrorPeso);
-        etiquetaErrorPeso.setBounds(490, 340, 170, 20);
+        etiquetaErrorPeso.setBounds(560, 340, 170, 20);
 
         fotoPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/predeterminadaUsuario.jpg"))); // NOI18N
         fotoPerfil.setMaximumSize(new java.awt.Dimension(210, 240));
         fotoPerfil.setMinimumSize(new java.awt.Dimension(210, 240));
         fotoPerfil.setPreferredSize(new java.awt.Dimension(210, 240));
         panelRegUsuario.add(fotoPerfil);
-        fotoPerfil.setBounds(20, 160, 110, 110);
+        fotoPerfil.setBounds(60, 140, 110, 110);
 
         fechaNacimiento.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -399,17 +399,17 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
             }
         });
         panelRegUsuario.add(fechaNacimiento);
-        fechaNacimiento.setBounds(280, 260, 180, 20);
+        fechaNacimiento.setBounds(350, 260, 180, 29);
 
         etiquetaErrorFechaNacimiento.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         etiquetaErrorFechaNacimiento.setPreferredSize(new java.awt.Dimension(100, 20));
         panelRegUsuario.add(etiquetaErrorFechaNacimiento);
-        etiquetaErrorFechaNacimiento.setBounds(480, 260, 180, 20);
+        etiquetaErrorFechaNacimiento.setBounds(550, 260, 180, 20);
 
         etiquetaPreferencias.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         etiquetaPreferencias.setText("Preferencias:");
         panelRegUsuario.add(etiquetaPreferencias);
-        etiquetaPreferencias.setBounds(50, 430, 150, 26);
+        etiquetaPreferencias.setBounds(50, 420, 150, 26);
 
         rBVegano.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         rBVegano.setText("Vegano");
@@ -420,7 +420,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
             }
         });
         panelRegUsuario.add(rBVegano);
-        rBVegano.setBounds(100, 480, 100, 20);
+        rBVegano.setBounds(100, 470, 100, 20);
 
         rBVegetariano.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         rBVegetariano.setText("Vegetariano");
@@ -431,7 +431,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
             }
         });
         panelRegUsuario.add(rBVegetariano);
-        rBVegetariano.setBounds(100, 460, 100, 20);
+        rBVegetariano.setBounds(100, 450, 100, 20);
 
         rBMacrobiotico.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         rBMacrobiotico.setText("Macrobiótico");
@@ -442,7 +442,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
             }
         });
         panelRegUsuario.add(rBMacrobiotico);
-        rBMacrobiotico.setBounds(10, 480, 100, 20);
+        rBMacrobiotico.setBounds(10, 470, 100, 20);
 
         rBOrganico.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         rBOrganico.setText("Orgánico");
@@ -453,7 +453,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
             }
         });
         panelRegUsuario.add(rBOrganico);
-        rBOrganico.setBounds(10, 460, 80, 20);
+        rBOrganico.setBounds(10, 450, 80, 20);
 
         btnCambiarFoto.setBackground(new java.awt.Color(102, 153, 255));
         btnCambiarFoto.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -467,7 +467,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
             }
         });
         panelRegUsuario.add(btnCambiarFoto);
-        btnCambiarFoto.setBounds(10, 280, 120, 30);
+        btnCambiarFoto.setBounds(50, 260, 120, 30);
 
         cajaNombUsuario.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cajaNombUsuario.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -481,17 +481,17 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
             }
         });
         panelRegUsuario.add(cajaNombUsuario);
-        cajaNombUsuario.setBounds(280, 150, 180, 20);
+        cajaNombUsuario.setBounds(350, 140, 180, 30);
 
         etiquetaNombUsuario1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         etiquetaNombUsuario1.setText("Nombre de Usuario:");
         panelRegUsuario.add(etiquetaNombUsuario1);
-        etiquetaNombUsuario1.setBounds(150, 150, 120, 20);
+        etiquetaNombUsuario1.setBounds(220, 150, 120, 20);
 
         etiquetaErrorPassword.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         etiquetaErrorPassword.setPreferredSize(new java.awt.Dimension(100, 20));
         panelRegUsuario.add(etiquetaErrorPassword);
-        etiquetaErrorPassword.setBounds(470, 180, 190, 20);
+        etiquetaErrorPassword.setBounds(540, 180, 190, 20);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

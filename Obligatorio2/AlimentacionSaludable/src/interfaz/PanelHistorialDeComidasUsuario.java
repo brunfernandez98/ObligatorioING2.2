@@ -71,7 +71,7 @@ public class PanelHistorialDeComidasUsuario extends javax.swing.JPanel {
             }
         });
         add(btnVolver);
-        btnVolver.setBounds(20, 0, 100, 60);
+        btnVolver.setBounds(20, 0, 90, 60);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVerHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerHistorialActionPerformed

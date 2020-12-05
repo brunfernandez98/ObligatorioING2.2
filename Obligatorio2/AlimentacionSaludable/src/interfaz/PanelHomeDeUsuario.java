@@ -23,7 +23,7 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
      */
     private Sistema sistema;
     private final JPanel panelConsulta;
-     private final JPanel panelPlanAlimentacionUsuario;
+    private final JPanel panelPlanAlimentacionUsuario;
     private JFrame ventana;
     private JPanel panelActual;
     private Usuario usuarioActual;
@@ -36,7 +36,7 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
         this.panelActual = panelHome;
         setColor(btn_1);
         ind_1.setOpaque(true);
-        resetColor(new JPanel[]{btn_2, btn_3, btn_4,btn_1,btn_6}, new JPanel[]{ind_2, ind_3, ind_4,ind_1,ind_6});
+        resetColor(new JPanel[]{btn_2, btn_3, btn_4, btn_1, btn_6}, new JPanel[]{ind_2, ind_3, ind_4, ind_1, ind_6});
         jProgressBar1.setValue(50);
         try {
             usuarioActual = this.sistema.getListaUsuarios().get(Integer.parseInt(persona));
@@ -44,10 +44,11 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
         } catch (Exception e) {
             this.jLabel12.setText("Error al encontrar el usuario");
         }
-        panelConsulta=new PanelRedactarConsulta(sistema,usuarioActual);
-        panelPlanAlimentacionUsuario=new PanelPlanAlimentacionUsuario(sistema,ventana,usuarioActual);
-        buzon=new PanelConsultaProfesional(sistema,ventana,usuarioActual);
-        this.labelMensajes.setText(labelMensajes.getText()+usuarioActual.getCasillaDeEntrada().size());
+        panelConsulta = new PanelRedactarConsulta(sistema, usuarioActual);
+        panelPlanAlimentacionUsuario = new PanelPlanAlimentacionUsuario(sistema, ventana, usuarioActual);
+        buzon = new PanelConsultaProfesional(sistema, ventana, usuarioActual);
+        this.labelMensajes.setText(labelMensajes.getText() + usuarioActual.getCasillaDeEntrada().size());
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -143,9 +144,9 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
             btn_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btn_1Layout.createSequentialGroup()
                 .addComponent(ind_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel8)
-                .addGap(0, 70, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+                .addContainerGap())
         );
         btn_1Layout.setVerticalGroup(
             btn_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -241,9 +242,9 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
             btn_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btn_3Layout.createSequentialGroup()
                 .addComponent(ind_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel10)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+                .addContainerGap())
         );
         btn_3Layout.setVerticalGroup(
             btn_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -289,9 +290,9 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
             btn_4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btn_4Layout.createSequentialGroup()
                 .addComponent(ind_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel11)
-                .addGap(0, 72, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+                .addContainerGap())
         );
         btn_4Layout.setVerticalGroup(
             btn_4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -641,7 +642,7 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
         setColor(btn_1);
         ind_1.setOpaque(true);
-        resetColor(new JPanel[]{btn_2, btn_3, btn_4,btn_6}, new JPanel[]{ind_2, ind_3, ind_4,ind_6});
+        resetColor(new JPanel[]{btn_2, btn_3, btn_4, btn_6}, new JPanel[]{ind_2, ind_3, ind_4, ind_6});
         this.setPanelActual(panelHome);
     }//GEN-LAST:event_btn_1MousePressed
 
@@ -649,19 +650,19 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
         setColor(btn_3);
         ind_3.setOpaque(true);
-        resetColor(new JPanel[]{btn_2, btn_1, btn_4,btn_6}, new JPanel[]{ind_2, ind_1, ind_4,ind_6});
+        resetColor(new JPanel[]{btn_2, btn_1, btn_4, btn_6}, new JPanel[]{ind_2, ind_1, ind_4, ind_6});
     }//GEN-LAST:event_btn_3MousePressed
 
     private void btn_4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_4MousePressed
         // TODO add your handling code here:
         setColor(btn_4);
         ind_4.setOpaque(true);
-        resetColor(new JPanel[]{btn_2, btn_3, btn_1,btn_6}, new JPanel[]{ind_2, ind_3, ind_1,ind_6});
+        resetColor(new JPanel[]{btn_2, btn_3, btn_1, btn_6}, new JPanel[]{ind_2, ind_3, ind_1, ind_6});
     }//GEN-LAST:event_btn_4MousePressed
 
     private void btn_2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_2MouseReleased
         // TODO add your handling code here:
-     
+
     }//GEN-LAST:event_btn_2MouseReleased
 
     int xx, xy;
@@ -683,8 +684,8 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
 
     private void btn_exitMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_exitMousePressed
         // TODO add your handling code here:
-       sistema.guardarSistema();
-       System.exit(0);
+        sistema.guardarSistema();
+        System.exit(0);
     }//GEN-LAST:event_btn_exitMousePressed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -696,9 +697,9 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_exitMouseClicked
 
     private void jLabel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseClicked
-InterfazLogin login=new InterfazLogin(ventana,sistema);  
-login.setVisible(true);
-hide();        // TODO add your handling code here:
+        InterfazLogin login = new InterfazLogin(ventana, sistema);
+        login.setVisible(true);
+        hide();        // TODO add your handling code here:
     }//GEN-LAST:event_jLabel15MouseClicked
 
     private void btn_6MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_6MouseReleased
@@ -712,16 +713,16 @@ hide();        // TODO add your handling code here:
     private void btn_6MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_6MousePressed
         setColor(btn_6);
         ind_6.setOpaque(true);
-       setPanelActual(panelConsulta);
+        setPanelActual(panelConsulta);
         jPanel9.add(this.getPanelActual(), new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 650, 540));
         jPanel9.setPreferredSize(new Dimension(400, 400));
         resetColor(new JPanel[]{btn_2, btn_3, btn_1, btn_4}, new JPanel[]{ind_2, ind_3, ind_1, ind_4});
     }//GEN-LAST:event_btn_6MousePressed
 
     private void btn_2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_2MousePressed
-      setColor(btn_2);
+        setColor(btn_2);
         ind_2.setOpaque(true);
-       
+
         setPanelActual(panelPlanAlimentacionUsuario);
         jPanel9.add(this.getPanelActual(), new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 650, 540));
         jPanel9.setPreferredSize(new Dimension(400, 400));
@@ -729,7 +730,7 @@ hide();        // TODO add your handling code here:
     }//GEN-LAST:event_btn_2MousePressed
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
-       setPanelActual(buzon);
+        setPanelActual(buzon);
         jPanel9.add(this.getPanelActual(), new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 650, 540));
         jPanel9.setPreferredSize(new Dimension(400, 400));
     }//GEN-LAST:event_button1ActionPerformed
@@ -748,7 +749,6 @@ hide();        // TODO add your handling code here:
     /**
      * @param args the command line arguments
      */
-
     private void setColor(JPanel pane) {
         pane.setBackground(new Color(41, 57, 80));
     }
@@ -764,14 +764,14 @@ hide();        // TODO add your handling code here:
 
     }
 
- private void formWindowClosing(java.awt.event.WindowEvent evt) {                                   
-       sistema.guardarSistema();
-    }                                  
-
-    private void formWindowClosed(java.awt.event.WindowEvent evt) {                                  
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {
         sistema.guardarSistema();
-    }  
-    
+    }
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {
+        sistema.guardarSistema();
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel btn_1;
     private javax.swing.JPanel btn_2;

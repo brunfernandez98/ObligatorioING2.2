@@ -57,7 +57,7 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
         etiquetaNombAlim.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         etiquetaNombAlim.setText("Nombre:");
         panelRegAlimento.add(etiquetaNombAlim);
-        etiquetaNombAlim.setBounds(20, 170, 54, 20);
+        etiquetaNombAlim.setBounds(110, 180, 54, 20);
 
         cajaNombreAlim.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         cajaNombreAlim.setPreferredSize(new java.awt.Dimension(8, 32));
@@ -72,7 +72,7 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
         etiquetaTipoAlim.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         etiquetaTipoAlim.setText("Tipo de alimento:");
         panelRegAlimento.add(etiquetaTipoAlim);
-        etiquetaTipoAlim.setBounds(20, 220, 105, 20);
+        etiquetaTipoAlim.setBounds(60, 220, 105, 20);
 
         listaTiposAlimentos.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         listaTiposAlimentos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -93,7 +93,7 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
             }
         });
         panelRegAlimento.add(checkBoxProteinas);
-        checkBoxProteinas.setBounds(20, 430, 81, 25);
+        checkBoxProteinas.setBounds(30, 380, 84, 24);
 
         checkBoxLipidos.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         checkBoxLipidos.setText("Lípidos");
@@ -104,7 +104,7 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
             }
         });
         panelRegAlimento.add(checkBoxLipidos);
-        checkBoxLipidos.setBounds(20, 470, 67, 25);
+        checkBoxLipidos.setBounds(30, 420, 69, 24);
 
         checkBoxHidratosDeCarbono.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         checkBoxHidratosDeCarbono.setText("Hidratos de Carbono");
@@ -115,7 +115,7 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
             }
         });
         panelRegAlimento.add(checkBoxHidratosDeCarbono);
-        checkBoxHidratosDeCarbono.setBounds(170, 430, 151, 25);
+        checkBoxHidratosDeCarbono.setBounds(180, 380, 154, 24);
 
         checkBoxVitaminas.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         checkBoxVitaminas.setText("Vitaminas");
@@ -126,7 +126,7 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
             }
         });
         panelRegAlimento.add(checkBoxVitaminas);
-        checkBoxVitaminas.setBounds(340, 430, 83, 25);
+        checkBoxVitaminas.setBounds(350, 380, 85, 24);
 
         checkBoxMinerales.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         checkBoxMinerales.setText("Minerales");
@@ -137,7 +137,7 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
             }
         });
         panelRegAlimento.add(checkBoxMinerales);
-        checkBoxMinerales.setBounds(440, 430, 79, 25);
+        checkBoxMinerales.setBounds(450, 380, 82, 24);
 
         checkBoxAgua.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         checkBoxAgua.setText("Agua");
@@ -148,7 +148,7 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
             }
         });
         panelRegAlimento.add(checkBoxAgua);
-        checkBoxAgua.setBounds(170, 470, 57, 25);
+        checkBoxAgua.setBounds(180, 420, 59, 24);
 
         checkBoxFibra.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         checkBoxFibra.setText("Fibra");
@@ -159,7 +159,7 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
             }
         });
         panelRegAlimento.add(checkBoxFibra);
-        checkBoxFibra.setBounds(340, 470, 55, 25);
+        checkBoxFibra.setBounds(350, 420, 57, 24);
 
         etiquetaErrorNombreAlimento.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         panelRegAlimento.add(etiquetaErrorNombreAlimento);
@@ -192,7 +192,7 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
             }
         });
         panelRegAlimento.add(btnAceptarRegAlim);
-        btnAceptarRegAlim.setBounds(510, 500, 110, 25);
+        btnAceptarRegAlim.setBounds(490, 470, 110, 33);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

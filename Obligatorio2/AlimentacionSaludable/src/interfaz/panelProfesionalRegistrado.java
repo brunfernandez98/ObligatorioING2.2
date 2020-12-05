@@ -32,9 +32,7 @@ public class panelProfesionalRegistrado extends javax.swing.JPanel {
     public panelProfesionalRegistrado(Sistema unSistema,PanelHomeDeAdministrador unaVentana) {
         initComponents();
         sistema=unSistema;
-        ventanaAdministrador=unaVentana;
-        
-        
+        ventanaAdministrador=unaVentana;        
     }
 
     /**

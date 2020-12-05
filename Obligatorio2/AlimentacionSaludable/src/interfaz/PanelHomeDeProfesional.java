@@ -42,9 +42,9 @@ public class PanelHomeDeProfesional extends javax.swing.JFrame {
         resetColor(new JPanel[]{btn_2, btn_3, btn_4, btn_6}, new JPanel[]{ind_2, ind_3,
             ind_4, ind_6});
         panelActual = panelHome;
-       
+
         try {
-            
+
             usuarioActual = this.sistema.getListaProfesionales().get(Integer.parseInt(persona));
             jLabel12.setText(getUsuarioActual().getNombreUsuario());
             this.labelMensajes.setText(labelMensajes.getText() + getUsuarioActual().getCasillaDeEntrada().size());
@@ -52,13 +52,13 @@ public class PanelHomeDeProfesional extends javax.swing.JFrame {
             jLabel12.setText("Error al encontrar usuario");
             this.usuarioActual = null;
         }
-        
-        panelRegistroAlimento = new PanelRegistroAlimento(sistema, ventana);
-        panelRedactarConsulta=new PanelRedactarConsultaDesdeProfesional(sistema,usuarioActual,ventana);
-         buzon=new PanelConsultaProfesionalDesdeProfesional(sistema,ventana,usuarioActual);
-        jProgressBar1.setValue(50);
-        panelRealizarPlan=new PanelSeleccionarPlanARealizar(sistema,this,this.getUsuarioActual());
 
+        panelRegistroAlimento = new PanelRegistroAlimento(sistema, ventana);
+        panelRedactarConsulta = new PanelRedactarConsultaDesdeProfesional(sistema, usuarioActual, ventana);
+        buzon = new PanelConsultaProfesionalDesdeProfesional(sistema, ventana, usuarioActual);
+        jProgressBar1.setValue(50);
+        panelRealizarPlan = new PanelSeleccionarPlanARealizar(sistema, this, this.getUsuarioActual());
+        setLocationRelativeTo(null);
     }
 
     private Profesional getUsuarioActual() {
@@ -158,9 +158,9 @@ public class PanelHomeDeProfesional extends javax.swing.JFrame {
             btn_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btn_1Layout.createSequentialGroup()
                 .addComponent(ind_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel8)
-                .addGap(0, 80, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
+                .addContainerGap())
         );
         btn_1Layout.setVerticalGroup(
             btn_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -261,9 +261,9 @@ public class PanelHomeDeProfesional extends javax.swing.JFrame {
             btn_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btn_3Layout.createSequentialGroup()
                 .addComponent(ind_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel10)
-                .addGap(0, 69, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
+                .addContainerGap())
         );
         btn_3Layout.setVerticalGroup(
             btn_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -310,8 +310,8 @@ public class PanelHomeDeProfesional extends javax.swing.JFrame {
             .addGroup(btn_4Layout.createSequentialGroup()
                 .addComponent(ind_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 43, Short.MAX_VALUE))
+                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
+                .addContainerGap())
         );
         btn_4Layout.setVerticalGroup(
             btn_4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -361,7 +361,8 @@ public class PanelHomeDeProfesional extends javax.swing.JFrame {
             .addGroup(btn_6Layout.createSequentialGroup()
                 .addComponent(ind_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         btn_6Layout.setVerticalGroup(
             btn_6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -664,7 +665,7 @@ public class PanelHomeDeProfesional extends javax.swing.JFrame {
         setColor(btn_4);
         ind_4.setOpaque(true);
         resetColor(new JPanel[]{btn_2, btn_3, btn_1, btn_6}, new JPanel[]{ind_2, ind_3, ind_1, ind_6});
-         setPanelActual(panelRealizarPlan);
+        setPanelActual(panelRealizarPlan);
         jPanel9.add(this.getPanelActual(), new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 650, 540));
         jPanel9.setPreferredSize(new Dimension(400, 400));
     }//GEN-LAST:event_btn_4MousePressed
@@ -694,7 +695,7 @@ public class PanelHomeDeProfesional extends javax.swing.JFrame {
 
     private void btn_exitMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_exitMousePressed
         // TODO add your handling code here:
-        
+
         sistema.guardarSistema();
         System.exit(0);
     }//GEN-LAST:event_btn_exitMousePressed
@@ -734,7 +735,7 @@ public class PanelHomeDeProfesional extends javax.swing.JFrame {
         setColor(btn_6);
         ind_6.setOpaque(true);
         resetColor(new JPanel[]{btn_1, btn_3, btn_4, btn_2}, new JPanel[]{ind_1, ind_3, ind_4, ind_2});
-         setPanelActual(panelRedactarConsulta);
+        setPanelActual(panelRedactarConsulta);
         jPanel9.add(this.getPanelActual(), new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 650, 540));
         jPanel9.setPreferredSize(new Dimension(400, 400));
     }//GEN-LAST:event_btn_6MousePressed
@@ -748,7 +749,7 @@ public class PanelHomeDeProfesional extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel9MousePressed
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
-       setPanelActual(buzon);
+        setPanelActual(buzon);
         jPanel9.add(this.getPanelActual(), new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 650, 540));
         jPanel9.setPreferredSize(new Dimension(400, 400));        // TODO add your handling code here:
     }//GEN-LAST:event_button1ActionPerformed

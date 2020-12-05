@@ -84,7 +84,7 @@ public class PanelHomeProfesional extends javax.swing.JPanel {
             }
         });
         add(btnVolver);
-        btnVolver.setBounds(20, 10, 100, 40);
+        btnVolver.setBounds(20, 10, 90, 40);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed

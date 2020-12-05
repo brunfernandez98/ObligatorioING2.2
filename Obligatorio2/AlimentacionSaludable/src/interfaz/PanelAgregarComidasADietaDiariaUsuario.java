@@ -9,21 +9,21 @@ import java.time.format.DateTimeFormatter;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-
 public class PanelAgregarComidasADietaDiariaUsuario extends javax.swing.JPanel {
 
     private final Sistema sistema;
     private final PanelHomeDeProfesional ventana;
     private final Usuario persona;
     private final JPanel panelRealizarPlanAlimentacion;
+
     public PanelAgregarComidasADietaDiariaUsuario(Sistema unSistema,
             PanelHomeDeProfesional unaVentana, Usuario usuario, JPanel panelRealizarPlan) {
         initComponents();
         sistema = unSistema;
         ventana = unaVentana;
-        persona=usuario;
-        panelRealizarPlanAlimentacion=panelRealizarPlan;
-        listaComidasDiarias.setListData(sistema.getListaAlimentos().toArray());
+        persona = usuario;
+        panelRealizarPlanAlimentacion = panelRealizarPlan;
+
     }
 
     @SuppressWarnings("unchecked")
@@ -44,14 +44,14 @@ public class PanelAgregarComidasADietaDiariaUsuario extends javax.swing.JPanel {
         jScrollPane1.setViewportView(listaComidasDiarias);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(150, 90, 370, 320);
+        jScrollPane1.setBounds(120, 90, 370, 320);
 
         etiquetaTitulo.setBackground(new java.awt.Color(102, 153, 255));
         etiquetaTitulo.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         etiquetaTitulo.setForeground(new java.awt.Color(102, 153, 255));
         etiquetaTitulo.setText("Agregar Comida");
         add(etiquetaTitulo);
-        etiquetaTitulo.setBounds(200, 10, 280, 50);
+        etiquetaTitulo.setBounds(170, 10, 280, 50);
 
         btnAgregarComida.setBackground(new java.awt.Color(102, 153, 255));
         btnAgregarComida.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -65,7 +65,7 @@ public class PanelAgregarComidasADietaDiariaUsuario extends javax.swing.JPanel {
             }
         });
         add(btnAgregarComida);
-        btnAgregarComida.setBounds(250, 460, 180, 30);
+        btnAgregarComida.setBounds(210, 440, 180, 30);
 
         btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/volver.png"))); // NOI18N
         btnVolver.setToolTipText("");
@@ -77,7 +77,7 @@ public class PanelAgregarComidasADietaDiariaUsuario extends javax.swing.JPanel {
             }
         });
         add(btnVolver);
-        btnVolver.setBounds(20, 10, 100, 40);
+        btnVolver.setBounds(30, 10, 90, 40);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAgregarComidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarComidaActionPerformed

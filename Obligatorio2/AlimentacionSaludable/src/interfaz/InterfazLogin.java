@@ -33,12 +33,11 @@ public class InterfazLogin extends javax.swing.JFrame {
     private PanelHomeDeUsuario interfazUsuario = null;
 
     public InterfazLogin(JFrame unaVentana,
-            Sistema unSistema
-    ) {
+            Sistema unSistema) {
         repositorio = unSistema;
         initComponents();
         ventana = unaVentana;
-
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -297,36 +296,33 @@ public class InterfazLogin extends javax.swing.JFrame {
                     dialog.setAlwaysOnTop(true);
                     dialog.setVisible(true);
                 } else {
-                    
+
                     String tipoUsuario = usuarioRegistrado[1];
                     switch (tipoUsuario) {
-                        case "Usuario":
-                            {
-                                InterfazLogin.this.setVisible(false);
-                                
-                                PanelHomeDeUsuario nuevaBotonera = new PanelHomeDeUsuario(repositorio, ventana,usuarioRegistrado[2]);
-                                nuevaBotonera.pack();
-                                nuevaBotonera.setVisible(true);
-                                break;
-                            }
-                        case "Profesional":
-                            {
-                                InterfazLogin.this.setVisible(false);
-                                PanelHomeDeProfesional nuevaBotonera
-                                        = new PanelHomeDeProfesional(repositorio, ventana,usuarioRegistrado[2]);
-                                nuevaBotonera.pack();
-                                nuevaBotonera.setVisible(true);
-                                break;
-                            }
-                        case "Root":
-                            {
-                                InterfazLogin.this.setVisible(false);
-                                PanelHomeDeAdministrador nuevaBotonera
-                                        = new PanelHomeDeAdministrador(repositorio, ventana);
-                                nuevaBotonera.pack();
-                                nuevaBotonera.setVisible(true);
-                                break;
-                            }
+                        case "Usuario": {
+                            InterfazLogin.this.setVisible(false);
+
+                            PanelHomeDeUsuario nuevaBotonera = new PanelHomeDeUsuario(repositorio, ventana, usuarioRegistrado[2]);
+                            nuevaBotonera.pack();
+                            nuevaBotonera.setVisible(true);
+                            break;
+                        }
+                        case "Profesional": {
+                            InterfazLogin.this.setVisible(false);
+                            PanelHomeDeProfesional nuevaBotonera
+                                    = new PanelHomeDeProfesional(repositorio, ventana, usuarioRegistrado[2]);
+                            nuevaBotonera.pack();
+                            nuevaBotonera.setVisible(true);
+                            break;
+                        }
+                        case "Root": {
+                            InterfazLogin.this.setVisible(false);
+                            PanelHomeDeAdministrador nuevaBotonera
+                                    = new PanelHomeDeAdministrador(repositorio, ventana);
+                            nuevaBotonera.pack();
+                            nuevaBotonera.setVisible(true);
+                            break;
+                        }
                         default:
                             JOptionPane optionPane = new JOptionPane("Contraseña incorrecta",
                                     JOptionPane.ERROR_MESSAGE);
@@ -370,21 +366,17 @@ public class InterfazLogin extends javax.swing.JFrame {
 
         repositorio.guardarSistema();
         System.exit(0);
-   
+
     }//GEN-LAST:event_lbl_closeMousePressed
 
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
-repositorio.guardarSistema();
+        repositorio.guardarSistema();
     }//GEN-LAST:event_formWindowClosed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         repositorio.guardarSistema();
     }//GEN-LAST:event_formWindowClosing
-       
-    
-    
-     
-    
+
     int xy, xx;
     /**
      * @param args the command line arguments

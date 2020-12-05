@@ -58,7 +58,7 @@ public class PanelDietaDiariaUsuario extends javax.swing.JPanel {
         lstComDiarias.setViewportView(listaComidasDiarias);
 
         panelDietaDiaria.add(lstComDiarias);
-        lstComDiarias.setBounds(130, 180, 370, 310);
+        lstComDiarias.setBounds(130, 170, 370, 310);
 
         etiquetaTituloAlim.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         etiquetaTituloAlim.setForeground(new java.awt.Color(102, 153, 255));
@@ -78,7 +78,7 @@ public class PanelDietaDiariaUsuario extends javax.swing.JPanel {
             }
         });
         panelDietaDiaria.add(etiquetaBtnAgregarComidas);
-        etiquetaBtnAgregarComidas.setBounds(360, 110, 210, 31);
+        etiquetaBtnAgregarComidas.setBounds(350, 90, 210, 38);
 
         etiquetaBtnQuitarComida.setBackground(new java.awt.Color(102, 153, 255));
         etiquetaBtnQuitarComida.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -92,7 +92,7 @@ public class PanelDietaDiariaUsuario extends javax.swing.JPanel {
             }
         });
         panelDietaDiaria.add(etiquetaBtnQuitarComida);
-        etiquetaBtnQuitarComida.setBounds(50, 110, 190, 31);
+        etiquetaBtnQuitarComida.setBounds(40, 90, 190, 38);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
