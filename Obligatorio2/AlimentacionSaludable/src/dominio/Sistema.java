@@ -89,9 +89,7 @@ public class Sistema implements Serializable {
     
     
     
-    
-    
-    
+  
     public ArrayList<Usuario> getListaUsuarios() {
         return listaUsuarios;
     }

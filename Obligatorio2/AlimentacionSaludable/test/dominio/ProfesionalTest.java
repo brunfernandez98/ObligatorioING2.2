@@ -125,6 +125,16 @@ public class ProfesionalTest {
         assertEquals(nombreTituloProf, instance.getNombreTituloProf());
     }
     
+     @Test
+    public void testSetNombreTituloProfesional2() {
+        System.out.println("setNombreTituloProfesional2");
+        String nombreTituloProf=" ";
+        instance.setNombreTituloProf(nombreTituloProf);
+        assertNotEquals(nombreTituloProf, instance.getNombreTituloProf());
+    }
+    
+    
+    
           @Test
     public void testSetFechaGraduacion() {
         System.out.println("setFechaGraduacion");
@@ -132,6 +142,16 @@ public class ProfesionalTest {
         instance.setFechaGraduacion(fechaGradu);
         assertEquals(fechaGradu, instance.getFechaGraduacion());
     }
+    
+           @Test
+    public void testSetFechaGraduacion2() {
+        System.out.println("setFechaGraduacion");
+        String fechaGradu=" ";
+        instance.setFechaGraduacion(fechaGradu);
+        assertNotEquals(fechaGradu, instance.getFechaGraduacion());
+    }
+    
+       
     
     
     @Test

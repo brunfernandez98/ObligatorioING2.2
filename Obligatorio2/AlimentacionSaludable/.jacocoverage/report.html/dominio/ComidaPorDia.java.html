@@ -14,10 +14,10 @@ public class ComidaPorDia implements Serializable{
      private String fecha;
      
      //Constructor
-<span class="nc" id="L17">    public ComidaPorDia(ArrayList&lt;Alimento&gt; comidasIngeridas, String fecha) {</span>
-<span class="nc" id="L18">        this.comidasIngeridas = comidasIngeridas;</span>
-<span class="nc" id="L19">        this.fecha = fecha;</span>
-<span class="nc" id="L20">    }</span>
+<span class="fc" id="L17">    public ComidaPorDia(ArrayList&lt;Alimento&gt; comidasIngeridas, String fecha) {</span>
+<span class="fc" id="L18">        this.comidasIngeridas = comidasIngeridas;</span>
+<span class="fc" id="L19">        this.fecha = fecha;</span>
+<span class="fc" id="L20">    }</span>
     
 <span class="fc" id="L22">    public ComidaPorDia() {</span>
 <span class="fc" id="L23">        this.comidasIngeridas = new ArrayList&lt;&gt;();</span>
@@ -31,27 +31,27 @@ public class ComidaPorDia implements Serializable{
     }
 
     public void setComidasIngeridas(ArrayList&lt;Alimento&gt; comidasIngeridas) {
-<span class="nc" id="L34">        this.comidasIngeridas = comidasIngeridas;</span>
-<span class="nc" id="L35">    }</span>
+<span class="fc" id="L34">        this.comidasIngeridas = comidasIngeridas;</span>
+<span class="fc" id="L35">    }</span>
 
     public String getFecha() {
 <span class="fc" id="L38">        return fecha;</span>
     }
 
     public void setFecha(String fecha) {
-<span class="nc" id="L42">        this.fecha = fecha;</span>
-<span class="nc" id="L43">    }</span>
+<span class="fc" id="L42">        this.fecha = fecha;</span>
+<span class="fc" id="L43">    }</span>
     
       @Override
     public String toString() {
-<span class="nc" id="L47">        return &quot;Comidas ingeridas el: &quot;+this.getFecha();</span>
+<span class="fc" id="L47">        return &quot;Comidas ingeridas el: &quot;+this.getFecha();</span>
     }
 
     @Override
     public boolean equals(Object obj) {
 <span class="fc" id="L52">        boolean retorno=true;</span>
-<span class="pc bpc" id="L53" title="1 of 2 branches missed.">        if (obj == null) {</span>
-<span class="nc" id="L54">            retorno= false;</span>
+<span class="fc bfc" id="L53" title="All 2 branches covered.">        if (obj == null) {</span>
+<span class="fc" id="L54">            retorno= false;</span>
         }
 <span class="pc bpc" id="L56" title="1 of 2 branches missed.">        if (getClass() != obj.getClass()) {</span>
 <span class="nc" id="L57">            retorno= false;</span>
@@ -59,8 +59,8 @@ public class ComidaPorDia implements Serializable{
 <span class="pc bpc" id="L59" title="1 of 2 branches missed.">        if (retorno == true) {</span>
 <span class="fc" id="L60">            ComidaPorDia other = (ComidaPorDia) obj;</span>
 <span class="fc" id="L61">            retorno=other.getComidasIngeridas()</span>
-<span class="pc bpc" id="L62" title="1 of 2 branches missed.">                    .equals(this.getComidasIngeridas()) &amp;&amp; </span>
-<span class="pc bpc" id="L63" title="1 of 2 branches missed.">                    other.getFecha().equalsIgnoreCase(this.getFecha());</span>
+<span class="fc bfc" id="L62" title="All 2 branches covered.">                    .equals(this.getComidasIngeridas()) &amp;&amp; </span>
+<span class="fc bfc" id="L63" title="All 2 branches covered.">                    other.getFecha().equalsIgnoreCase(this.getFecha());</span>
         }
 <span class="fc" id="L65">        return retorno;</span>
     }

@@ -92,12 +92,12 @@ public class Usuario extends Persona implements Serializable {
 <span class="fc" id="L92">    }</span>
 
     public Profesional getProfesionalAsignado() {
-<span class="nc" id="L95">        return profesionalAsignado;</span>
+<span class="fc" id="L95">        return profesionalAsignado;</span>
     }
 
     public void setProfesionalAsignado(Profesional profesionalAsignado) {
-<span class="nc" id="L99">        this.profesionalAsignado = profesionalAsignado;</span>
-<span class="nc" id="L100">    }</span>
+<span class="fc" id="L99">        this.profesionalAsignado = profesionalAsignado;</span>
+<span class="fc" id="L100">    }</span>
 
     public ArrayList&lt;Mensaje&gt; getCasillaDeEntrada() {
 <span class="nc" id="L103">        return casillaDeEntrada;</span>
@@ -131,21 +131,21 @@ public class Usuario extends Persona implements Serializable {
     }
 
     public void setPesoKg(double pesoKg) {
-<span class="pc bpc" id="L134" title="3 of 4 branches missed.">        if(pesoKg &gt; 0 &amp;&amp; pesoKg &lt; 501){</span>
-<span class="nc" id="L135">            this.pesoKg = pesoKg;</span>
+<span class="pc bpc" id="L134" title="1 of 4 branches missed.">        if(pesoKg &gt; 0 &amp;&amp; pesoKg &lt; 501){</span>
+<span class="fc" id="L135">            this.pesoKg = pesoKg;</span>
         }
         
 <span class="fc" id="L138">    }</span>
 
     public double getAlturaCm() {
-<span class="nc" id="L141">        return alturaCm;</span>
+<span class="fc" id="L141">        return alturaCm;</span>
     }
 
     public void setAlturaCm(double alturaCm) {
-<span class="nc bnc" id="L145" title="All 4 branches missed.">        if(alturaCm &gt; 0 &amp;&amp; alturaCm &lt; 266){</span>
-<span class="nc" id="L146">            this.alturaCm = alturaCm;</span>
+<span class="pc bpc" id="L145" title="1 of 4 branches missed.">        if(alturaCm &gt; 0 &amp;&amp; alturaCm &lt; 266){</span>
+<span class="fc" id="L146">            this.alturaCm = alturaCm;</span>
         }
-<span class="nc" id="L148">    }</span>
+<span class="fc" id="L148">    }</span>
 
     public Preferencias getPreferenciasAlimentarias() {
 <span class="nc" id="L151">        return preferenciasAlimentarias;</span>
@@ -157,20 +157,20 @@ public class Usuario extends Persona implements Serializable {
 <span class="nc" id="L157">    }</span>
 
     public Restricciones getRestricciones() {
-<span class="nc" id="L160">        return restricciones;</span>
+<span class="fc" id="L160">        return restricciones;</span>
     }
 
     public void setRestricciones(Restricciones restricciones) {
-<span class="nc" id="L164">        this.restricciones = restricciones;</span>
-<span class="nc" id="L165">    }</span>
+<span class="fc" id="L164">        this.restricciones = restricciones;</span>
+<span class="fc" id="L165">    }</span>
 
     public PlanDeAlimentacion getPlan() {
-<span class="nc" id="L168">        return plan;</span>
+<span class="fc" id="L168">        return plan;</span>
     }
 
     public void setPlan(PlanDeAlimentacion plan) {
-<span class="nc" id="L172">        this.plan = plan;</span>
-<span class="nc" id="L173">    }</span>
+<span class="fc" id="L172">        this.plan = plan;</span>
+<span class="fc" id="L173">    }</span>
 
     public String getSexo() {
 <span class="fc" id="L176">        return sexo;</span>
@@ -218,7 +218,7 @@ public class Usuario extends Persona implements Serializable {
     }
 
     String[] inicializoListaNacionalidades() {
-<span class="nc" id="L221">        String[] listaPaisesPivot = {&quot;Alemana&quot;, &quot;Australiana&quot;, &quot;Austriaca&quot;,</span>
+<span class="fc" id="L221">        String[] listaPaisesPivot = {&quot;Alemana&quot;, &quot;Australiana&quot;, &quot;Austriaca&quot;,</span>
             &quot;Brasileña&quot;,&quot;Canadiense&quot;, &quot;Chilena&quot;, &quot;China&quot;, &quot;Colombiana&quot;,
             &quot;Surcoreana&quot;, &quot;Cubana&quot;, &quot;Ecuatoriana&quot;, &quot;Egipcia&quot;,
             &quot;Española&quot;, &quot;EstadoUnidense&quot;, &quot;Francesa&quot;, &quot;Griega&quot;,
@@ -226,7 +226,7 @@ public class Usuario extends Persona implements Serializable {
             &quot;Japonesa&quot;, &quot;Méxicana&quot;, &quot;Paraguaya&quot;, &quot;Peruana&quot;,
             &quot;Portuguesa&quot;, &quot;Rusa&quot;, &quot;Sudáfricana&quot;, &quot;Uruguaya&quot;,
             &quot;Venezolana&quot;};
-<span class="nc" id="L229">        return listaPaisesPivot;</span>
+<span class="fc" id="L229">        return listaPaisesPivot;</span>
     }
 
     public Nacionalidades[] inicializoListaEnum() {

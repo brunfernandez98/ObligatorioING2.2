@@ -1,6 +1,5 @@
 package dominio;
 
-import javax.swing.ImageIcon;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -94,7 +93,6 @@ public class PersonaTest {
     }
     
     
-
     public class PersonaImpl extends Persona {
 
         public PersonaImpl() {

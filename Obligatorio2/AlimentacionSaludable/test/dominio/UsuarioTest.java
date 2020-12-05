@@ -1,5 +1,6 @@
 package dominio;
 
+import dominio.Usuario.Nacionalidades;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import org.junit.After;
@@ -66,6 +67,25 @@ public class UsuarioTest {
         assertEquals(historialDelDia, instance.getHistorialDelDia());
     }
 
+       @Test
+    public void testSetPesoKg() {
+        System.out.println("setPesoKg");
+        double peso=20;
+        Usuario instance = new Usuario();
+        instance.setPesoKg(peso);
+        assertEquals(peso, instance.getPesoKg(),0);
+    }
+    
+        @Test
+    public void testGetPesoKg() {
+        System.out.println("getPesoKg");
+        double peso=20;
+        Usuario instance = new Usuario();
+        instance.setPesoKg(peso);
+        assertEquals(peso, instance.getPesoKg(),0);
+    }
+    
+    
 
     @Test
     public void testGetNacionalidadEgipcia() {
@@ -104,6 +124,14 @@ public class UsuarioTest {
         instance.setNacionalidad(nacionalidad);
         assertEquals(nacionalidad, instance.getNacionalidad());
     }
+    
+    
+    
+    
+    
+    
+    
+    
 
     @Test
     public void testGetNacionalidadEstadoUnidense() {
@@ -464,23 +492,104 @@ public class UsuarioTest {
         assertArrayEquals(instance.getListaEnumNac(), listaEnumNac);
     }
 
-    @Test
-    public void testGetPesoKg() {
-        System.out.println("getPesoKg");
+     @Test
+    public void testSetPesoKgValido() {
+        System.out.println("setPesoKgValido");
         Usuario instance = new Usuario();
-        double expResult = 0;
-        double result = instance.getPesoKg();
-        assertEquals(expResult, result, 0.0);
-    }
-
-    @Test
-    public void testSetPesoKg() {
-        System.out.println("setPesoKg");
-        Usuario instance = new Usuario();
-        double pesoKg = 0;
+        double pesoKg = 20;
         instance.setPesoKg(pesoKg);
-        assertEquals(instance.getPesoKg(), pesoKg, 0.0);
+        assertTrue(instance.getPesoKg()==pesoKg);
     }
+    
+     @Test
+    public void testSetAlturaValido() {
+        System.out.println("setAlturaValido");
+        Usuario instance = new Usuario();
+        double altura = 20;
+        instance.setAlturaCm(altura);
+        assertTrue(instance.getAlturaCm()==altura);
+    }
+  
+     @Test
+    public void testSetAlturaInValido() {
+        System.out.println("setAlturaValido");
+        Usuario instance = new Usuario();
+        double altura = -1;
+        instance.setAlturaCm(altura);
+        assertFalse(instance.getAlturaCm()==altura);
+    }
+    
+      @Test
+    public void testSetPlanAlimentacion() {
+        System.out.println("setPlanAlimentacion");
+        Usuario instance = new Usuario();
+        PlanDeAlimentacion plan = new PlanDeAlimentacion(instance);
+        instance.setPlan(plan);
+        assertEquals(instance.getPlan(),plan);
+    }
+    
+        @Test
+    public void testGetPlanAlimentacion() {
+        System.out.println("getPlanAlimentacion");
+        Usuario instance = new Usuario();
+        PlanDeAlimentacion plan = new PlanDeAlimentacion(instance);
+        instance.setPlan(plan);
+        assertTrue(instance.getPlan().equals(plan));
+    }
+    
+    
+        @Test
+    public void testSetProfesional() {
+        System.out.println("setProfesional");
+        Usuario instance = new Usuario();
+        Profesional profesional = new Profesional();
+        instance.setProfesionalAsignado(profesional);
+        assertEquals(instance.getProfesionalAsignado(),profesional);
+    }
+    
+          @Test
+    public void testGetProfesional() {
+        System.out.println("setProfesional");
+        Usuario instance = new Usuario();
+        Profesional profesional = new Profesional();
+        instance.setProfesionalAsignado(profesional);
+        assertTrue(instance.getProfesionalAsignado().equals(profesional));
+    }
+    
+          @Test
+    public void testGetRestriccionesAlimentarias() {
+        System.out.println("getPreferenciasAlimentarias");
+        Usuario instance = new Usuario();
+        Usuario.Restricciones restriccion=Usuario.Restricciones.Ninguna;      
+        instance.setRestricciones(restriccion);
+        assertTrue(instance.getRestricciones().equals(restriccion));
+    }
+    
+        @Test
+    public void testInicializoEnumNacionalidad() {
+        System.out.println("InicializoEnumNacionalidad");
+        Usuario instance = new Usuario();
+        String[] listaEnumPivot=instance.inicializoListaNacionalidades();
+        assertTrue(listaEnumPivot.length>1);
+    }
+    
+    
+    
+    
+    
+           @Test
+    public void testSetRestriccionesAlimentarias() {
+        System.out.println("getPreferenciasAlimentarias");
+        Usuario instance = new Usuario();
+        Usuario.Restricciones restriccion=Usuario.Restricciones.Ninguna;      
+        instance.setRestricciones(restriccion);
+        assertEquals(instance.getRestricciones(),restriccion);
+    }
+    
+    
+    
+    
+    
     
     @Test
     public void testSetPesoKgInvalido() {

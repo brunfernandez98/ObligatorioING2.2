@@ -23,7 +23,7 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
      */
     private Sistema sistema;
     private final JPanel panelConsulta;
-     private final JPanel panelPlanAlimentacionUsuario;
+    private final JPanel panelPlanAlimentacionUsuario;
     private JFrame ventana;
     private JPanel panelActual;
     private Usuario usuarioActual;
@@ -36,7 +36,7 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
 <span class="nc" id="L36">        this.panelActual = panelHome;</span>
 <span class="nc" id="L37">        setColor(btn_1);</span>
 <span class="nc" id="L38">        ind_1.setOpaque(true);</span>
-<span class="nc" id="L39">        resetColor(new JPanel[]{btn_2, btn_3, btn_4,btn_1,btn_6}, new JPanel[]{ind_2, ind_3, ind_4,ind_1,ind_6});</span>
+<span class="nc" id="L39">        resetColor(new JPanel[]{btn_2, btn_3, btn_4, btn_1, btn_6}, new JPanel[]{ind_2, ind_3, ind_4, ind_1, ind_6});</span>
 <span class="nc" id="L40">        jProgressBar1.setValue(50);</span>
         try {
 <span class="nc" id="L42">            usuarioActual = this.sistema.getListaUsuarios().get(Integer.parseInt(persona));</span>
@@ -44,11 +44,12 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
 <span class="nc" id="L44">        } catch (Exception e) {</span>
 <span class="nc" id="L45">            this.jLabel12.setText(&quot;Error al encontrar el usuario&quot;);</span>
 <span class="nc" id="L46">        }</span>
-<span class="nc" id="L47">        panelConsulta=new PanelRedactarConsulta(sistema,usuarioActual);</span>
-<span class="nc" id="L48">        panelPlanAlimentacionUsuario=new PanelPlanAlimentacionUsuario(sistema,ventana,usuarioActual);</span>
-<span class="nc" id="L49">        buzon=new PanelConsultaProfesional(sistema,ventana,usuarioActual);</span>
-<span class="nc" id="L50">        this.labelMensajes.setText(labelMensajes.getText()+usuarioActual.getCasillaDeEntrada().size());</span>
-<span class="nc" id="L51">    }</span>
+<span class="nc" id="L47">        panelConsulta = new PanelRedactarConsulta(sistema, usuarioActual);</span>
+<span class="nc" id="L48">        panelPlanAlimentacionUsuario = new PanelPlanAlimentacionUsuario(sistema, ventana, usuarioActual);</span>
+<span class="nc" id="L49">        buzon = new PanelConsultaProfesional(sistema, ventana, usuarioActual);</span>
+<span class="nc" id="L50">        this.labelMensajes.setText(labelMensajes.getText() + usuarioActual.getCasillaDeEntrada().size());</span>
+<span class="nc" id="L51">        setLocationRelativeTo(null);</span>
+<span class="nc" id="L52">    }</span>
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -59,537 +60,537 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
     private void initComponents() {
 
-<span class="nc" id="L62">        jPanel9 = new javax.swing.JPanel();</span>
-<span class="nc" id="L63">        side_pane = new javax.swing.JPanel();</span>
-<span class="nc" id="L64">        btn_1 = new javax.swing.JPanel();</span>
-<span class="nc" id="L65">        ind_1 = new javax.swing.JPanel();</span>
-<span class="nc" id="L66">        jLabel8 = new javax.swing.JLabel();</span>
-<span class="nc" id="L67">        btn_2 = new javax.swing.JPanel();</span>
-<span class="nc" id="L68">        ind_2 = new javax.swing.JPanel();</span>
-<span class="nc" id="L69">        jLabel9 = new javax.swing.JLabel();</span>
-<span class="nc" id="L70">        btn_3 = new javax.swing.JPanel();</span>
-<span class="nc" id="L71">        ind_3 = new javax.swing.JPanel();</span>
-<span class="nc" id="L72">        jLabel10 = new javax.swing.JLabel();</span>
-<span class="nc" id="L73">        btn_4 = new javax.swing.JPanel();</span>
-<span class="nc" id="L74">        ind_4 = new javax.swing.JPanel();</span>
-<span class="nc" id="L75">        jLabel11 = new javax.swing.JLabel();</span>
-<span class="nc" id="L76">        btn_6 = new javax.swing.JPanel();</span>
-<span class="nc" id="L77">        ind_6 = new javax.swing.JPanel();</span>
-<span class="nc" id="L78">        jLabel18 = new javax.swing.JLabel();</span>
-<span class="nc" id="L79">        jPanel2 = new javax.swing.JPanel();</span>
-<span class="nc" id="L80">        jTextField1 = new javax.swing.JTextField();</span>
-<span class="nc" id="L81">        jLabel7 = new javax.swing.JLabel();</span>
-<span class="nc" id="L82">        jPanel3 = new javax.swing.JPanel();</span>
-<span class="nc" id="L83">        jPanel4 = new javax.swing.JPanel();</span>
-<span class="nc" id="L84">        jPanel5 = new javax.swing.JPanel();</span>
-<span class="nc" id="L85">        jLabel1 = new javax.swing.JLabel();</span>
-<span class="nc" id="L86">        jLabel3 = new javax.swing.JLabel();</span>
-<span class="nc" id="L87">        jLabel4 = new javax.swing.JLabel();</span>
-<span class="nc" id="L88">        jSeparator1 = new javax.swing.JSeparator();</span>
-<span class="nc" id="L89">        jProgressBar1 = new javax.swing.JProgressBar();</span>
-<span class="nc" id="L90">        jLabel5 = new javax.swing.JLabel();</span>
-<span class="nc" id="L91">        jLabel15 = new javax.swing.JLabel();</span>
-<span class="nc" id="L92">        btn_exit = new javax.swing.JLabel();</span>
-<span class="nc" id="L93">        jLabel2 = new javax.swing.JLabel();</span>
-<span class="nc" id="L94">        jLabel12 = new javax.swing.JLabel();</span>
-<span class="nc" id="L95">        labelMensajes = new javax.swing.JLabel();</span>
-<span class="nc" id="L96">        button1 = new java.awt.Button();</span>
-<span class="nc" id="L97">        jLabel13 = new javax.swing.JLabel();</span>
-<span class="nc" id="L98">        jLabel16 = new javax.swing.JLabel();</span>
-<span class="nc" id="L99">        panelHome = new javax.swing.JPanel();</span>
-<span class="nc" id="L100">        jPanel7 = new javax.swing.JPanel();</span>
-<span class="nc" id="L101">        jLabel14 = new javax.swing.JLabel();</span>
-<span class="nc" id="L102">        jScrollPane1 = new javax.swing.JScrollPane();</span>
-<span class="nc" id="L103">        jTable1 = new javax.swing.JTable();</span>
+<span class="nc" id="L63">        jPanel9 = new javax.swing.JPanel();</span>
+<span class="nc" id="L64">        side_pane = new javax.swing.JPanel();</span>
+<span class="nc" id="L65">        btn_1 = new javax.swing.JPanel();</span>
+<span class="nc" id="L66">        ind_1 = new javax.swing.JPanel();</span>
+<span class="nc" id="L67">        jLabel8 = new javax.swing.JLabel();</span>
+<span class="nc" id="L68">        btn_2 = new javax.swing.JPanel();</span>
+<span class="nc" id="L69">        ind_2 = new javax.swing.JPanel();</span>
+<span class="nc" id="L70">        jLabel9 = new javax.swing.JLabel();</span>
+<span class="nc" id="L71">        btn_3 = new javax.swing.JPanel();</span>
+<span class="nc" id="L72">        ind_3 = new javax.swing.JPanel();</span>
+<span class="nc" id="L73">        jLabel10 = new javax.swing.JLabel();</span>
+<span class="nc" id="L74">        btn_4 = new javax.swing.JPanel();</span>
+<span class="nc" id="L75">        ind_4 = new javax.swing.JPanel();</span>
+<span class="nc" id="L76">        jLabel11 = new javax.swing.JLabel();</span>
+<span class="nc" id="L77">        btn_6 = new javax.swing.JPanel();</span>
+<span class="nc" id="L78">        ind_6 = new javax.swing.JPanel();</span>
+<span class="nc" id="L79">        jLabel18 = new javax.swing.JLabel();</span>
+<span class="nc" id="L80">        jPanel2 = new javax.swing.JPanel();</span>
+<span class="nc" id="L81">        jTextField1 = new javax.swing.JTextField();</span>
+<span class="nc" id="L82">        jLabel7 = new javax.swing.JLabel();</span>
+<span class="nc" id="L83">        jPanel3 = new javax.swing.JPanel();</span>
+<span class="nc" id="L84">        jPanel4 = new javax.swing.JPanel();</span>
+<span class="nc" id="L85">        jPanel5 = new javax.swing.JPanel();</span>
+<span class="nc" id="L86">        jLabel1 = new javax.swing.JLabel();</span>
+<span class="nc" id="L87">        jLabel3 = new javax.swing.JLabel();</span>
+<span class="nc" id="L88">        jLabel4 = new javax.swing.JLabel();</span>
+<span class="nc" id="L89">        jSeparator1 = new javax.swing.JSeparator();</span>
+<span class="nc" id="L90">        jProgressBar1 = new javax.swing.JProgressBar();</span>
+<span class="nc" id="L91">        jLabel5 = new javax.swing.JLabel();</span>
+<span class="nc" id="L92">        jLabel15 = new javax.swing.JLabel();</span>
+<span class="nc" id="L93">        btn_exit = new javax.swing.JLabel();</span>
+<span class="nc" id="L94">        jLabel2 = new javax.swing.JLabel();</span>
+<span class="nc" id="L95">        jLabel12 = new javax.swing.JLabel();</span>
+<span class="nc" id="L96">        labelMensajes = new javax.swing.JLabel();</span>
+<span class="nc" id="L97">        button1 = new java.awt.Button();</span>
+<span class="nc" id="L98">        jLabel13 = new javax.swing.JLabel();</span>
+<span class="nc" id="L99">        jLabel16 = new javax.swing.JLabel();</span>
+<span class="nc" id="L100">        panelHome = new javax.swing.JPanel();</span>
+<span class="nc" id="L101">        jPanel7 = new javax.swing.JPanel();</span>
+<span class="nc" id="L102">        jLabel14 = new javax.swing.JLabel();</span>
+<span class="nc" id="L103">        jScrollPane1 = new javax.swing.JScrollPane();</span>
+<span class="nc" id="L104">        jTable1 = new javax.swing.JTable();</span>
 
-<span class="nc" id="L105">        setBackground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L106">        setUndecorated(true);</span>
-<span class="nc" id="L107">        setType(java.awt.Window.Type.UTILITY);</span>
-<span class="nc" id="L108">        getContentPane().setLayout(new java.awt.CardLayout());</span>
+<span class="nc" id="L106">        setBackground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L107">        setUndecorated(true);</span>
+<span class="nc" id="L108">        setType(java.awt.Window.Type.UTILITY);</span>
+<span class="nc" id="L109">        getContentPane().setLayout(new java.awt.CardLayout());</span>
 
-<span class="nc" id="L110">        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());</span>
+<span class="nc" id="L111">        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());</span>
 
-<span class="nc" id="L112">        side_pane.setBackground(new java.awt.Color(23, 35, 51));</span>
-<span class="nc" id="L113">        side_pane.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());</span>
+<span class="nc" id="L113">        side_pane.setBackground(new java.awt.Color(23, 35, 51));</span>
+<span class="nc" id="L114">        side_pane.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());</span>
 
-<span class="nc" id="L115">        btn_1.setBackground(new java.awt.Color(23, 35, 51));</span>
-<span class="nc" id="L116">        btn_1.addMouseListener(new java.awt.event.MouseAdapter() {</span>
+<span class="nc" id="L116">        btn_1.setBackground(new java.awt.Color(23, 35, 51));</span>
+<span class="nc" id="L117">        btn_1.addMouseListener(new java.awt.event.MouseAdapter() {</span>
             public void mousePressed(java.awt.event.MouseEvent evt) {
-<span class="nc" id="L118">                btn_1MousePressed(evt);</span>
-<span class="nc" id="L119">            }</span>
+<span class="nc" id="L119">                btn_1MousePressed(evt);</span>
+<span class="nc" id="L120">            }</span>
         });
 
-<span class="nc" id="L122">        ind_1.setOpaque(false);</span>
-<span class="nc" id="L123">        ind_1.setPreferredSize(new java.awt.Dimension(3, 43));</span>
+<span class="nc" id="L123">        ind_1.setOpaque(false);</span>
+<span class="nc" id="L124">        ind_1.setPreferredSize(new java.awt.Dimension(3, 43));</span>
 
-<span class="nc" id="L125">        javax.swing.GroupLayout ind_1Layout = new javax.swing.GroupLayout(ind_1);</span>
-<span class="nc" id="L126">        ind_1.setLayout(ind_1Layout);</span>
-<span class="nc" id="L127">        ind_1Layout.setHorizontalGroup(</span>
-<span class="nc" id="L128">            ind_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L129">            .addGap(0, 3, Short.MAX_VALUE)</span>
+<span class="nc" id="L126">        javax.swing.GroupLayout ind_1Layout = new javax.swing.GroupLayout(ind_1);</span>
+<span class="nc" id="L127">        ind_1.setLayout(ind_1Layout);</span>
+<span class="nc" id="L128">        ind_1Layout.setHorizontalGroup(</span>
+<span class="nc" id="L129">            ind_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L130">            .addGap(0, 3, Short.MAX_VALUE)</span>
         );
-<span class="nc" id="L131">        ind_1Layout.setVerticalGroup(</span>
-<span class="nc" id="L132">            ind_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L133">            .addGap(0, 43, Short.MAX_VALUE)</span>
-        );
-
-<span class="nc" id="L136">        jLabel8.setFont(new java.awt.Font(&quot;Segoe UI&quot;, 0, 12)); // NOI18N</span>
-<span class="nc" id="L137">        jLabel8.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L138">        jLabel8.setText(&quot;Inicio&quot;);</span>
-
-<span class="nc" id="L140">        javax.swing.GroupLayout btn_1Layout = new javax.swing.GroupLayout(btn_1);</span>
-<span class="nc" id="L141">        btn_1.setLayout(btn_1Layout);</span>
-<span class="nc" id="L142">        btn_1Layout.setHorizontalGroup(</span>
-<span class="nc" id="L143">            btn_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L144">            .addGroup(btn_1Layout.createSequentialGroup()</span>
-<span class="nc" id="L145">                .addComponent(ind_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L146">                .addGap(18, 18, 18)</span>
-<span class="nc" id="L147">                .addComponent(jLabel8)</span>
-<span class="nc" id="L148">                .addGap(0, 70, Short.MAX_VALUE))</span>
-        );
-<span class="nc" id="L150">        btn_1Layout.setVerticalGroup(</span>
-<span class="nc" id="L151">            btn_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L152">            .addGroup(btn_1Layout.createSequentialGroup()</span>
-<span class="nc" id="L153">                .addComponent(ind_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L154">                .addGap(0, 0, Short.MAX_VALUE))</span>
-<span class="nc" id="L155">            .addGroup(btn_1Layout.createSequentialGroup()</span>
-<span class="nc" id="L156">                .addContainerGap()</span>
-<span class="nc" id="L157">                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L158">                .addContainerGap())</span>
+<span class="nc" id="L132">        ind_1Layout.setVerticalGroup(</span>
+<span class="nc" id="L133">            ind_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L134">            .addGap(0, 43, Short.MAX_VALUE)</span>
         );
 
-<span class="nc" id="L161">        side_pane.add(btn_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 120, -1));</span>
+<span class="nc" id="L137">        jLabel8.setFont(new java.awt.Font(&quot;Segoe UI&quot;, 0, 12)); // NOI18N</span>
+<span class="nc" id="L138">        jLabel8.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L139">        jLabel8.setText(&quot;Inicio&quot;);</span>
 
-<span class="nc" id="L163">        btn_2.setBackground(new java.awt.Color(23, 35, 51));</span>
-<span class="nc" id="L164">        btn_2.addMouseListener(new java.awt.event.MouseAdapter() {</span>
+<span class="nc" id="L141">        javax.swing.GroupLayout btn_1Layout = new javax.swing.GroupLayout(btn_1);</span>
+<span class="nc" id="L142">        btn_1.setLayout(btn_1Layout);</span>
+<span class="nc" id="L143">        btn_1Layout.setHorizontalGroup(</span>
+<span class="nc" id="L144">            btn_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L145">            .addGroup(btn_1Layout.createSequentialGroup()</span>
+<span class="nc" id="L146">                .addComponent(ind_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L147">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L148">                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)</span>
+<span class="nc" id="L149">                .addContainerGap())</span>
+        );
+<span class="nc" id="L151">        btn_1Layout.setVerticalGroup(</span>
+<span class="nc" id="L152">            btn_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L153">            .addGroup(btn_1Layout.createSequentialGroup()</span>
+<span class="nc" id="L154">                .addComponent(ind_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L155">                .addGap(0, 0, Short.MAX_VALUE))</span>
+<span class="nc" id="L156">            .addGroup(btn_1Layout.createSequentialGroup()</span>
+<span class="nc" id="L157">                .addContainerGap()</span>
+<span class="nc" id="L158">                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L159">                .addContainerGap())</span>
+        );
+
+<span class="nc" id="L162">        side_pane.add(btn_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 120, -1));</span>
+
+<span class="nc" id="L164">        btn_2.setBackground(new java.awt.Color(23, 35, 51));</span>
+<span class="nc" id="L165">        btn_2.addMouseListener(new java.awt.event.MouseAdapter() {</span>
             public void mousePressed(java.awt.event.MouseEvent evt) {
-<span class="nc" id="L166">                btn_2MousePressed(evt);</span>
-<span class="nc" id="L167">            }</span>
+<span class="nc" id="L167">                btn_2MousePressed(evt);</span>
+<span class="nc" id="L168">            }</span>
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-<span class="nc" id="L169">                btn_2MouseReleased(evt);</span>
-<span class="nc" id="L170">            }</span>
+<span class="nc" id="L170">                btn_2MouseReleased(evt);</span>
+<span class="nc" id="L171">            }</span>
         });
 
-<span class="nc" id="L173">        ind_2.setOpaque(false);</span>
-<span class="nc" id="L174">        ind_2.setPreferredSize(new java.awt.Dimension(3, 43));</span>
+<span class="nc" id="L174">        ind_2.setOpaque(false);</span>
+<span class="nc" id="L175">        ind_2.setPreferredSize(new java.awt.Dimension(3, 43));</span>
 
-<span class="nc" id="L176">        javax.swing.GroupLayout ind_2Layout = new javax.swing.GroupLayout(ind_2);</span>
-<span class="nc" id="L177">        ind_2.setLayout(ind_2Layout);</span>
-<span class="nc" id="L178">        ind_2Layout.setHorizontalGroup(</span>
-<span class="nc" id="L179">            ind_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L180">            .addGap(0, 3, Short.MAX_VALUE)</span>
+<span class="nc" id="L177">        javax.swing.GroupLayout ind_2Layout = new javax.swing.GroupLayout(ind_2);</span>
+<span class="nc" id="L178">        ind_2.setLayout(ind_2Layout);</span>
+<span class="nc" id="L179">        ind_2Layout.setHorizontalGroup(</span>
+<span class="nc" id="L180">            ind_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L181">            .addGap(0, 3, Short.MAX_VALUE)</span>
         );
-<span class="nc" id="L182">        ind_2Layout.setVerticalGroup(</span>
-<span class="nc" id="L183">            ind_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L184">            .addGap(0, 43, Short.MAX_VALUE)</span>
-        );
-
-<span class="nc" id="L187">        jLabel9.setFont(new java.awt.Font(&quot;Segoe UI&quot;, 0, 12)); // NOI18N</span>
-<span class="nc" id="L188">        jLabel9.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L189">        jLabel9.setText(&quot;Solicitar Plan&quot;);</span>
-
-<span class="nc" id="L191">        javax.swing.GroupLayout btn_2Layout = new javax.swing.GroupLayout(btn_2);</span>
-<span class="nc" id="L192">        btn_2.setLayout(btn_2Layout);</span>
-<span class="nc" id="L193">        btn_2Layout.setHorizontalGroup(</span>
-<span class="nc" id="L194">            btn_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L195">            .addGroup(btn_2Layout.createSequentialGroup()</span>
-<span class="nc" id="L196">                .addComponent(ind_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L197">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L198">                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
-        );
-<span class="nc" id="L200">        btn_2Layout.setVerticalGroup(</span>
-<span class="nc" id="L201">            btn_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L202">            .addGroup(btn_2Layout.createSequentialGroup()</span>
-<span class="nc" id="L203">                .addComponent(ind_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L204">                .addGap(0, 0, Short.MAX_VALUE))</span>
-<span class="nc" id="L205">            .addGroup(btn_2Layout.createSequentialGroup()</span>
-<span class="nc" id="L206">                .addContainerGap()</span>
-<span class="nc" id="L207">                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L208">                .addContainerGap())</span>
+<span class="nc" id="L183">        ind_2Layout.setVerticalGroup(</span>
+<span class="nc" id="L184">            ind_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L185">            .addGap(0, 43, Short.MAX_VALUE)</span>
         );
 
-<span class="nc" id="L211">        side_pane.add(btn_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 120, -1));</span>
+<span class="nc" id="L188">        jLabel9.setFont(new java.awt.Font(&quot;Segoe UI&quot;, 0, 12)); // NOI18N</span>
+<span class="nc" id="L189">        jLabel9.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L190">        jLabel9.setText(&quot;Solicitar Plan&quot;);</span>
 
-<span class="nc" id="L213">        btn_3.setBackground(new java.awt.Color(23, 35, 51));</span>
-<span class="nc" id="L214">        btn_3.addMouseListener(new java.awt.event.MouseAdapter() {</span>
+<span class="nc" id="L192">        javax.swing.GroupLayout btn_2Layout = new javax.swing.GroupLayout(btn_2);</span>
+<span class="nc" id="L193">        btn_2.setLayout(btn_2Layout);</span>
+<span class="nc" id="L194">        btn_2Layout.setHorizontalGroup(</span>
+<span class="nc" id="L195">            btn_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L196">            .addGroup(btn_2Layout.createSequentialGroup()</span>
+<span class="nc" id="L197">                .addComponent(ind_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L198">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L199">                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
+        );
+<span class="nc" id="L201">        btn_2Layout.setVerticalGroup(</span>
+<span class="nc" id="L202">            btn_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L203">            .addGroup(btn_2Layout.createSequentialGroup()</span>
+<span class="nc" id="L204">                .addComponent(ind_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L205">                .addGap(0, 0, Short.MAX_VALUE))</span>
+<span class="nc" id="L206">            .addGroup(btn_2Layout.createSequentialGroup()</span>
+<span class="nc" id="L207">                .addContainerGap()</span>
+<span class="nc" id="L208">                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L209">                .addContainerGap())</span>
+        );
+
+<span class="nc" id="L212">        side_pane.add(btn_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 120, -1));</span>
+
+<span class="nc" id="L214">        btn_3.setBackground(new java.awt.Color(23, 35, 51));</span>
+<span class="nc" id="L215">        btn_3.addMouseListener(new java.awt.event.MouseAdapter() {</span>
             public void mousePressed(java.awt.event.MouseEvent evt) {
-<span class="nc" id="L216">                btn_3MousePressed(evt);</span>
-<span class="nc" id="L217">            }</span>
+<span class="nc" id="L217">                btn_3MousePressed(evt);</span>
+<span class="nc" id="L218">            }</span>
         });
 
-<span class="nc" id="L220">        ind_3.setOpaque(false);</span>
-<span class="nc" id="L221">        ind_3.setPreferredSize(new java.awt.Dimension(3, 43));</span>
+<span class="nc" id="L221">        ind_3.setOpaque(false);</span>
+<span class="nc" id="L222">        ind_3.setPreferredSize(new java.awt.Dimension(3, 43));</span>
 
-<span class="nc" id="L223">        javax.swing.GroupLayout ind_3Layout = new javax.swing.GroupLayout(ind_3);</span>
-<span class="nc" id="L224">        ind_3.setLayout(ind_3Layout);</span>
-<span class="nc" id="L225">        ind_3Layout.setHorizontalGroup(</span>
-<span class="nc" id="L226">            ind_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L227">            .addGap(0, 3, Short.MAX_VALUE)</span>
+<span class="nc" id="L224">        javax.swing.GroupLayout ind_3Layout = new javax.swing.GroupLayout(ind_3);</span>
+<span class="nc" id="L225">        ind_3.setLayout(ind_3Layout);</span>
+<span class="nc" id="L226">        ind_3Layout.setHorizontalGroup(</span>
+<span class="nc" id="L227">            ind_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L228">            .addGap(0, 3, Short.MAX_VALUE)</span>
         );
-<span class="nc" id="L229">        ind_3Layout.setVerticalGroup(</span>
-<span class="nc" id="L230">            ind_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L231">            .addGap(0, 43, Short.MAX_VALUE)</span>
-        );
-
-<span class="nc" id="L234">        jLabel10.setFont(new java.awt.Font(&quot;Segoe UI&quot;, 0, 12)); // NOI18N</span>
-<span class="nc" id="L235">        jLabel10.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L236">        jLabel10.setText(&quot;Usuario&quot;);</span>
-
-<span class="nc" id="L238">        javax.swing.GroupLayout btn_3Layout = new javax.swing.GroupLayout(btn_3);</span>
-<span class="nc" id="L239">        btn_3.setLayout(btn_3Layout);</span>
-<span class="nc" id="L240">        btn_3Layout.setHorizontalGroup(</span>
-<span class="nc" id="L241">            btn_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L242">            .addGroup(btn_3Layout.createSequentialGroup()</span>
-<span class="nc" id="L243">                .addComponent(ind_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L244">                .addGap(18, 18, 18)</span>
-<span class="nc" id="L245">                .addComponent(jLabel10)</span>
-<span class="nc" id="L246">                .addGap(0, 0, Short.MAX_VALUE))</span>
-        );
-<span class="nc" id="L248">        btn_3Layout.setVerticalGroup(</span>
-<span class="nc" id="L249">            btn_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L250">            .addGroup(btn_3Layout.createSequentialGroup()</span>
-<span class="nc" id="L251">                .addComponent(ind_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L252">                .addGap(0, 0, Short.MAX_VALUE))</span>
-<span class="nc" id="L253">            .addGroup(btn_3Layout.createSequentialGroup()</span>
-<span class="nc" id="L254">                .addContainerGap()</span>
-<span class="nc" id="L255">                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L256">                .addContainerGap())</span>
+<span class="nc" id="L230">        ind_3Layout.setVerticalGroup(</span>
+<span class="nc" id="L231">            ind_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L232">            .addGap(0, 43, Short.MAX_VALUE)</span>
         );
 
-<span class="nc" id="L259">        side_pane.add(btn_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 120, -1));</span>
+<span class="nc" id="L235">        jLabel10.setFont(new java.awt.Font(&quot;Segoe UI&quot;, 0, 12)); // NOI18N</span>
+<span class="nc" id="L236">        jLabel10.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L237">        jLabel10.setText(&quot;Usuario&quot;);</span>
 
-<span class="nc" id="L261">        btn_4.setBackground(new java.awt.Color(23, 35, 51));</span>
-<span class="nc" id="L262">        btn_4.addMouseListener(new java.awt.event.MouseAdapter() {</span>
+<span class="nc" id="L239">        javax.swing.GroupLayout btn_3Layout = new javax.swing.GroupLayout(btn_3);</span>
+<span class="nc" id="L240">        btn_3.setLayout(btn_3Layout);</span>
+<span class="nc" id="L241">        btn_3Layout.setHorizontalGroup(</span>
+<span class="nc" id="L242">            btn_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L243">            .addGroup(btn_3Layout.createSequentialGroup()</span>
+<span class="nc" id="L244">                .addComponent(ind_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L245">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L246">                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)</span>
+<span class="nc" id="L247">                .addContainerGap())</span>
+        );
+<span class="nc" id="L249">        btn_3Layout.setVerticalGroup(</span>
+<span class="nc" id="L250">            btn_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L251">            .addGroup(btn_3Layout.createSequentialGroup()</span>
+<span class="nc" id="L252">                .addComponent(ind_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L253">                .addGap(0, 0, Short.MAX_VALUE))</span>
+<span class="nc" id="L254">            .addGroup(btn_3Layout.createSequentialGroup()</span>
+<span class="nc" id="L255">                .addContainerGap()</span>
+<span class="nc" id="L256">                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L257">                .addContainerGap())</span>
+        );
+
+<span class="nc" id="L260">        side_pane.add(btn_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 120, -1));</span>
+
+<span class="nc" id="L262">        btn_4.setBackground(new java.awt.Color(23, 35, 51));</span>
+<span class="nc" id="L263">        btn_4.addMouseListener(new java.awt.event.MouseAdapter() {</span>
             public void mousePressed(java.awt.event.MouseEvent evt) {
-<span class="nc" id="L264">                btn_4MousePressed(evt);</span>
-<span class="nc" id="L265">            }</span>
+<span class="nc" id="L265">                btn_4MousePressed(evt);</span>
+<span class="nc" id="L266">            }</span>
         });
 
-<span class="nc" id="L268">        ind_4.setOpaque(false);</span>
-<span class="nc" id="L269">        ind_4.setPreferredSize(new java.awt.Dimension(3, 43));</span>
+<span class="nc" id="L269">        ind_4.setOpaque(false);</span>
+<span class="nc" id="L270">        ind_4.setPreferredSize(new java.awt.Dimension(3, 43));</span>
 
-<span class="nc" id="L271">        javax.swing.GroupLayout ind_4Layout = new javax.swing.GroupLayout(ind_4);</span>
-<span class="nc" id="L272">        ind_4.setLayout(ind_4Layout);</span>
-<span class="nc" id="L273">        ind_4Layout.setHorizontalGroup(</span>
-<span class="nc" id="L274">            ind_4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L275">            .addGap(0, 3, Short.MAX_VALUE)</span>
+<span class="nc" id="L272">        javax.swing.GroupLayout ind_4Layout = new javax.swing.GroupLayout(ind_4);</span>
+<span class="nc" id="L273">        ind_4.setLayout(ind_4Layout);</span>
+<span class="nc" id="L274">        ind_4Layout.setHorizontalGroup(</span>
+<span class="nc" id="L275">            ind_4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L276">            .addGap(0, 3, Short.MAX_VALUE)</span>
         );
-<span class="nc" id="L277">        ind_4Layout.setVerticalGroup(</span>
-<span class="nc" id="L278">            ind_4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L279">            .addGap(0, 43, Short.MAX_VALUE)</span>
-        );
-
-<span class="nc" id="L282">        jLabel11.setFont(new java.awt.Font(&quot;Segoe UI&quot;, 0, 12)); // NOI18N</span>
-<span class="nc" id="L283">        jLabel11.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L284">        jLabel11.setText(&quot;Perfil&quot;);</span>
-
-<span class="nc" id="L286">        javax.swing.GroupLayout btn_4Layout = new javax.swing.GroupLayout(btn_4);</span>
-<span class="nc" id="L287">        btn_4.setLayout(btn_4Layout);</span>
-<span class="nc" id="L288">        btn_4Layout.setHorizontalGroup(</span>
-<span class="nc" id="L289">            btn_4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L290">            .addGroup(btn_4Layout.createSequentialGroup()</span>
-<span class="nc" id="L291">                .addComponent(ind_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L292">                .addGap(18, 18, 18)</span>
-<span class="nc" id="L293">                .addComponent(jLabel11)</span>
-<span class="nc" id="L294">                .addGap(0, 72, Short.MAX_VALUE))</span>
-        );
-<span class="nc" id="L296">        btn_4Layout.setVerticalGroup(</span>
-<span class="nc" id="L297">            btn_4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L298">            .addGroup(btn_4Layout.createSequentialGroup()</span>
-<span class="nc" id="L299">                .addComponent(ind_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L300">                .addGap(0, 0, Short.MAX_VALUE))</span>
-<span class="nc" id="L301">            .addGroup(btn_4Layout.createSequentialGroup()</span>
-<span class="nc" id="L302">                .addContainerGap()</span>
-<span class="nc" id="L303">                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L304">                .addContainerGap())</span>
+<span class="nc" id="L278">        ind_4Layout.setVerticalGroup(</span>
+<span class="nc" id="L279">            ind_4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L280">            .addGap(0, 43, Short.MAX_VALUE)</span>
         );
 
-<span class="nc" id="L307">        side_pane.add(btn_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 120, -1));</span>
+<span class="nc" id="L283">        jLabel11.setFont(new java.awt.Font(&quot;Segoe UI&quot;, 0, 12)); // NOI18N</span>
+<span class="nc" id="L284">        jLabel11.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L285">        jLabel11.setText(&quot;Perfil&quot;);</span>
 
-<span class="nc" id="L309">        btn_6.setBackground(new java.awt.Color(23, 35, 51));</span>
-<span class="nc" id="L310">        btn_6.addMouseListener(new java.awt.event.MouseAdapter() {</span>
+<span class="nc" id="L287">        javax.swing.GroupLayout btn_4Layout = new javax.swing.GroupLayout(btn_4);</span>
+<span class="nc" id="L288">        btn_4.setLayout(btn_4Layout);</span>
+<span class="nc" id="L289">        btn_4Layout.setHorizontalGroup(</span>
+<span class="nc" id="L290">            btn_4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L291">            .addGroup(btn_4Layout.createSequentialGroup()</span>
+<span class="nc" id="L292">                .addComponent(ind_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L293">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L294">                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)</span>
+<span class="nc" id="L295">                .addContainerGap())</span>
+        );
+<span class="nc" id="L297">        btn_4Layout.setVerticalGroup(</span>
+<span class="nc" id="L298">            btn_4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L299">            .addGroup(btn_4Layout.createSequentialGroup()</span>
+<span class="nc" id="L300">                .addComponent(ind_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L301">                .addGap(0, 0, Short.MAX_VALUE))</span>
+<span class="nc" id="L302">            .addGroup(btn_4Layout.createSequentialGroup()</span>
+<span class="nc" id="L303">                .addContainerGap()</span>
+<span class="nc" id="L304">                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L305">                .addContainerGap())</span>
+        );
+
+<span class="nc" id="L308">        side_pane.add(btn_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 120, -1));</span>
+
+<span class="nc" id="L310">        btn_6.setBackground(new java.awt.Color(23, 35, 51));</span>
+<span class="nc" id="L311">        btn_6.addMouseListener(new java.awt.event.MouseAdapter() {</span>
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-<span class="nc" id="L312">                btn_6MouseClicked(evt);</span>
-<span class="nc" id="L313">            }</span>
+<span class="nc" id="L313">                btn_6MouseClicked(evt);</span>
+<span class="nc" id="L314">            }</span>
             public void mousePressed(java.awt.event.MouseEvent evt) {
-<span class="nc" id="L315">                btn_6MousePressed(evt);</span>
-<span class="nc" id="L316">            }</span>
+<span class="nc" id="L316">                btn_6MousePressed(evt);</span>
+<span class="nc" id="L317">            }</span>
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-<span class="nc" id="L318">                btn_6MouseReleased(evt);</span>
-<span class="nc" id="L319">            }</span>
+<span class="nc" id="L319">                btn_6MouseReleased(evt);</span>
+<span class="nc" id="L320">            }</span>
         });
 
-<span class="nc" id="L322">        ind_6.setOpaque(false);</span>
-<span class="nc" id="L323">        ind_6.setPreferredSize(new java.awt.Dimension(3, 43));</span>
+<span class="nc" id="L323">        ind_6.setOpaque(false);</span>
+<span class="nc" id="L324">        ind_6.setPreferredSize(new java.awt.Dimension(3, 43));</span>
 
-<span class="nc" id="L325">        javax.swing.GroupLayout ind_6Layout = new javax.swing.GroupLayout(ind_6);</span>
-<span class="nc" id="L326">        ind_6.setLayout(ind_6Layout);</span>
-<span class="nc" id="L327">        ind_6Layout.setHorizontalGroup(</span>
-<span class="nc" id="L328">            ind_6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L329">            .addGap(0, 3, Short.MAX_VALUE)</span>
+<span class="nc" id="L326">        javax.swing.GroupLayout ind_6Layout = new javax.swing.GroupLayout(ind_6);</span>
+<span class="nc" id="L327">        ind_6.setLayout(ind_6Layout);</span>
+<span class="nc" id="L328">        ind_6Layout.setHorizontalGroup(</span>
+<span class="nc" id="L329">            ind_6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L330">            .addGap(0, 3, Short.MAX_VALUE)</span>
         );
-<span class="nc" id="L331">        ind_6Layout.setVerticalGroup(</span>
-<span class="nc" id="L332">            ind_6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L333">            .addGap(0, 43, Short.MAX_VALUE)</span>
-        );
-
-<span class="nc" id="L336">        jLabel18.setFont(new java.awt.Font(&quot;Segoe UI&quot;, 0, 12)); // NOI18N</span>
-<span class="nc" id="L337">        jLabel18.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L338">        jLabel18.setText(&quot;Realizar Consulta&quot;);</span>
-
-<span class="nc" id="L340">        javax.swing.GroupLayout btn_6Layout = new javax.swing.GroupLayout(btn_6);</span>
-<span class="nc" id="L341">        btn_6.setLayout(btn_6Layout);</span>
-<span class="nc" id="L342">        btn_6Layout.setHorizontalGroup(</span>
-<span class="nc" id="L343">            btn_6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L344">            .addGroup(btn_6Layout.createSequentialGroup()</span>
-<span class="nc" id="L345">                .addComponent(ind_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L346">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L347">                .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
-        );
-<span class="nc" id="L349">        btn_6Layout.setVerticalGroup(</span>
-<span class="nc" id="L350">            btn_6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L351">            .addGroup(btn_6Layout.createSequentialGroup()</span>
-<span class="nc" id="L352">                .addComponent(ind_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L353">                .addGap(0, 0, Short.MAX_VALUE))</span>
-<span class="nc" id="L354">            .addGroup(btn_6Layout.createSequentialGroup()</span>
-<span class="nc" id="L355">                .addContainerGap()</span>
-<span class="nc" id="L356">                .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L357">                .addContainerGap())</span>
+<span class="nc" id="L332">        ind_6Layout.setVerticalGroup(</span>
+<span class="nc" id="L333">            ind_6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L334">            .addGap(0, 43, Short.MAX_VALUE)</span>
         );
 
-<span class="nc" id="L360">        side_pane.add(btn_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 120, -1));</span>
+<span class="nc" id="L337">        jLabel18.setFont(new java.awt.Font(&quot;Segoe UI&quot;, 0, 12)); // NOI18N</span>
+<span class="nc" id="L338">        jLabel18.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L339">        jLabel18.setText(&quot;Realizar Consulta&quot;);</span>
 
-<span class="nc" id="L362">        jPanel9.add(side_pane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 120, 590));</span>
+<span class="nc" id="L341">        javax.swing.GroupLayout btn_6Layout = new javax.swing.GroupLayout(btn_6);</span>
+<span class="nc" id="L342">        btn_6.setLayout(btn_6Layout);</span>
+<span class="nc" id="L343">        btn_6Layout.setHorizontalGroup(</span>
+<span class="nc" id="L344">            btn_6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L345">            .addGroup(btn_6Layout.createSequentialGroup()</span>
+<span class="nc" id="L346">                .addComponent(ind_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L347">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L348">                .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
+        );
+<span class="nc" id="L350">        btn_6Layout.setVerticalGroup(</span>
+<span class="nc" id="L351">            btn_6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L352">            .addGroup(btn_6Layout.createSequentialGroup()</span>
+<span class="nc" id="L353">                .addComponent(ind_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L354">                .addGap(0, 0, Short.MAX_VALUE))</span>
+<span class="nc" id="L355">            .addGroup(btn_6Layout.createSequentialGroup()</span>
+<span class="nc" id="L356">                .addContainerGap()</span>
+<span class="nc" id="L357">                .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L358">                .addContainerGap())</span>
+        );
 
-<span class="nc" id="L364">        jPanel2.setBackground(new java.awt.Color(71, 120, 197));</span>
-<span class="nc" id="L365">        jPanel2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {</span>
+<span class="nc" id="L361">        side_pane.add(btn_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 120, -1));</span>
+
+<span class="nc" id="L363">        jPanel9.add(side_pane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 120, 590));</span>
+
+<span class="nc" id="L365">        jPanel2.setBackground(new java.awt.Color(71, 120, 197));</span>
+<span class="nc" id="L366">        jPanel2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {</span>
             public void mouseDragged(java.awt.event.MouseEvent evt) {
-<span class="nc" id="L367">                jPanel2MouseDragged(evt);</span>
-<span class="nc" id="L368">            }</span>
+<span class="nc" id="L368">                jPanel2MouseDragged(evt);</span>
+<span class="nc" id="L369">            }</span>
         });
-<span class="nc" id="L370">        jPanel2.addMouseListener(new java.awt.event.MouseAdapter() {</span>
+<span class="nc" id="L371">        jPanel2.addMouseListener(new java.awt.event.MouseAdapter() {</span>
             public void mousePressed(java.awt.event.MouseEvent evt) {
-<span class="nc" id="L372">                jPanel2MousePressed(evt);</span>
-<span class="nc" id="L373">            }</span>
+<span class="nc" id="L373">                jPanel2MousePressed(evt);</span>
+<span class="nc" id="L374">            }</span>
         });
 
-<span class="nc" id="L376">        jTextField1.setBackground(new java.awt.Color(123, 156, 225));</span>
-<span class="nc" id="L377">        jTextField1.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L378">        jTextField1.setBorder(null);</span>
-<span class="nc" id="L379">        jTextField1.setCaretColor(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L380">        jTextField1.setPreferredSize(new java.awt.Dimension(2, 20));</span>
-<span class="nc" id="L381">        jTextField1.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L377">        jTextField1.setBackground(new java.awt.Color(123, 156, 225));</span>
+<span class="nc" id="L378">        jTextField1.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L379">        jTextField1.setBorder(null);</span>
+<span class="nc" id="L380">        jTextField1.setCaretColor(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L381">        jTextField1.setPreferredSize(new java.awt.Dimension(2, 20));</span>
+<span class="nc" id="L382">        jTextField1.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L383">                jTextField1ActionPerformed(evt);</span>
-<span class="nc" id="L384">            }</span>
+<span class="nc" id="L384">                jTextField1ActionPerformed(evt);</span>
+<span class="nc" id="L385">            }</span>
         });
 
-<span class="nc" id="L387">        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/imagenes/icons8_Search_18px.png&quot;))); // NOI18N</span>
+<span class="nc" id="L388">        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/imagenes/icons8_Search_18px.png&quot;))); // NOI18N</span>
 
-<span class="nc" id="L389">        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);</span>
-<span class="nc" id="L390">        jPanel2.setLayout(jPanel2Layout);</span>
-<span class="nc" id="L391">        jPanel2Layout.setHorizontalGroup(</span>
-<span class="nc" id="L392">            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L393">            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()</span>
-<span class="nc" id="L394">                .addContainerGap(747, Short.MAX_VALUE)</span>
-<span class="nc" id="L395">                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L396">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
-<span class="nc" id="L397">                .addComponent(jLabel7)</span>
-<span class="nc" id="L398">                .addGap(34, 34, 34))</span>
+<span class="nc" id="L390">        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);</span>
+<span class="nc" id="L391">        jPanel2.setLayout(jPanel2Layout);</span>
+<span class="nc" id="L392">        jPanel2Layout.setHorizontalGroup(</span>
+<span class="nc" id="L393">            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L394">            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()</span>
+<span class="nc" id="L395">                .addContainerGap(747, Short.MAX_VALUE)</span>
+<span class="nc" id="L396">                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L397">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
+<span class="nc" id="L398">                .addComponent(jLabel7)</span>
+<span class="nc" id="L399">                .addGap(34, 34, 34))</span>
         );
-<span class="nc" id="L400">        jPanel2Layout.setVerticalGroup(</span>
-<span class="nc" id="L401">            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L402">            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()</span>
-<span class="nc" id="L403">                .addContainerGap(19, Short.MAX_VALUE)</span>
-<span class="nc" id="L404">                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)</span>
-<span class="nc" id="L405">                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L406">                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
-<span class="nc" id="L407">                .addContainerGap())</span>
+<span class="nc" id="L401">        jPanel2Layout.setVerticalGroup(</span>
+<span class="nc" id="L402">            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L403">            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()</span>
+<span class="nc" id="L404">                .addContainerGap(19, Short.MAX_VALUE)</span>
+<span class="nc" id="L405">                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)</span>
+<span class="nc" id="L406">                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L407">                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
+<span class="nc" id="L408">                .addContainerGap())</span>
         );
 
-<span class="nc" id="L410">        jPanel9.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 950, 50));</span>
+<span class="nc" id="L411">        jPanel9.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 950, 50));</span>
 
-<span class="nc" id="L412">        jPanel3.setBackground(new java.awt.Color(71, 120, 197));</span>
+<span class="nc" id="L413">        jPanel3.setBackground(new java.awt.Color(71, 120, 197));</span>
 
-<span class="nc" id="L414">        jPanel4.setBackground(new java.awt.Color(120, 168, 252));</span>
-<span class="nc" id="L415">        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());</span>
+<span class="nc" id="L415">        jPanel4.setBackground(new java.awt.Color(120, 168, 252));</span>
+<span class="nc" id="L416">        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());</span>
 
-<span class="nc" id="L417">        jPanel5.setBackground(new java.awt.Color(84, 127, 206));</span>
+<span class="nc" id="L418">        jPanel5.setBackground(new java.awt.Color(84, 127, 206));</span>
 
-<span class="nc" id="L419">        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/imagenes/icons8_Secured_Letter_25px_2.png&quot;))); // NOI18N</span>
+<span class="nc" id="L420">        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/imagenes/icons8_Secured_Letter_25px_2.png&quot;))); // NOI18N</span>
 
-<span class="nc" id="L421">        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/imagenes/icons8_Contacts_25px.png&quot;))); // NOI18N</span>
+<span class="nc" id="L422">        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/imagenes/icons8_Contacts_25px.png&quot;))); // NOI18N</span>
 
-<span class="nc" id="L423">        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/imagenes/icons8_Calendar_25px.png&quot;))); // NOI18N</span>
+<span class="nc" id="L424">        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/imagenes/icons8_Calendar_25px.png&quot;))); // NOI18N</span>
 
-<span class="nc" id="L425">        jProgressBar1.setBackground(new java.awt.Color(84, 127, 206));</span>
-<span class="nc" id="L426">        jProgressBar1.setForeground(new java.awt.Color(0, 204, 204));</span>
-<span class="nc" id="L427">        jProgressBar1.setPreferredSize(new java.awt.Dimension(146, 10));</span>
-<span class="nc" id="L428">        jProgressBar1.setString(&quot;&quot;);</span>
-<span class="nc" id="L429">        jProgressBar1.setStringPainted(true);</span>
+<span class="nc" id="L426">        jProgressBar1.setBackground(new java.awt.Color(84, 127, 206));</span>
+<span class="nc" id="L427">        jProgressBar1.setForeground(new java.awt.Color(0, 204, 204));</span>
+<span class="nc" id="L428">        jProgressBar1.setPreferredSize(new java.awt.Dimension(146, 10));</span>
+<span class="nc" id="L429">        jProgressBar1.setString(&quot;&quot;);</span>
+<span class="nc" id="L430">        jProgressBar1.setStringPainted(true);</span>
 
-<span class="nc" id="L431">        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/imagenes/icons8_Water_25px.png&quot;))); // NOI18N</span>
+<span class="nc" id="L432">        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/imagenes/icons8_Water_25px.png&quot;))); // NOI18N</span>
 
-<span class="nc" id="L433">        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/imagenes/icons8_Lock_25px.png&quot;))); // NOI18N</span>
-<span class="nc" id="L434">        jLabel15.addMouseListener(new java.awt.event.MouseAdapter() {</span>
+<span class="nc" id="L434">        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/imagenes/icons8_Lock_25px.png&quot;))); // NOI18N</span>
+<span class="nc" id="L435">        jLabel15.addMouseListener(new java.awt.event.MouseAdapter() {</span>
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-<span class="nc" id="L436">                jLabel15MouseClicked(evt);</span>
-<span class="nc" id="L437">            }</span>
+<span class="nc" id="L437">                jLabel15MouseClicked(evt);</span>
+<span class="nc" id="L438">            }</span>
         });
 
-<span class="nc" id="L440">        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);</span>
-<span class="nc" id="L441">        jPanel5.setLayout(jPanel5Layout);</span>
-<span class="nc" id="L442">        jPanel5Layout.setHorizontalGroup(</span>
-<span class="nc" id="L443">            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L444">            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()</span>
-<span class="nc" id="L445">                .addGap(27, 27, 27)</span>
-<span class="nc" id="L446">                .addComponent(jLabel5)</span>
-<span class="nc" id="L447">                .addGap(12, 12, 12)</span>
-<span class="nc" id="L448">                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L449">                    .addGroup(jPanel5Layout.createSequentialGroup()</span>
-<span class="nc" id="L450">                        .addComponent(jLabel3)</span>
-<span class="nc" id="L451">                        .addGap(31, 31, 31)</span>
-<span class="nc" id="L452">                        .addComponent(jLabel1)</span>
-<span class="nc" id="L453">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L454">                        .addComponent(jLabel4)</span>
-<span class="nc" id="L455">                        .addGap(31, 31, 31)</span>
-<span class="nc" id="L456">                        .addComponent(jLabel15)</span>
-<span class="nc" id="L457">                        .addGap(8, 8, 8))</span>
-<span class="nc" id="L458">                    .addGroup(jPanel5Layout.createSequentialGroup()</span>
-<span class="nc" id="L459">                        .addGap(0, 0, Short.MAX_VALUE)</span>
-<span class="nc" id="L460">                        .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L461">                    .addComponent(jSeparator1))</span>
-<span class="nc" id="L462">                .addGap(40, 40, 40))</span>
+<span class="nc" id="L441">        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);</span>
+<span class="nc" id="L442">        jPanel5.setLayout(jPanel5Layout);</span>
+<span class="nc" id="L443">        jPanel5Layout.setHorizontalGroup(</span>
+<span class="nc" id="L444">            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L445">            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()</span>
+<span class="nc" id="L446">                .addGap(27, 27, 27)</span>
+<span class="nc" id="L447">                .addComponent(jLabel5)</span>
+<span class="nc" id="L448">                .addGap(12, 12, 12)</span>
+<span class="nc" id="L449">                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L450">                    .addGroup(jPanel5Layout.createSequentialGroup()</span>
+<span class="nc" id="L451">                        .addComponent(jLabel3)</span>
+<span class="nc" id="L452">                        .addGap(31, 31, 31)</span>
+<span class="nc" id="L453">                        .addComponent(jLabel1)</span>
+<span class="nc" id="L454">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L455">                        .addComponent(jLabel4)</span>
+<span class="nc" id="L456">                        .addGap(31, 31, 31)</span>
+<span class="nc" id="L457">                        .addComponent(jLabel15)</span>
+<span class="nc" id="L458">                        .addGap(8, 8, 8))</span>
+<span class="nc" id="L459">                    .addGroup(jPanel5Layout.createSequentialGroup()</span>
+<span class="nc" id="L460">                        .addGap(0, 0, Short.MAX_VALUE)</span>
+<span class="nc" id="L461">                        .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L462">                    .addComponent(jSeparator1))</span>
+<span class="nc" id="L463">                .addGap(40, 40, 40))</span>
         );
-<span class="nc" id="L464">        jPanel5Layout.setVerticalGroup(</span>
-<span class="nc" id="L465">            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L466">            .addGroup(jPanel5Layout.createSequentialGroup()</span>
-<span class="nc" id="L467">                .addGap(32, 32, 32)</span>
-<span class="nc" id="L468">                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)</span>
-<span class="nc" id="L469">                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L470">                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L471">                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L472">                    .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
-<span class="nc" id="L473">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
-<span class="nc" id="L474">                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L475">                    .addGroup(jPanel5Layout.createSequentialGroup()</span>
-<span class="nc" id="L476">                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L477">                        .addGap(18, 18, 18)</span>
-<span class="nc" id="L478">                        .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L479">                        .addGap(0, 24, Short.MAX_VALUE))</span>
-<span class="nc" id="L480">                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))</span>
+<span class="nc" id="L465">        jPanel5Layout.setVerticalGroup(</span>
+<span class="nc" id="L466">            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L467">            .addGroup(jPanel5Layout.createSequentialGroup()</span>
+<span class="nc" id="L468">                .addGap(32, 32, 32)</span>
+<span class="nc" id="L469">                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)</span>
+<span class="nc" id="L470">                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L471">                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L472">                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L473">                    .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
+<span class="nc" id="L474">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
+<span class="nc" id="L475">                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L476">                    .addGroup(jPanel5Layout.createSequentialGroup()</span>
+<span class="nc" id="L477">                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L478">                        .addGap(18, 18, 18)</span>
+<span class="nc" id="L479">                        .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L480">                        .addGap(0, 24, Short.MAX_VALUE))</span>
+<span class="nc" id="L481">                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))</span>
         );
 
-<span class="nc" id="L483">        jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 85, -1, 130));</span>
+<span class="nc" id="L484">        jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 85, -1, 130));</span>
 
-<span class="nc" id="L485">        btn_exit.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/imagenes/icons8_Exit_25px.png&quot;))); // NOI18N</span>
-<span class="nc" id="L486">        btn_exit.addMouseListener(new java.awt.event.MouseAdapter() {</span>
+<span class="nc" id="L486">        btn_exit.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/imagenes/icons8_Exit_25px.png&quot;))); // NOI18N</span>
+<span class="nc" id="L487">        btn_exit.addMouseListener(new java.awt.event.MouseAdapter() {</span>
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-<span class="nc" id="L488">                btn_exitMouseClicked(evt);</span>
-<span class="nc" id="L489">            }</span>
+<span class="nc" id="L489">                btn_exitMouseClicked(evt);</span>
+<span class="nc" id="L490">            }</span>
             public void mousePressed(java.awt.event.MouseEvent evt) {
-<span class="nc" id="L491">                btn_exitMousePressed(evt);</span>
-<span class="nc" id="L492">            }</span>
+<span class="nc" id="L492">                btn_exitMousePressed(evt);</span>
+<span class="nc" id="L493">            }</span>
         });
-<span class="nc" id="L494">        jPanel4.add(btn_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 24, -1, 46));</span>
+<span class="nc" id="L495">        jPanel4.add(btn_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 24, -1, 46));</span>
 
-<span class="nc" id="L496">        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/imagenes/profesional.png&quot;))); // NOI18N</span>
-<span class="nc" id="L497">        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 130, 90));</span>
+<span class="nc" id="L497">        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/imagenes/profesional.png&quot;))); // NOI18N</span>
+<span class="nc" id="L498">        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 130, 90));</span>
 
-<span class="nc" id="L499">        jLabel12.setFont(new java.awt.Font(&quot;Segoe UI&quot;, 0, 12)); // NOI18N</span>
-<span class="nc" id="L500">        jLabel12.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L501">        jLabel12.setText(&quot;Amos&quot;);</span>
-<span class="nc" id="L502">        jPanel4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, -1, 30));</span>
+<span class="nc" id="L500">        jLabel12.setFont(new java.awt.Font(&quot;Segoe UI&quot;, 0, 12)); // NOI18N</span>
+<span class="nc" id="L501">        jLabel12.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L502">        jLabel12.setText(&quot;Amos&quot;);</span>
+<span class="nc" id="L503">        jPanel4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, -1, 30));</span>
 
-<span class="nc" id="L504">        labelMensajes.setFont(new java.awt.Font(&quot;Segoe UI&quot;, 0, 48)); // NOI18N</span>
-<span class="nc" id="L505">        labelMensajes.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L506">        labelMensajes.setText(&quot;Mensajes:&quot;);</span>
+<span class="nc" id="L505">        labelMensajes.setFont(new java.awt.Font(&quot;Segoe UI&quot;, 0, 48)); // NOI18N</span>
+<span class="nc" id="L506">        labelMensajes.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L507">        labelMensajes.setText(&quot;Mensajes:&quot;);</span>
 
-<span class="nc" id="L508">        button1.setBackground(new java.awt.Color(71, 120, 197));</span>
-<span class="nc" id="L509">        button1.setFont(new java.awt.Font(&quot;Segoe UI&quot;, 0, 14)); // NOI18N</span>
-<span class="nc" id="L510">        button1.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L511">        button1.setLabel(&quot;Casilla de Mensaje&quot;);</span>
-<span class="nc" id="L512">        button1.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L509">        button1.setBackground(new java.awt.Color(71, 120, 197));</span>
+<span class="nc" id="L510">        button1.setFont(new java.awt.Font(&quot;Segoe UI&quot;, 0, 14)); // NOI18N</span>
+<span class="nc" id="L511">        button1.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L512">        button1.setLabel(&quot;Casilla de Mensaje&quot;);</span>
+<span class="nc" id="L513">        button1.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L514">                button1ActionPerformed(evt);</span>
-<span class="nc" id="L515">            }</span>
+<span class="nc" id="L515">                button1ActionPerformed(evt);</span>
+<span class="nc" id="L516">            }</span>
         });
 
-<span class="nc" id="L518">        jLabel13.setFont(new java.awt.Font(&quot;Segoe UI&quot;, 0, 12)); // NOI18N</span>
-<span class="nc" id="L519">        jLabel13.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L520">        jLabel13.setText(&quot;May 2018&quot;);</span>
+<span class="nc" id="L519">        jLabel13.setFont(new java.awt.Font(&quot;Segoe UI&quot;, 0, 12)); // NOI18N</span>
+<span class="nc" id="L520">        jLabel13.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L521">        jLabel13.setText(&quot;May 2018&quot;);</span>
 
-<span class="nc" id="L522">        jLabel16.setFont(new java.awt.Font(&quot;Segoe UI&quot;, 0, 12)); // NOI18N</span>
-<span class="nc" id="L523">        jLabel16.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L524">        jLabel16.setText(&quot;Friday 23 Feb &quot;);</span>
+<span class="nc" id="L523">        jLabel16.setFont(new java.awt.Font(&quot;Segoe UI&quot;, 0, 12)); // NOI18N</span>
+<span class="nc" id="L524">        jLabel16.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L525">        jLabel16.setText(&quot;Friday 23 Feb &quot;);</span>
 
-<span class="nc" id="L526">        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);</span>
-<span class="nc" id="L527">        jPanel3.setLayout(jPanel3Layout);</span>
-<span class="nc" id="L528">        jPanel3Layout.setHorizontalGroup(</span>
-<span class="nc" id="L529">            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L530">            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)</span>
-<span class="nc" id="L531">            .addGroup(jPanel3Layout.createSequentialGroup()</span>
-<span class="nc" id="L532">                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L533">                    .addGroup(jPanel3Layout.createSequentialGroup()</span>
-<span class="nc" id="L534">                        .addGap(33, 33, 33)</span>
-<span class="nc" id="L535">                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L536">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L537">                        .addComponent(jLabel13))</span>
-<span class="nc" id="L538">                    .addGroup(jPanel3Layout.createSequentialGroup()</span>
-<span class="nc" id="L539">                        .addGap(72, 72, 72)</span>
-<span class="nc" id="L540">                        .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L541">                        .addGap(0, 0, Short.MAX_VALUE))</span>
-<span class="nc" id="L542">                    .addGroup(jPanel3Layout.createSequentialGroup()</span>
-<span class="nc" id="L543">                        .addContainerGap()</span>
-<span class="nc" id="L544">                        .addComponent(labelMensajes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))</span>
-<span class="nc" id="L545">                .addContainerGap())</span>
+<span class="nc" id="L527">        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);</span>
+<span class="nc" id="L528">        jPanel3.setLayout(jPanel3Layout);</span>
+<span class="nc" id="L529">        jPanel3Layout.setHorizontalGroup(</span>
+<span class="nc" id="L530">            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L531">            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)</span>
+<span class="nc" id="L532">            .addGroup(jPanel3Layout.createSequentialGroup()</span>
+<span class="nc" id="L533">                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L534">                    .addGroup(jPanel3Layout.createSequentialGroup()</span>
+<span class="nc" id="L535">                        .addGap(33, 33, 33)</span>
+<span class="nc" id="L536">                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L537">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L538">                        .addComponent(jLabel13))</span>
+<span class="nc" id="L539">                    .addGroup(jPanel3Layout.createSequentialGroup()</span>
+<span class="nc" id="L540">                        .addGap(72, 72, 72)</span>
+<span class="nc" id="L541">                        .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L542">                        .addGap(0, 0, Short.MAX_VALUE))</span>
+<span class="nc" id="L543">                    .addGroup(jPanel3Layout.createSequentialGroup()</span>
+<span class="nc" id="L544">                        .addContainerGap()</span>
+<span class="nc" id="L545">                        .addComponent(labelMensajes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))</span>
+<span class="nc" id="L546">                .addContainerGap())</span>
         );
-<span class="nc" id="L547">        jPanel3Layout.setVerticalGroup(</span>
-<span class="nc" id="L548">            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L549">            .addGroup(jPanel3Layout.createSequentialGroup()</span>
-<span class="nc" id="L550">                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L551">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
-<span class="nc" id="L552">                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
-<span class="nc" id="L553">                    .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE)</span>
-<span class="nc" id="L554">                    .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE))</span>
-<span class="nc" id="L555">                .addGap(38, 38, 38)</span>
-<span class="nc" id="L556">                .addComponent(labelMensajes, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L557">                .addGap(44, 44, 44)</span>
-<span class="nc" id="L558">                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L559">                .addContainerGap(106, Short.MAX_VALUE))</span>
-        );
-
-<span class="nc" id="L562">        jPanel9.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 300, 540));</span>
-
-<span class="nc" id="L564">        panelHome.setBackground(new java.awt.Color(255, 255, 255));</span>
-
-<span class="nc" id="L566">        jPanel7.setBackground(new java.awt.Color(242, 247, 247));</span>
-
-<span class="nc" id="L568">        jLabel14.setFont(new java.awt.Font(&quot;Segoe UI&quot;, 0, 12)); // NOI18N</span>
-<span class="nc" id="L569">        jLabel14.setForeground(new java.awt.Color(102, 102, 102));</span>
-<span class="nc" id="L570">        jLabel14.setText(&quot;Launch dates for the items listed &quot;);</span>
-
-<span class="nc" id="L572">        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);</span>
-<span class="nc" id="L573">        jPanel7.setLayout(jPanel7Layout);</span>
-<span class="nc" id="L574">        jPanel7Layout.setHorizontalGroup(</span>
-<span class="nc" id="L575">            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L576">            .addGroup(jPanel7Layout.createSequentialGroup()</span>
-<span class="nc" id="L577">                .addGap(31, 31, 31)</span>
-<span class="nc" id="L578">                .addComponent(jLabel14)</span>
-<span class="nc" id="L579">                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
-        );
-<span class="nc" id="L581">        jPanel7Layout.setVerticalGroup(</span>
-<span class="nc" id="L582">            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L583">            .addGroup(jPanel7Layout.createSequentialGroup()</span>
-<span class="nc" id="L584">                .addGap(23, 23, 23)</span>
-<span class="nc" id="L585">                .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE)</span>
-<span class="nc" id="L586">                .addGap(113, 113, 113))</span>
+<span class="nc" id="L548">        jPanel3Layout.setVerticalGroup(</span>
+<span class="nc" id="L549">            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L550">            .addGroup(jPanel3Layout.createSequentialGroup()</span>
+<span class="nc" id="L551">                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L552">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
+<span class="nc" id="L553">                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L554">                    .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE)</span>
+<span class="nc" id="L555">                    .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE))</span>
+<span class="nc" id="L556">                .addGap(38, 38, 38)</span>
+<span class="nc" id="L557">                .addComponent(labelMensajes, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L558">                .addGap(44, 44, 44)</span>
+<span class="nc" id="L559">                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L560">                .addContainerGap(106, Short.MAX_VALUE))</span>
         );
 
-<span class="nc" id="L589">        jScrollPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));</span>
+<span class="nc" id="L563">        jPanel9.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 300, 540));</span>
 
-<span class="nc" id="L591">        jTable1.setFont(new java.awt.Font(&quot;Segoe UI&quot;, 0, 12)); // NOI18N</span>
-<span class="nc" id="L592">        jTable1.setModel(new javax.swing.table.DefaultTableModel(</span>
+<span class="nc" id="L565">        panelHome.setBackground(new java.awt.Color(255, 255, 255));</span>
+
+<span class="nc" id="L567">        jPanel7.setBackground(new java.awt.Color(242, 247, 247));</span>
+
+<span class="nc" id="L569">        jLabel14.setFont(new java.awt.Font(&quot;Segoe UI&quot;, 0, 12)); // NOI18N</span>
+<span class="nc" id="L570">        jLabel14.setForeground(new java.awt.Color(102, 102, 102));</span>
+<span class="nc" id="L571">        jLabel14.setText(&quot;Launch dates for the items listed &quot;);</span>
+
+<span class="nc" id="L573">        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);</span>
+<span class="nc" id="L574">        jPanel7.setLayout(jPanel7Layout);</span>
+<span class="nc" id="L575">        jPanel7Layout.setHorizontalGroup(</span>
+<span class="nc" id="L576">            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L577">            .addGroup(jPanel7Layout.createSequentialGroup()</span>
+<span class="nc" id="L578">                .addGap(31, 31, 31)</span>
+<span class="nc" id="L579">                .addComponent(jLabel14)</span>
+<span class="nc" id="L580">                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
+        );
+<span class="nc" id="L582">        jPanel7Layout.setVerticalGroup(</span>
+<span class="nc" id="L583">            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L584">            .addGroup(jPanel7Layout.createSequentialGroup()</span>
+<span class="nc" id="L585">                .addGap(23, 23, 23)</span>
+<span class="nc" id="L586">                .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE)</span>
+<span class="nc" id="L587">                .addGap(113, 113, 113))</span>
+        );
+
+<span class="nc" id="L590">        jScrollPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));</span>
+
+<span class="nc" id="L592">        jTable1.setFont(new java.awt.Font(&quot;Segoe UI&quot;, 0, 12)); // NOI18N</span>
+<span class="nc" id="L593">        jTable1.setModel(new javax.swing.table.DefaultTableModel(</span>
             new Object [][] {
                 {&quot;12/1/2018&quot;, &quot;Expresso POS&quot;, &quot;Kenya&quot;, null},
                 {&quot;12/1/2018&quot;, &quot;ROM Gen&quot;, &quot;US&quot;, null},
@@ -599,156 +600,155 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
             new String [] {
                 &quot;Date&quot;, &quot;Item&quot;, &quot;Location&quot;, &quot;Completed&quot;
             }
-<span class="nc" id="L602">        ) {</span>
-<span class="nc" id="L603">            Class[] types = new Class [] {</span>
+<span class="nc" id="L603">        ) {</span>
+<span class="nc" id="L604">            Class[] types = new Class [] {</span>
                 java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class
             };
 
             public Class getColumnClass(int columnIndex) {
-<span class="nc" id="L608">                return types [columnIndex];</span>
+<span class="nc" id="L609">                return types [columnIndex];</span>
             }
         });
-<span class="nc" id="L611">        jTable1.setGridColor(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L612">        jTable1.setRowHeight(22);</span>
-<span class="nc" id="L613">        jScrollPane1.setViewportView(jTable1);</span>
+<span class="nc" id="L612">        jTable1.setGridColor(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L613">        jTable1.setRowHeight(22);</span>
+<span class="nc" id="L614">        jScrollPane1.setViewportView(jTable1);</span>
 
-<span class="nc" id="L615">        javax.swing.GroupLayout panelHomeLayout = new javax.swing.GroupLayout(panelHome);</span>
-<span class="nc" id="L616">        panelHome.setLayout(panelHomeLayout);</span>
-<span class="nc" id="L617">        panelHomeLayout.setHorizontalGroup(</span>
-<span class="nc" id="L618">            panelHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L619">            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L620">            .addGroup(panelHomeLayout.createSequentialGroup()</span>
-<span class="nc" id="L621">                .addGap(27, 27, 27)</span>
-<span class="nc" id="L622">                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 613, Short.MAX_VALUE)</span>
-<span class="nc" id="L623">                .addContainerGap())</span>
+<span class="nc" id="L616">        javax.swing.GroupLayout panelHomeLayout = new javax.swing.GroupLayout(panelHome);</span>
+<span class="nc" id="L617">        panelHome.setLayout(panelHomeLayout);</span>
+<span class="nc" id="L618">        panelHomeLayout.setHorizontalGroup(</span>
+<span class="nc" id="L619">            panelHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L620">            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L621">            .addGroup(panelHomeLayout.createSequentialGroup()</span>
+<span class="nc" id="L622">                .addGap(27, 27, 27)</span>
+<span class="nc" id="L623">                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 613, Short.MAX_VALUE)</span>
+<span class="nc" id="L624">                .addContainerGap())</span>
         );
-<span class="nc" id="L625">        panelHomeLayout.setVerticalGroup(</span>
-<span class="nc" id="L626">            panelHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L627">            .addGroup(panelHomeLayout.createSequentialGroup()</span>
-<span class="nc" id="L628">                .addGap(75, 75, 75)</span>
-<span class="nc" id="L629">                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L630">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)</span>
-<span class="nc" id="L631">                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L632">                .addGap(22, 22, 22))</span>
+<span class="nc" id="L626">        panelHomeLayout.setVerticalGroup(</span>
+<span class="nc" id="L627">            panelHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L628">            .addGroup(panelHomeLayout.createSequentialGroup()</span>
+<span class="nc" id="L629">                .addGap(75, 75, 75)</span>
+<span class="nc" id="L630">                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L631">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)</span>
+<span class="nc" id="L632">                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L633">                .addGap(22, 22, 22))</span>
         );
 
-<span class="nc" id="L635">        jPanel9.add(panelHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 650, 540));</span>
+<span class="nc" id="L636">        jPanel9.add(panelHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 650, 540));</span>
 
-<span class="nc" id="L637">        getContentPane().add(jPanel9, &quot;card2&quot;);</span>
-<span class="nc" id="L638">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+<span class="nc" id="L638">        getContentPane().add(jPanel9, &quot;card2&quot;);</span>
+<span class="nc" id="L639">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
     private void btn_1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_1MousePressed
         // TODO add your handling code here:
-<span class="nc" id="L642">        setColor(btn_1);</span>
-<span class="nc" id="L643">        ind_1.setOpaque(true);</span>
-<span class="nc" id="L644">        resetColor(new JPanel[]{btn_2, btn_3, btn_4,btn_6}, new JPanel[]{ind_2, ind_3, ind_4,ind_6});</span>
-<span class="nc" id="L645">        this.setPanelActual(panelHome);</span>
-<span class="nc" id="L646">    }//GEN-LAST:event_btn_1MousePressed</span>
+<span class="nc" id="L643">        setColor(btn_1);</span>
+<span class="nc" id="L644">        ind_1.setOpaque(true);</span>
+<span class="nc" id="L645">        resetColor(new JPanel[]{btn_2, btn_3, btn_4, btn_6}, new JPanel[]{ind_2, ind_3, ind_4, ind_6});</span>
+<span class="nc" id="L646">        this.setPanelActual(panelHome);</span>
+<span class="nc" id="L647">    }//GEN-LAST:event_btn_1MousePressed</span>
 
     private void btn_3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_3MousePressed
         // TODO add your handling code here:
-<span class="nc" id="L650">        setColor(btn_3);</span>
-<span class="nc" id="L651">        ind_3.setOpaque(true);</span>
-<span class="nc" id="L652">        resetColor(new JPanel[]{btn_2, btn_1, btn_4,btn_6}, new JPanel[]{ind_2, ind_1, ind_4,ind_6});</span>
-<span class="nc" id="L653">    }//GEN-LAST:event_btn_3MousePressed</span>
+<span class="nc" id="L651">        setColor(btn_3);</span>
+<span class="nc" id="L652">        ind_3.setOpaque(true);</span>
+<span class="nc" id="L653">        resetColor(new JPanel[]{btn_2, btn_1, btn_4, btn_6}, new JPanel[]{ind_2, ind_1, ind_4, ind_6});</span>
+<span class="nc" id="L654">    }//GEN-LAST:event_btn_3MousePressed</span>
 
     private void btn_4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_4MousePressed
         // TODO add your handling code here:
-<span class="nc" id="L657">        setColor(btn_4);</span>
-<span class="nc" id="L658">        ind_4.setOpaque(true);</span>
-<span class="nc" id="L659">        resetColor(new JPanel[]{btn_2, btn_3, btn_1,btn_6}, new JPanel[]{ind_2, ind_3, ind_1,ind_6});</span>
-<span class="nc" id="L660">    }//GEN-LAST:event_btn_4MousePressed</span>
+<span class="nc" id="L658">        setColor(btn_4);</span>
+<span class="nc" id="L659">        ind_4.setOpaque(true);</span>
+<span class="nc" id="L660">        resetColor(new JPanel[]{btn_2, btn_3, btn_1, btn_6}, new JPanel[]{ind_2, ind_3, ind_1, ind_6});</span>
+<span class="nc" id="L661">    }//GEN-LAST:event_btn_4MousePressed</span>
 
     private void btn_2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_2MouseReleased
         // TODO add your handling code here:
-     
-<span class="nc" id="L665">    }//GEN-LAST:event_btn_2MouseReleased</span>
+
+<span class="nc" id="L666">    }//GEN-LAST:event_btn_2MouseReleased</span>
 
     int xx, xy;
     private void jPanel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MousePressed
         // TODO add your handling code here:
         //drag this pane
-<span class="nc" id="L671">        xx = evt.getX();</span>
-<span class="nc" id="L672">        xy = evt.getY();</span>
-<span class="nc" id="L673">    }//GEN-LAST:event_jPanel2MousePressed</span>
+<span class="nc" id="L672">        xx = evt.getX();</span>
+<span class="nc" id="L673">        xy = evt.getY();</span>
+<span class="nc" id="L674">    }//GEN-LAST:event_jPanel2MousePressed</span>
 
     private void jPanel2MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseDragged
         // TODO add your handling code here:
 
         //source to drag
-<span class="nc" id="L679">        int x = evt.getXOnScreen();</span>
-<span class="nc" id="L680">        int y = evt.getYOnScreen();</span>
-<span class="nc" id="L681">        this.setLocation(x - xx, y - xy);</span>
-<span class="nc" id="L682">    }//GEN-LAST:event_jPanel2MouseDragged</span>
+<span class="nc" id="L680">        int x = evt.getXOnScreen();</span>
+<span class="nc" id="L681">        int y = evt.getYOnScreen();</span>
+<span class="nc" id="L682">        this.setLocation(x - xx, y - xy);</span>
+<span class="nc" id="L683">    }//GEN-LAST:event_jPanel2MouseDragged</span>
 
     private void btn_exitMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_exitMousePressed
         // TODO add your handling code here:
-<span class="nc" id="L686">       sistema.guardarSistema();</span>
-<span class="nc" id="L687">       System.exit(0);</span>
-<span class="nc" id="L688">    }//GEN-LAST:event_btn_exitMousePressed</span>
+<span class="nc" id="L687">        sistema.guardarSistema();</span>
+<span class="nc" id="L688">        System.exit(0);</span>
+<span class="nc" id="L689">    }//GEN-LAST:event_btn_exitMousePressed</span>
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
-<span class="nc" id="L692">    }//GEN-LAST:event_jTextField1ActionPerformed</span>
+<span class="nc" id="L693">    }//GEN-LAST:event_jTextField1ActionPerformed</span>
 
     private void btn_exitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_exitMouseClicked
         // TODO add your handling code here:
-<span class="nc" id="L696">    }//GEN-LAST:event_btn_exitMouseClicked</span>
+<span class="nc" id="L697">    }//GEN-LAST:event_btn_exitMouseClicked</span>
 
     private void jLabel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseClicked
-<span class="nc" id="L699">InterfazLogin login=new InterfazLogin(ventana,sistema);  </span>
-<span class="nc" id="L700">login.setVisible(true);</span>
-<span class="nc" id="L701">hide();        // TODO add your handling code here:</span>
-<span class="nc" id="L702">    }//GEN-LAST:event_jLabel15MouseClicked</span>
+<span class="nc" id="L700">        InterfazLogin login = new InterfazLogin(ventana, sistema);</span>
+<span class="nc" id="L701">        login.setVisible(true);</span>
+<span class="nc" id="L702">        hide();        // TODO add your handling code here:</span>
+<span class="nc" id="L703">    }//GEN-LAST:event_jLabel15MouseClicked</span>
 
     private void btn_6MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_6MouseReleased
 
-<span class="nc" id="L706">    }//GEN-LAST:event_btn_6MouseReleased</span>
+<span class="nc" id="L707">    }//GEN-LAST:event_btn_6MouseReleased</span>
 
     private void btn_6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_6MouseClicked
 
-<span class="nc" id="L710">    }//GEN-LAST:event_btn_6MouseClicked</span>
+<span class="nc" id="L711">    }//GEN-LAST:event_btn_6MouseClicked</span>
 
     private void btn_6MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_6MousePressed
-<span class="nc" id="L713">        setColor(btn_6);</span>
-<span class="nc" id="L714">        ind_6.setOpaque(true);</span>
-<span class="nc" id="L715">       setPanelActual(panelConsulta);</span>
-<span class="nc" id="L716">        jPanel9.add(this.getPanelActual(), new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 650, 540));</span>
-<span class="nc" id="L717">        jPanel9.setPreferredSize(new Dimension(400, 400));</span>
-<span class="nc" id="L718">        resetColor(new JPanel[]{btn_2, btn_3, btn_1, btn_4}, new JPanel[]{ind_2, ind_3, ind_1, ind_4});</span>
-<span class="nc" id="L719">    }//GEN-LAST:event_btn_6MousePressed</span>
+<span class="nc" id="L714">        setColor(btn_6);</span>
+<span class="nc" id="L715">        ind_6.setOpaque(true);</span>
+<span class="nc" id="L716">        setPanelActual(panelConsulta);</span>
+<span class="nc" id="L717">        jPanel9.add(this.getPanelActual(), new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 650, 540));</span>
+<span class="nc" id="L718">        jPanel9.setPreferredSize(new Dimension(400, 400));</span>
+<span class="nc" id="L719">        resetColor(new JPanel[]{btn_2, btn_3, btn_1, btn_4}, new JPanel[]{ind_2, ind_3, ind_1, ind_4});</span>
+<span class="nc" id="L720">    }//GEN-LAST:event_btn_6MousePressed</span>
 
     private void btn_2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_2MousePressed
-<span class="nc" id="L722">      setColor(btn_2);</span>
-<span class="nc" id="L723">        ind_2.setOpaque(true);</span>
-       
-<span class="nc" id="L725">        setPanelActual(panelPlanAlimentacionUsuario);</span>
-<span class="nc" id="L726">        jPanel9.add(this.getPanelActual(), new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 650, 540));</span>
-<span class="nc" id="L727">        jPanel9.setPreferredSize(new Dimension(400, 400));</span>
-<span class="nc" id="L728">        resetColor(new JPanel[]{btn_6, btn_3, btn_1, btn_4}, new JPanel[]{ind_6, ind_3, ind_1, ind_4});</span>
-<span class="nc" id="L729">    }//GEN-LAST:event_btn_2MousePressed</span>
+<span class="nc" id="L723">        setColor(btn_2);</span>
+<span class="nc" id="L724">        ind_2.setOpaque(true);</span>
+
+<span class="nc" id="L726">        setPanelActual(panelPlanAlimentacionUsuario);</span>
+<span class="nc" id="L727">        jPanel9.add(this.getPanelActual(), new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 650, 540));</span>
+<span class="nc" id="L728">        jPanel9.setPreferredSize(new Dimension(400, 400));</span>
+<span class="nc" id="L729">        resetColor(new JPanel[]{btn_6, btn_3, btn_1, btn_4}, new JPanel[]{ind_6, ind_3, ind_1, ind_4});</span>
+<span class="nc" id="L730">    }//GEN-LAST:event_btn_2MousePressed</span>
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
-<span class="nc" id="L732">       setPanelActual(buzon);</span>
-<span class="nc" id="L733">        jPanel9.add(this.getPanelActual(), new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 650, 540));</span>
-<span class="nc" id="L734">        jPanel9.setPreferredSize(new Dimension(400, 400));</span>
-<span class="nc" id="L735">    }//GEN-LAST:event_button1ActionPerformed</span>
+<span class="nc" id="L733">        setPanelActual(buzon);</span>
+<span class="nc" id="L734">        jPanel9.add(this.getPanelActual(), new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 650, 540));</span>
+<span class="nc" id="L735">        jPanel9.setPreferredSize(new Dimension(400, 400));</span>
+<span class="nc" id="L736">    }//GEN-LAST:event_button1ActionPerformed</span>
 
     private void setPanelActual(JPanel unPanelActual) {
-<span class="nc" id="L738">        this.getPanelActual().hide();</span>
-<span class="nc" id="L739">        this.panelActual = unPanelActual;</span>
-<span class="nc" id="L740">        this.getPanelActual().show();</span>
-<span class="nc" id="L741">    }</span>
+<span class="nc" id="L739">        this.getPanelActual().hide();</span>
+<span class="nc" id="L740">        this.panelActual = unPanelActual;</span>
+<span class="nc" id="L741">        this.getPanelActual().show();</span>
+<span class="nc" id="L742">    }</span>
 
     public JPanel getPanelActual() {
 
-<span class="nc" id="L745">        return this.panelActual;</span>
+<span class="nc" id="L746">        return this.panelActual;</span>
     }
 
     /**
      * @param args the command line arguments
      */
-
     private void setColor(JPanel pane) {
 <span class="nc" id="L753">        pane.setBackground(new Color(41, 57, 80));</span>
 <span class="nc" id="L754">    }</span>
@@ -764,14 +764,14 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
 
 <span class="nc" id="L765">    }</span>
 
- private void formWindowClosing(java.awt.event.WindowEvent evt) {                                   
-<span class="nc" id="L768">       sistema.guardarSistema();</span>
-<span class="nc" id="L769">    }                                  </span>
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {
+<span class="nc" id="L768">        sistema.guardarSistema();</span>
+<span class="nc" id="L769">    }</span>
 
-    private void formWindowClosed(java.awt.event.WindowEvent evt) {                                  
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {
 <span class="nc" id="L772">        sistema.guardarSistema();</span>
-<span class="nc" id="L773">    }  </span>
-    
+<span class="nc" id="L773">    }</span>
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel btn_1;
     private javax.swing.JPanel btn_2;

@@ -115,25 +115,7 @@ public class SistemaTest {
         assertEquals("NO OK", result);
     }
 
-    @Test
-    public void testPidoDatoNumericoInvalido4() {
-        System.out.println("pidoDatoNumericoInvalido4");
-        String dato = "test";
-         String result = "";
-        String resultAux = "";
-        try {
-            int datoTest = Integer.parseInt(dato);
-            int min = 0;
-            int max = 2;
-            resultAux= instance.pidoDatoNumerico(datoTest, min, max);
-
-        } catch (NumberFormatException ex) {
-            result = "ERROR";
-        }
-
-        assertEquals(resultAux, result);
-    }
-
+   
     @Test(expected = java.lang.NumberFormatException.class)
     public void testPidoDatoNumericoInvalido3() {
         System.out.println("pidoDatoNumericoInvalido3");
