@@ -26,14 +26,14 @@ public class PanelHomeDeProfesional extends javax.swing.JFrame {
      * Creates new form Home
      */
     private Sistema sistema;
-    private  Profesional usuarioActual;
+    private Profesional usuarioActual;
     private JPanel panelActual;
     private final JPanel panelRegistroAlimento;
     private final JPanel panelRedactarConsulta;
     private final JPanel panelRealizarPlan;
     private final JPanel panelPerfilProfesional;
     private final JPanel buzon;
-    
+
     private JFrame ventana;
 
     public PanelHomeDeProfesional(Sistema unSistema, JFrame unaVentana,
@@ -52,9 +52,9 @@ public class PanelHomeDeProfesional extends javax.swing.JFrame {
             usuarioActual = this.sistema.getListaProfesionales().get(Integer.parseInt(persona));
             jLabel12.setText(getUsuarioActual().getNombreUsuario());
             this.labelMensajes.setText(labelMensajes.getText() + getUsuarioActual().getCasillaDeEntrada().size());
-           ImageIcon imageIcon = scaleImage(usuarioActual.getFotoPerfil(),200,200);
+            ImageIcon imageIcon = scaleImage(usuarioActual.getFotoPerfil(), 200, 200);
             etiquetaFoto.setIcon(imageIcon);
-            
+
         } catch (NumberFormatException e) {
             jLabel12.setText("Error al encontrar usuario");
             this.usuarioActual = null;
@@ -69,40 +69,23 @@ public class PanelHomeDeProfesional extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }
 
-    
-    
-     public final ImageIcon scaleImage(ImageIcon icon, int w, int h)
-    {
+    public final ImageIcon scaleImage(ImageIcon icon, int w, int h) {
         int nw = icon.getIconWidth();
         int nh = icon.getIconHeight();
 
-        if(icon.getIconWidth() > w)
-        {
-          nw = w;
-          nh = (nw * icon.getIconHeight()) / icon.getIconWidth();
+        if (icon.getIconWidth() > w) {
+            nw = w;
+            nh = (nw * icon.getIconHeight()) / icon.getIconWidth();
         }
 
-        if(nh > h)
-        {
-          nh = h;
-          nw = (icon.getIconWidth() * nh) / icon.getIconHeight();
+        if (nh > h) {
+            nh = h;
+            nw = (icon.getIconWidth() * nh) / icon.getIconHeight();
         }
 
         return new ImageIcon(icon.getImage().getScaledInstance(nw, nh, Image.SCALE_DEFAULT));
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     private Profesional getUsuarioActual() {
 
         return usuarioActual;
@@ -762,9 +745,9 @@ public class PanelHomeDeProfesional extends javax.swing.JFrame {
     }//GEN-LAST:event_button1ActionPerformed
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-     setPanelActual(buzon);
+        setPanelActual(buzon);
         jPanel9.add(this.getPanelActual(), new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 650, 540));
-        jPanel9.setPreferredSize(new Dimension(400, 400));   
+        jPanel9.setPreferredSize(new Dimension(400, 400));
     }//GEN-LAST:event_jLabel1MouseClicked
 
     /**

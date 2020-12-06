@@ -1,12 +1,10 @@
 package interfaz;
 
-
 import dominio.Profesional;
 import dominio.Sistema;
 import dominio.Usuario;
 import java.awt.Dimension;
 import java.util.ArrayList;
-
 
 public final class PanelSeleccionarPlanARealizar extends javax.swing.JPanel {
 
@@ -15,20 +13,19 @@ public final class PanelSeleccionarPlanARealizar extends javax.swing.JPanel {
     private final Profesional usuarioActivo;
 
     public PanelSeleccionarPlanARealizar(Sistema unSistema,
-            
             PanelHomeDeProfesional unaVentana, Profesional profesional) {
         initComponents();
-       
+
         sistema = unSistema;
         ventana = unaVentana;
-        usuarioActivo=profesional;
+        usuarioActivo = profesional;
         listaUsuarios.setListData(listaConPlanARealizar().toArray());
     }
 
-    
-    private Profesional getUsuarioActivo(){
+    private Profesional getUsuarioActivo() {
         return usuarioActivo;
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -71,22 +68,20 @@ public final class PanelSeleccionarPlanARealizar extends javax.swing.JPanel {
 
     private void btnRealizarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPlanActionPerformed
         if (listaUsuarios.getSelectedValue() != null) {
-            Usuario usuarioAModificar = sistema.getListaUsuarios().get(listaUsuarios.getSelectedIndex());
-            
-            PanelRealizarPlanAlimentacion nuevoPanel = new PanelRealizarPlanAlimentacion(sistema,ventana, usuarioAModificar);
-            
+            Usuario usuarioAModificar = listaConPlanARealizar().get(listaUsuarios.getSelectedIndex());
+            PanelRealizarPlanAlimentacion nuevoPanel = new PanelRealizarPlanAlimentacion(sistema, ventana, usuarioAModificar);
+
             ventana.setPanelActual(nuevoPanel);
-      
-      ventana.getPanelPrincipal().add(ventana.getPanelActual(), new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 650, 540));
-      ventana.setPreferredSize(new Dimension(400, 400));
-            
-          
+
+            ventana.getPanelPrincipal().add(ventana.getPanelActual(), new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 650, 540));
+            ventana.setPreferredSize(new Dimension(400, 400));
+
         }
 
     }//GEN-LAST:event_btnRealizarPlanActionPerformed
 
     ArrayList<Usuario> listaConPlanARealizar() {
-        ArrayList<Usuario> retorno = new ArrayList<Usuario>();
+        ArrayList<Usuario> retorno = new ArrayList();
         for (int i = 0; i < sistema.getListaUsuarios().size(); i++) {
             if (sistema.getListaUsuarios().get(i).isNecesitoPlan() && sistema.getListaUsuarios().get(i).getProfesionalAsignado().equals(getUsuarioActivo())) {
                 retorno.add(sistema.getListaUsuarios().get(i));

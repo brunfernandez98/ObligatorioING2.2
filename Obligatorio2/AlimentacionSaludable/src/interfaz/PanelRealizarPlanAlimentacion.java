@@ -156,6 +156,7 @@ public class PanelRealizarPlanAlimentacion extends javax.swing.JPanel {
 
     private void btnEnviarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarPlanActionPerformed
         usuarioAModificar.setPlan(nuevoPlan);
+        System.out.println(usuarioAModificar.getNombre());
       JOptionPane optionPane
                     = new JOptionPane("Plan registrado "
                             + "correctamente", JOptionPane.INFORMATION_MESSAGE);

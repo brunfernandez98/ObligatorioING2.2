@@ -31,14 +31,14 @@ public class Sistema implements Serializable {
     public Sistema(ArrayList<Alimento> listaAlimentos,
             ArrayList<Usuario> listaUsuarios,
             ArrayList<Profesional> listaProfesionales,
-            tipoUsuario usuarioActivo,HashMap<String,String> usuarioAdministrador) {
+            tipoUsuario usuarioActivo, HashMap<String, String> usuarioAdministrador) {
         this.listaAlimentos = listaAlimentos;
         this.listaUsuarios = listaUsuarios;
         this.listaProfesionales = listaProfesionales;
         this.usuarioActivo = usuarioActivo;
-        this.usuarioAdministrador= usuarioAdministrador;
+        this.usuarioAdministrador = usuarioAdministrador;
         this.listaTiposDeUsuario = inicializoListaTiposDeUsuario();
-        
+
     }
 
     public Sistema() {
@@ -46,26 +46,23 @@ public class Sistema implements Serializable {
         this.listaUsuarios = new ArrayList();
         this.listaProfesionales = new ArrayList();
         this.usuarioActivo = tipoUsuario.NoSeleccionado;
-        this.usuarioAdministrador= new HashMap<>();
-        
+        this.usuarioAdministrador = new HashMap<>();
+
         this.listaTiposDeUsuario = inicializoListaTiposDeUsuario();
-        usuarioAdministrador=new HashMap<>();
+        usuarioAdministrador = new HashMap<>();
         usuarioAdministrador.put("admin", "adminalimentacion");
-         
+
     }
     //Metodos de la clase sistema
 
-    
-       public HashMap<String,String> getListaUsuarioAdministador() {
+    public HashMap<String, String> getListaUsuarioAdministador() {
         return this.usuarioAdministrador;
     }
-    
-    public void setUsuarioAdministrador(String nombreUsuario,String password){
+
+    public void setUsuarioAdministrador(String nombreUsuario, String password) {
         this.usuarioAdministrador.put(nombreUsuario, password);
     }
-    
-    
-    
+
     public tipoUsuario[] getListaTiposDeUsuario() {
         tipoUsuario[] lista = listaTiposDeUsuario;
         return lista;
@@ -85,11 +82,6 @@ public class Sistema implements Serializable {
         this.listaAlimentos = listaAlimentos;
     }
 
-    
-    
-    
-    
-  
     public ArrayList<Usuario> getListaUsuarios() {
         return listaUsuarios;
     }
@@ -98,14 +90,11 @@ public class Sistema implements Serializable {
         this.listaUsuarios = listaUsuarios;
     }
 
-  
-    
     public ArrayList<Profesional> getListaProfesionales() {
         return listaProfesionales;
     }
 
-    public void setListaProfesionales(ArrayList<Profesional>
-                                      listaProfesionales) {
+    public void setListaProfesionales(ArrayList<Profesional> listaProfesionales) {
         this.listaProfesionales = listaProfesionales;
     }
 
@@ -131,44 +120,38 @@ public class Sistema implements Serializable {
     //CARGAR Y GUARDAR SISTEMA
     public void cargarSistema() {
         try {
-            ObjectInputStream in = new ObjectInputStream
-                                   (new FileInputStream("repositorio.ser"));
-            ArrayList<Alimento> listAlimentos = (ArrayList<Alimento>)
-                                                in.readObject();
+            ObjectInputStream in = new ObjectInputStream(new FileInputStream("repositorio.ser"));
+            ArrayList<Alimento> listAlimentos = (ArrayList<Alimento>) in.readObject();
             listaAlimentos = listAlimentos;
-            ArrayList<Usuario> listUsuarios = (ArrayList<Usuario>)
-                                              in.readObject();
+            ArrayList<Usuario> listUsuarios = (ArrayList<Usuario>) in.readObject();
             listaUsuarios = listUsuarios;
-            ArrayList<Profesional> listProfesionales = (ArrayList<Profesional>)
-                                                        in.readObject();
+            ArrayList<Profesional> listProfesionales = (ArrayList<Profesional>) in.readObject();
             listaProfesionales = listProfesionales;
-            
-              
+
             in.close();
         } catch (IOException | ClassNotFoundException ex) {
             listaAlimentos = new ArrayList<>();
             listaUsuarios = new ArrayList<>();
             listaProfesionales = new ArrayList<>();
-            usuarioAdministrador=new HashMap<>();
+            usuarioAdministrador = new HashMap<>();
             usuarioAdministrador.put("admin", "adminalimentacion");
         }
     }
 
     public void guardarSistema() {
         try {
-            ObjectOutputStream out = new ObjectOutputStream
-                                         (new FileOutputStream("repositorio.ser"));
+            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("repositorio.ser"));
             out.writeObject(listaAlimentos);
             out.writeObject(listaUsuarios);
             out.writeObject(listaProfesionales);
-            
+
             out.flush();
             out.close();
         } catch (IOException ex) {
         }
     }
 
-     public String pidoDatoNumerico(int dato, int min, int max) {
+    public String pidoDatoNumerico(int dato, int min, int max) {
         int datoAVerificar = 0;
         String severidad = "NO OK";
         try {
@@ -177,10 +160,9 @@ public class Sistema implements Serializable {
                 severidad = "OK";
             }
         } catch (NumberFormatException ex) {
-            severidad="ERROR";
+            severidad = "ERROR";
         }
         return severidad;
     }
-    
 
 }
