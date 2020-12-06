@@ -95,10 +95,7 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
         this.labelMensajes.setText(labelMensajes.getText() + usuarioActual.getCasillaDeEntrada().size());
        
         setLocationRelativeTo(null);
-        System.out.println(usuarioActual.getNombre());
-        for (int i = 0; i < usuarioActual.getPlan().getListaLunes().size(); i++) {
-            System.out.println(usuarioActual.getPlan().getListaLunes().get(i).getNombre()); 
-        }
+
     }
 
     public JPanel getPanelPrincipal() {
