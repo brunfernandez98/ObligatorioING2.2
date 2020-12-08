@@ -5,25 +5,23 @@ import dominio.Sistema;
 import dominio.Usuario;
 import java.awt.Dimension;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class PanelAgregarComidasADietaDiariaUsuario extends javax.swing.JPanel {
 
     private final Sistema sistema;
-    private final PanelHomeDeProfesional ventana;
+    private final PanelHomeDeUsuario ventana;
     private final Usuario persona;
-    private final JPanel panelRealizarPlanAlimentacion;
+    private PanelDietaDiariaUsuario panelRealizarPlanAlimentacion;
 
     public PanelAgregarComidasADietaDiariaUsuario(Sistema unSistema,
-            PanelHomeDeProfesional unaVentana, Usuario usuario, JPanel panelRealizarPlan) {
+            PanelHomeDeUsuario unaVentana, Usuario usuario, PanelDietaDiariaUsuario panelRealizarPlan) {
         initComponents();
         sistema = unSistema;
         ventana = unaVentana;
         persona = usuario;
-        panelRealizarPlanAlimentacion = panelRealizarPlan;
-
+     
+        listaComidasDiarias.setListData(sistema.getListaAlimentos().toArray());
     }
 
     @SuppressWarnings("unchecked")
@@ -44,7 +42,7 @@ public class PanelAgregarComidasADietaDiariaUsuario extends javax.swing.JPanel {
         jScrollPane1.setViewportView(listaComidasDiarias);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(120, 90, 370, 320);
+        jScrollPane1.setBounds(130, 90, 370, 320);
 
         etiquetaTitulo.setBackground(new java.awt.Color(102, 153, 255));
         etiquetaTitulo.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
@@ -65,7 +63,7 @@ public class PanelAgregarComidasADietaDiariaUsuario extends javax.swing.JPanel {
             }
         });
         add(btnAgregarComida);
-        btnAgregarComida.setBounds(210, 440, 180, 30);
+        btnAgregarComida.setBounds(230, 430, 180, 30);
 
         btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/volver.png"))); // NOI18N
         btnVolver.setToolTipText("");
@@ -85,9 +83,11 @@ public class PanelAgregarComidasADietaDiariaUsuario extends javax.swing.JPanel {
         persona.getHistorialDelDia().getComidasIngeridas().add(comidaSeleccionada);
         LocalDate diaActual = LocalDate.now();
         persona.setFechaUltimaAdicion(diaActual.toString());
+       
     }//GEN-LAST:event_btnAgregarComidaActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+        panelRealizarPlanAlimentacion = new PanelDietaDiariaUsuario(sistema,ventana,persona);
         ventana.setPanelActual(panelRealizarPlanAlimentacion);
         ventana.getPanelPrincipal().add(ventana.getPanelActual(), new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 650, 540));
         ventana.setPreferredSize(new Dimension(400, 400));

@@ -9,7 +9,11 @@ import dominio.Sistema;
 import dominio.Usuario;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Image;
+import java.util.Calendar;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -24,11 +28,38 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
     private Sistema sistema;
     private final JPanel panelConsulta;
     private final JPanel panelPlanAlimentacionUsuario;
+    private final JPanel panelPerfilUsuario;
+    private final JPanel panelComidaAdieta;
     private JFrame ventana;
     private JPanel panelActual;
     private Usuario usuarioActual;
     private final JPanel buzon;
 
+    
+    
+    public ImageIcon scaleImage(ImageIcon icon, int w, int h)
+    {
+        int nw = icon.getIconWidth();
+        int nh = icon.getIconHeight();
+
+        if(icon.getIconWidth() > w)
+        {
+          nw = w;
+          nh = (nw * icon.getIconHeight()) / icon.getIconWidth();
+        }
+
+        if(nh > h)
+        {
+          nh = h;
+          nw = (icon.getIconWidth() * nh) / icon.getIconHeight();
+        }
+
+        return new ImageIcon(icon.getImage().getScaledInstance(nw, nh, Image.SCALE_DEFAULT));
+    }
+    
+    
+    
+    
     public PanelHomeDeUsuario(Sistema unSistema, JFrame unaVentana, String persona) {
         initComponents();
         sistema = unSistema;
@@ -41,14 +72,55 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
         try {
             usuarioActual = this.sistema.getListaUsuarios().get(Integer.parseInt(persona));
             this.jLabel12.setText(usuarioActual.getNombreUsuario());
-        } catch (Exception e) {
+            ImageIcon imageIcon = scaleImage(usuarioActual.getFotoPerfil(),200,200);
+            etiquetaFoto.setIcon(imageIcon);
+        } catch (NumberFormatException e) {
             this.jLabel12.setText("Error al encontrar el usuario");
         }
+        if(usuarioActual.getProfesionalAsignado()!=null)
+        jLabel6.setText("Plan de Alimentacion asignado por : "+ usuarioActual.getProfesionalAsignado().getNombre()+" "
+                + usuarioActual.getProfesionalAsignado().getApellidos() );
+        else
+            jLabel6.setText("No tienes ningun plan de alimentacion:");
         panelConsulta = new PanelRedactarConsulta(sistema, usuarioActual);
+        panelComidaAdieta = new PanelDietaDiariaUsuario(sistema, this, usuarioActual);
+        panelPerfilUsuario = new PanelPerfilUsuarioDesdeUsuario(sistema, this, usuarioActual);
         panelPlanAlimentacionUsuario = new PanelPlanAlimentacionUsuario(sistema, ventana, usuarioActual);
         buzon = new PanelConsultaProfesional(sistema, ventana, usuarioActual);
         this.labelMensajes.setText(labelMensajes.getText() + usuarioActual.getCasillaDeEntrada().size());
         setLocationRelativeTo(null);
+    }
+
+    public JPanel getPanelPrincipal() {
+        return this.jPanel9;
+    }
+
+    public JPanel getPanelHome() {
+        return this.panelHome;
+    }
+
+    void actualizarLista() {
+        if (listaDiasDeLaSemana.getSelectedItem().equals("lunes")) {
+            listaComidasPlan.setListData(usuarioActual.getPlan().getListaLunes().toArray());
+        }
+        if (listaDiasDeLaSemana.getSelectedItem().equals("martes")) {
+            listaComidasPlan.setListData(usuarioActual.getPlan().getListaMartes().toArray());
+        }
+        if (listaDiasDeLaSemana.getSelectedItem().equals("miercoles")) {
+            listaComidasPlan.setListData(usuarioActual.getPlan().getListaMiercoles().toArray());
+        }
+        if (listaDiasDeLaSemana.getSelectedItem().equals("jueves")) {
+            listaComidasPlan.setListData(usuarioActual.getPlan().getListaJueves().toArray());
+        }
+        if (listaDiasDeLaSemana.getSelectedItem().equals("viernes")) {
+            listaComidasPlan.setListData(usuarioActual.getPlan().getListaViernes().toArray());
+        }
+        if (listaDiasDeLaSemana.getSelectedItem().equals("sabado")) {
+            listaComidasPlan.setListData(usuarioActual.getPlan().getListaSabado().toArray());
+        }
+        if (listaDiasDeLaSemana.getSelectedItem().equals("domingo")) {
+            listaComidasPlan.setListData(usuarioActual.getPlan().getListaDomingo().toArray());
+        }
     }
 
     /**
@@ -78,30 +150,28 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
         ind_6 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jProgressBar1 = new javax.swing.JProgressBar();
         jLabel5 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         btn_exit = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        etiquetaFoto = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         labelMensajes = new javax.swing.JLabel();
         button1 = new java.awt.Button();
-        jLabel13 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         panelHome = new javax.swing.JPanel();
-        jPanel7 = new javax.swing.JPanel();
-        jLabel14 = new javax.swing.JLabel();
+        btnHistorialDeComidas = new javax.swing.JButton();
+        listaDiasDeLaSemana = new javax.swing.JComboBox<>();
+        etiquetaComidasDelDia = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        listaComidasPlan = new javax.swing.JList();
+        jLabel6 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setUndecorated(true);
@@ -145,7 +215,7 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
             .addGroup(btn_1Layout.createSequentialGroup()
                 .addComponent(ind_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
                 .addContainerGap())
         );
         btn_1Layout.setVerticalGroup(
@@ -234,7 +304,7 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Usuario");
+        jLabel10.setText("Comida en la Dieta");
 
         javax.swing.GroupLayout btn_3Layout = new javax.swing.GroupLayout(btn_3);
         btn_3.setLayout(btn_3Layout);
@@ -243,7 +313,7 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
             .addGroup(btn_3Layout.createSequentialGroup()
                 .addComponent(ind_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
                 .addContainerGap())
         );
         btn_3Layout.setVerticalGroup(
@@ -291,7 +361,7 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
             .addGroup(btn_4Layout.createSequentialGroup()
                 .addComponent(ind_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
                 .addContainerGap())
         );
         btn_4Layout.setVerticalGroup(
@@ -374,38 +444,15 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
             }
         });
 
-        jTextField1.setBackground(new java.awt.Color(123, 156, 225));
-        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField1.setBorder(null);
-        jTextField1.setCaretColor(new java.awt.Color(255, 255, 255));
-        jTextField1.setPreferredSize(new java.awt.Dimension(2, 20));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icons8_Search_18px.png"))); // NOI18N
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(747, Short.MAX_VALUE)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel7)
-                .addGap(34, 34, 34))
+            .addGap(0, 950, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(19, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+            .addGap(0, 50, Short.MAX_VALUE)
         );
 
         jPanel9.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 950, 50));
@@ -418,10 +465,13 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(84, 127, 206));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icons8_Secured_Letter_25px_2.png"))); // NOI18N
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icons8_Contacts_25px.png"))); // NOI18N
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icons8_Calendar_25px.png"))); // NOI18N
 
         jProgressBar1.setBackground(new java.awt.Color(84, 127, 206));
         jProgressBar1.setForeground(new java.awt.Color(0, 204, 204));
@@ -449,13 +499,11 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jLabel3)
-                        .addGap(31, 31, 31)
-                        .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel4)
-                        .addGap(31, 31, 31)
+                        .addComponent(jLabel1)
+                        .addGap(40, 40, 40)
                         .addComponent(jLabel15)
-                        .addGap(8, 8, 8))
+                        .addGap(36, 36, 36))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -467,7 +515,6 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -494,13 +541,13 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
         });
         jPanel4.add(btn_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 24, -1, 46));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/profesional.png"))); // NOI18N
-        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 130, 90));
+        etiquetaFoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/profesional.png"))); // NOI18N
+        jPanel4.add(etiquetaFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 130, 90));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Amos");
-        jPanel4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, -1, 30));
+        jPanel4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, -1, 30));
 
         labelMensajes.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         labelMensajes.setForeground(new java.awt.Color(255, 255, 255));
@@ -516,10 +563,6 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
             }
         });
 
-        jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("May 2018");
-
         jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("Friday 23 Feb ");
@@ -532,10 +575,9 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel13))
+                        .addGap(99, 99, 99))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(72, 72, 72)
                         .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -550,9 +592,7 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE)
-                    .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE))
+                .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE)
                 .addGap(38, 38, 38)
                 .addComponent(labelMensajes, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44)
@@ -564,73 +604,73 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
 
         panelHome.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel7.setBackground(new java.awt.Color(242, 247, 247));
-
-        jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel14.setText("Launch dates for the items listed ");
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jLabel14)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE)
-                .addGap(113, 113, 113))
-        );
-
-        jScrollPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-
-        jTable1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"12/1/2018", "Expresso POS", "Kenya", null},
-                {"12/1/2018", "ROM Gen", "US", null},
-                {"12/1/2018", "Text Ed", "UK", null},
-                {"12/1/2018", "Mola Con", "China", null}
-            },
-            new String [] {
-                "Date", "Item", "Location", "Completed"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
+        btnHistorialDeComidas.setBackground(new java.awt.Color(71, 120, 197));
+        btnHistorialDeComidas.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnHistorialDeComidas.setForeground(new java.awt.Color(255, 255, 255));
+        btnHistorialDeComidas.setText("Historial de Comidas");
+        btnHistorialDeComidas.setContentAreaFilled(false);
+        btnHistorialDeComidas.setOpaque(true);
+        btnHistorialDeComidas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHistorialDeComidasActionPerformed(evt);
             }
         });
-        jTable1.setGridColor(new java.awt.Color(255, 255, 255));
-        jTable1.setRowHeight(22);
-        jScrollPane1.setViewportView(jTable1);
+
+        listaDiasDeLaSemana.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        listaDiasDeLaSemana.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo" }));
+        listaDiasDeLaSemana.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                listaDiasDeLaSemanaItemStateChanged(evt);
+            }
+        });
+        listaDiasDeLaSemana.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listaDiasDeLaSemanaActionPerformed(evt);
+            }
+        });
+
+        etiquetaComidasDelDia.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        etiquetaComidasDelDia.setText("Comidas del dia:");
+
+        listaComidasPlan.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jScrollPane1.setViewportView(listaComidasPlan);
+
+        jLabel6.setBackground(new java.awt.Color(51, 51, 255));
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel6.setText("Plan de Alimentacion:");
 
         javax.swing.GroupLayout panelHomeLayout = new javax.swing.GroupLayout(panelHome);
         panelHome.setLayout(panelHomeLayout);
         panelHomeLayout.setHorizontalGroup(
             panelHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(panelHomeLayout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 613, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(20, 20, 20)
+                .addGroup(panelHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 576, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panelHomeLayout.createSequentialGroup()
+                        .addComponent(etiquetaComidasDelDia, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(panelHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(panelHomeLayout.createSequentialGroup()
+                                .addComponent(listaDiasDeLaSemana, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnHistorialDeComidas))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
         panelHomeLayout.setVerticalGroup(
             panelHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelHomeLayout.createSequentialGroup()
-                .addGap(75, 75, 75)
-                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelHomeLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(panelHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(etiquetaComidasDelDia)
+                    .addComponent(listaDiasDeLaSemana, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnHistorialDeComidas))
+                .addGap(33, 33, 33)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36))
         );
 
         jPanel9.add(panelHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 650, 540));
@@ -651,6 +691,9 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
         setColor(btn_3);
         ind_3.setOpaque(true);
         resetColor(new JPanel[]{btn_2, btn_1, btn_4, btn_6}, new JPanel[]{ind_2, ind_1, ind_4, ind_6});
+        setPanelActual(panelComidaAdieta);
+        jPanel9.add(this.getPanelActual(), new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 650, 540));
+        jPanel9.setPreferredSize(new Dimension(400, 400));
     }//GEN-LAST:event_btn_3MousePressed
 
     private void btn_4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_4MousePressed
@@ -658,6 +701,9 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
         setColor(btn_4);
         ind_4.setOpaque(true);
         resetColor(new JPanel[]{btn_2, btn_3, btn_1, btn_6}, new JPanel[]{ind_2, ind_3, ind_1, ind_6});
+        setPanelActual(panelPerfilUsuario);
+        jPanel9.add(this.getPanelActual(), new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 650, 540));
+        jPanel9.setPreferredSize(new Dimension(400, 400));
     }//GEN-LAST:event_btn_4MousePressed
 
     private void btn_2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_2MouseReleased
@@ -687,10 +733,6 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
         sistema.guardarSistema();
         System.exit(0);
     }//GEN-LAST:event_btn_exitMousePressed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void btn_exitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_exitMouseClicked
         // TODO add your handling code here:
@@ -735,7 +777,38 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
         jPanel9.setPreferredSize(new Dimension(400, 400));
     }//GEN-LAST:event_button1ActionPerformed
 
-    private void setPanelActual(JPanel unPanelActual) {
+    private void btnHistorialDeComidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistorialDeComidasActionPerformed
+
+        PanelHistorialDeComidasUsuario nuevoPanel = new PanelHistorialDeComidasUsuario(sistema, this, usuarioActual);
+        setPanelActual(nuevoPanel);
+        jPanel9.add(this.getPanelActual(), new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 650, 540));
+        jPanel9.setPreferredSize(new Dimension(400, 400));
+
+    }//GEN-LAST:event_btnHistorialDeComidasActionPerformed
+
+    private void listaDiasDeLaSemanaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_listaDiasDeLaSemanaItemStateChanged
+        if (usuarioActual.getPlan() != null) {
+            actualizarLista();
+        }
+    }//GEN-LAST:event_listaDiasDeLaSemanaItemStateChanged
+
+    private void listaDiasDeLaSemanaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaDiasDeLaSemanaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_listaDiasDeLaSemanaActionPerformed
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+      setPanelActual(buzon);
+        jPanel9.add(this.getPanelActual(), new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 650, 540));
+        jPanel9.setPreferredSize(new Dimension(400, 400));
+    }//GEN-LAST:event_jLabel1MouseClicked
+    
+    
+    
+    
+    
+    
+    
+    public void setPanelActual(JPanel unPanelActual) {
         this.getPanelActual().hide();
         this.panelActual = unPanelActual;
         this.getPanelActual().show();
@@ -754,12 +827,11 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
     }
 
     private void resetColor(JPanel[] pane, JPanel[] indicators) {
-        for (int i = 0; i < pane.length; i++) {
-            pane[i].setBackground(new Color(23, 35, 51));
-
+        for (JPanel pane1 : pane) {
+            pane1.setBackground(new Color(23, 35, 51));
         }
-        for (int i = 0; i < indicators.length; i++) {
-            indicators[i].setOpaque(false);
+        for (JPanel indicator : indicators) {
+            indicator.setOpaque(false);
         }
 
     }
@@ -773,6 +845,7 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnHistorialDeComidas;
     private javax.swing.JPanel btn_1;
     private javax.swing.JPanel btn_2;
     private javax.swing.JPanel btn_3;
@@ -780,6 +853,8 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
     private javax.swing.JPanel btn_6;
     private javax.swing.JLabel btn_exit;
     private java.awt.Button button1;
+    private javax.swing.JLabel etiquetaComidasDelDia;
+    private javax.swing.JLabel etiquetaFoto;
     private javax.swing.JPanel ind_1;
     private javax.swing.JPanel ind_2;
     private javax.swing.JPanel ind_3;
@@ -789,30 +864,25 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel labelMensajes;
+    private javax.swing.JList listaComidasPlan;
+    private javax.swing.JComboBox<String> listaDiasDeLaSemana;
     private javax.swing.JPanel panelHome;
     private javax.swing.JPanel side_pane;
     // End of variables declaration//GEN-END:variables

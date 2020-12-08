@@ -11,9 +11,9 @@ import javax.swing.JOptionPane;
 public class PanelRegistroAlimento extends javax.swing.JPanel {
 
     //Atributos
-    private Sistema sistema;
-    private Alimento alimento;
-    private JFrame ventana;
+    private final Sistema sistema;
+    private  Alimento alimento;
+    private final JFrame ventana;
 
     //Cosntructor
     public PanelRegistroAlimento(Sistema unSistema, JFrame unaVentana) {
@@ -267,8 +267,9 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
                 && !sistema.getListaAlimentos().contains(comparo);
           
         if (nombre) {
-            alimento.setNombre(cajaNombreAlim.getText());
+            alimento.setNombre(cajaNombreAlim.getText().trim());
             alimento.setTipo(alimento.getListaEnumTipoAlimento()[listaTiposAlimentos.getSelectedIndex()]);
+             sistema.getListaAlimentos().add(alimento);
             JOptionPane optionPane
                     = new JOptionPane("Alimento registrado "
                             + "correctamente", JOptionPane.INFORMATION_MESSAGE);
@@ -284,7 +285,7 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
             dialog.setAlwaysOnTop(true);
             dialog.setVisible(true);
         }
-       
+        alimento = new Alimento();
 
     }//GEN-LAST:event_btnAceptarRegAlimActionPerformed
 

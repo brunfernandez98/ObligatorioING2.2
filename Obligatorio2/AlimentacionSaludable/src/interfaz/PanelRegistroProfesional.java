@@ -187,7 +187,7 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
             }
         });
         panelRegProf.add(fechaNacimiento);
-        fechaNacimiento.setBounds(370, 310, 160, 29);
+        fechaNacimiento.setBounds(370, 310, 160, 20);
 
         etiquetaErrorFechaNacimiento.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         panelRegProf.add(etiquetaErrorFechaNacimiento);
@@ -199,18 +199,18 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
             }
         });
         panelRegProf.add(fechaGraduacion);
-        fechaGraduacion.setBounds(370, 390, 160, 29);
+        fechaGraduacion.setBounds(370, 390, 160, 20);
 
         etiquetaErrorFechaGraduacion.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         panelRegProf.add(etiquetaErrorFechaGraduacion);
         etiquetaErrorFechaGraduacion.setBounds(540, 390, 160, 20);
 
-        fotoPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/predeterminadaUsuario.jpg"))); // NOI18N
+        fotoPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/profesional.png"))); // NOI18N
         fotoPerfil.setMaximumSize(new java.awt.Dimension(210, 240));
         fotoPerfil.setMinimumSize(new java.awt.Dimension(210, 240));
         fotoPerfil.setPreferredSize(new java.awt.Dimension(210, 240));
         panelRegProf.add(fotoPerfil);
-        fotoPerfil.setBounds(70, 170, 110, 110);
+        fotoPerfil.setBounds(30, 170, 180, 110);
 
         btnCambiarFoto.setBackground(new java.awt.Color(102, 153, 255));
         btnCambiarFoto.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -224,7 +224,7 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
             }
         });
         panelRegProf.add(btnCambiarFoto);
-        btnCambiarFoto.setBounds(60, 300, 120, 30);
+        btnCambiarFoto.setBounds(50, 300, 120, 30);
 
         etiquetaTitulo.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         etiquetaTitulo.setForeground(new java.awt.Color(51, 153, 255));
@@ -313,7 +313,7 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
 
     private void btnCambiarFotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarFotoActionPerformed
         JFileChooser fileChooser = new JFileChooser();
-        FileNameExtensionFilter file = new FileNameExtensionFilter("Archivo imagen", "jpg");
+         FileNameExtensionFilter file = new FileNameExtensionFilter("Archivo imagen", "jpg","png");
         fileChooser.setFileFilter(file);
         int imagen = fileChooser.showOpenDialog(this);
         if (imagen == JFileChooser.APPROVE_OPTION) {

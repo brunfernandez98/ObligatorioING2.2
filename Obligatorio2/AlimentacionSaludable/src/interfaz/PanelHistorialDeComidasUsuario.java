@@ -3,18 +3,22 @@ package interfaz;
 import dominio.ComidaPorDia;
 import dominio.Sistema;
 import dominio.Usuario;
-import javax.swing.JFrame;
+import java.awt.Dimension;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
+
 
 public class PanelHistorialDeComidasUsuario extends javax.swing.JPanel {
 
     //Atributos
     private final Sistema sistema;
-    private final JFrame ventana;
+    private final PanelHomeDeUsuario ventana;
+  
     private final Usuario usuarioActual;
 
     //Constructor
     public PanelHistorialDeComidasUsuario(Sistema unSistema,
-            JFrame unaVentana, Usuario usuario) {
+            PanelHomeDeUsuario unaVentana, Usuario usuario) {
         initComponents();
         sistema = unSistema;
         ventana = unaVentana;
@@ -71,25 +75,38 @@ public class PanelHistorialDeComidasUsuario extends javax.swing.JPanel {
             }
         });
         add(btnVolver);
-        btnVolver.setBounds(20, 0, 90, 60);
+        btnVolver.setBounds(30, 30, 90, 40);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVerHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerHistorialActionPerformed
+
+
         ComidaPorDia comidaSeleccionada = (ComidaPorDia) listaHistorialDeComidas.getSelectedValue();
         if (comidaSeleccionada != null) {
-            ventana.remove(this);
-            PanelVerHistorialUsuario nuevo = new PanelVerHistorialUsuario(sistema, ventana, comidaSeleccionada);
             
+            PanelVerHistorialUsuario nuevo = new PanelVerHistorialUsuario(sistema, ventana, comidaSeleccionada,this);
+            ventana.setPanelActual(nuevo);
+       ventana.getPanelPrincipal().add(ventana.getPanelActual(), new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 650, 540));
+       ventana.setPreferredSize(new Dimension(400, 400));
            
+        }else if(usuarioActual.getHistorialComidas().isEmpty()){
+            JOptionPane optionPane = new JOptionPane("Historial de comida esta vacio", JOptionPane.WARNING_MESSAGE);
+            JDialog dialog = optionPane.createDialog("Historial de comidas");
+            dialog.setAlwaysOnTop(true);
+            dialog.setVisible(true);
+        }else{
+             JOptionPane optionPane = new JOptionPane("No selecciono ningun historial de comida", JOptionPane.WARNING_MESSAGE);
+            JDialog dialog = optionPane.createDialog("Historial de comidas");
+            dialog.setAlwaysOnTop(true);
+            dialog.setVisible(true);
         }
     }//GEN-LAST:event_btnVerHistorialActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-        ventana.remove(this);
-        PanelHomeDeUsuario nuevo = new PanelHomeDeUsuario(sistema, ventana,usuarioActual.getNombreUsuario());
+       ventana.setPanelActual(ventana.getPanelHome());
+       ventana.getPanelPrincipal().add(ventana.getPanelActual(), new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 650, 540));
+       ventana.setPreferredSize(new Dimension(400, 400));
         
-        ventana.add(nuevo);
-        ventana.pack();
     }//GEN-LAST:event_btnVolverActionPerformed
 
 

@@ -6,14 +6,11 @@ import handlers.ValidacionDeDatos;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import javax.swing.ComboBoxModel;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
@@ -487,7 +484,7 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
 
     private void btnCambiarFoto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarFoto1ActionPerformed
         JFileChooser fileChooser = new JFileChooser();
-        FileNameExtensionFilter file = new FileNameExtensionFilter("Archivo imagen", "jpg");
+         FileNameExtensionFilter file = new FileNameExtensionFilter("Archivo imagen", "jpg","png");
         fileChooser.setFileFilter(file);
         int imagen = fileChooser.showOpenDialog(this);
         if (imagen == JFileChooser.APPROVE_OPTION) {
