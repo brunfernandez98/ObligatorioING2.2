@@ -4,39 +4,39 @@ import dominio.Alimento;
 import dominio.ComidaPorDia;
 import dominio.Sistema;
 import dominio.Usuario;
+import java.awt.Dimension;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
+
 import javax.swing.JFrame;
 
 public class PanelDietaDiariaUsuario extends javax.swing.JPanel {
 
     //Atrubutos
-    private Sistema sistema;
-    private JFrame ventana;
-
+    private final Sistema sistema;
+    private final PanelHomeDeUsuario ventana;
+    private final Usuario usuarioActual;
     private boolean deboActualizar;
 
     //Constructor
     public PanelDietaDiariaUsuario(Sistema unSistema,
-<span class="nc" id="L22">            JFrame unaVentana) {</span>
+<span class="nc" id="L22">            PanelHomeDeUsuario unaVentana, Usuario usuario) {</span>
 <span class="nc" id="L23">        initComponents();</span>
 <span class="nc" id="L24">        sistema = unSistema;</span>
 <span class="nc" id="L25">        ventana = unaVentana;</span>
-//        interfaz = unaInterfaz;
-//        LocalDate diaActual = LocalDate.now();
-//        interfaz.getUsuarioActual().setFechaUltimaAdicion(diaActual.toString());
-//        if (interfaz.getUsuarioActual().getHistorialDelDia().getFecha() == null) {
-//            interfaz.getUsuarioActual().getHistorialDelDia().setFecha(diaActual.toString());
-//        } else {
-//            if (!interfaz.getUsuarioActual().getHistorialDelDia().getFecha().equals(interfaz.getUsuarioActual().getFechaUltimaAdicion()) &amp;&amp; !interfaz.getUsuarioActual().getHistorialDelDia().getComidasIngeridas().isEmpty()) {
-//                interfaz.getUsuarioActual().getHistorialComidas().add(interfaz.getUsuarioActual().getHistorialDelDia());
-//                ComidaPorDia nuevoHistorial = new ComidaPorDia();
-//                nuevoHistorial.setFecha(diaActual.toString());
-//                interfaz.getUsuarioActual().setHistorialDelDia(nuevoHistorial);
-//            }
-//        }
-//        listaComidasDiarias.setListData(interfaz.getUsuarioActual().getHistorialDelDia().getComidasIngeridas().toArray());
+<span class="nc" id="L26">        usuarioActual = usuario;</span>
+<span class="nc" id="L27">        LocalDate diaActual = LocalDate.now();</span>
+<span class="nc" id="L28">        usuarioActual.setFechaUltimaAdicion(diaActual.toString());</span>
+<span class="nc bnc" id="L29" title="All 2 branches missed.">        if (usuarioActual.getHistorialDelDia().getFecha() == null) {</span>
+<span class="nc" id="L30">            usuarioActual.getHistorialDelDia().setFecha(diaActual.toString());</span>
+        } else {
+<span class="nc bnc" id="L32" title="All 4 branches missed.">            if (!usuarioActual.getHistorialDelDia().getFecha().equals(usuarioActual.getFechaUltimaAdicion()) &amp;&amp; !usuarioActual.getHistorialDelDia().getComidasIngeridas().isEmpty()) {</span>
+<span class="nc" id="L33">                usuarioActual.getHistorialComidas().add(usuarioActual.getHistorialDelDia());</span>
+<span class="nc" id="L34">                ComidaPorDia nuevoHistorial = new ComidaPorDia();</span>
+<span class="nc" id="L35">                nuevoHistorial.setFecha(diaActual.toString());</span>
+<span class="nc" id="L36">                usuarioActual.setHistorialDelDia(nuevoHistorial);</span>
+            }
+        }
+<span class="nc" id="L39">        listaComidasDiarias.setListData(usuarioActual.getHistorialDelDia().getComidasIngeridas().toArray());</span>
 <span class="nc" id="L40">    }</span>
 
     @SuppressWarnings(&quot;unchecked&quot;)
@@ -52,79 +52,85 @@ public class PanelDietaDiariaUsuario extends javax.swing.JPanel {
 
 <span class="nc" id="L53">        panelDietaDiaria.setBackground(new java.awt.Color(255, 255, 255));</span>
 <span class="nc" id="L54">        panelDietaDiaria.setPreferredSize(new java.awt.Dimension(650, 540));</span>
-<span class="nc" id="L55">        panelDietaDiaria.setLayout(null);</span>
-
-<span class="nc" id="L57">        listaComidasDiarias.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
-<span class="nc" id="L58">        lstComDiarias.setViewportView(listaComidasDiarias);</span>
-
-<span class="nc" id="L60">        panelDietaDiaria.add(lstComDiarias);</span>
-<span class="nc" id="L61">        lstComDiarias.setBounds(130, 170, 370, 310);</span>
-
-<span class="nc" id="L63">        etiquetaTituloAlim.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 36)); // NOI18N</span>
-<span class="nc" id="L64">        etiquetaTituloAlim.setForeground(new java.awt.Color(102, 153, 255));</span>
-<span class="nc" id="L65">        etiquetaTituloAlim.setText(&quot;Comidas Ingeridas Diarias&quot;);</span>
-<span class="nc" id="L66">        panelDietaDiaria.add(etiquetaTituloAlim);</span>
-<span class="nc" id="L67">        etiquetaTituloAlim.setBounds(100, 10, 450, 44);</span>
-
-<span class="nc" id="L69">        etiquetaBtnAgregarComidas.setBackground(new java.awt.Color(102, 153, 255));</span>
-<span class="nc" id="L70">        etiquetaBtnAgregarComidas.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 18)); // NOI18N</span>
-<span class="nc" id="L71">        etiquetaBtnAgregarComidas.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L72">        etiquetaBtnAgregarComidas.setText(&quot;Agregar Comida&quot;);</span>
-<span class="nc" id="L73">        etiquetaBtnAgregarComidas.setContentAreaFilled(false);</span>
-<span class="nc" id="L74">        etiquetaBtnAgregarComidas.setOpaque(true);</span>
-<span class="nc" id="L75">        etiquetaBtnAgregarComidas.addActionListener(new java.awt.event.ActionListener() {</span>
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L77">                etiquetaBtnAgregarComidasActionPerformed(evt);</span>
-<span class="nc" id="L78">            }</span>
+<span class="nc" id="L55">        panelDietaDiaria.addFocusListener(new java.awt.event.FocusAdapter() {</span>
+            public void focusGained(java.awt.event.FocusEvent evt) {
+<span class="nc" id="L57">                panelDietaDiariaFocusGained(evt);</span>
+<span class="nc" id="L58">            }</span>
         });
-<span class="nc" id="L80">        panelDietaDiaria.add(etiquetaBtnAgregarComidas);</span>
-<span class="nc" id="L81">        etiquetaBtnAgregarComidas.setBounds(350, 90, 210, 38);</span>
+<span class="nc" id="L60">        panelDietaDiaria.setLayout(null);</span>
 
-<span class="nc" id="L83">        etiquetaBtnQuitarComida.setBackground(new java.awt.Color(102, 153, 255));</span>
-<span class="nc" id="L84">        etiquetaBtnQuitarComida.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 18)); // NOI18N</span>
-<span class="nc" id="L85">        etiquetaBtnQuitarComida.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L86">        etiquetaBtnQuitarComida.setText(&quot;Quitar Comida&quot;);</span>
-<span class="nc" id="L87">        etiquetaBtnQuitarComida.setContentAreaFilled(false);</span>
-<span class="nc" id="L88">        etiquetaBtnQuitarComida.setOpaque(true);</span>
-<span class="nc" id="L89">        etiquetaBtnQuitarComida.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L62">        listaComidasDiarias.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L63">        lstComDiarias.setViewportView(listaComidasDiarias);</span>
+
+<span class="nc" id="L65">        panelDietaDiaria.add(lstComDiarias);</span>
+<span class="nc" id="L66">        lstComDiarias.setBounds(130, 170, 370, 310);</span>
+
+<span class="nc" id="L68">        etiquetaTituloAlim.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 36)); // NOI18N</span>
+<span class="nc" id="L69">        etiquetaTituloAlim.setForeground(new java.awt.Color(102, 153, 255));</span>
+<span class="nc" id="L70">        etiquetaTituloAlim.setText(&quot;Comidas Ingeridas Diarias&quot;);</span>
+<span class="nc" id="L71">        panelDietaDiaria.add(etiquetaTituloAlim);</span>
+<span class="nc" id="L72">        etiquetaTituloAlim.setBounds(100, 10, 450, 44);</span>
+
+<span class="nc" id="L74">        etiquetaBtnAgregarComidas.setBackground(new java.awt.Color(102, 153, 255));</span>
+<span class="nc" id="L75">        etiquetaBtnAgregarComidas.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 16)); // NOI18N</span>
+<span class="nc" id="L76">        etiquetaBtnAgregarComidas.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L77">        etiquetaBtnAgregarComidas.setText(&quot;Agregar Comida&quot;);</span>
+<span class="nc" id="L78">        etiquetaBtnAgregarComidas.setContentAreaFilled(false);</span>
+<span class="nc" id="L79">        etiquetaBtnAgregarComidas.setOpaque(true);</span>
+<span class="nc" id="L80">        etiquetaBtnAgregarComidas.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L91">                etiquetaBtnQuitarComidaActionPerformed(evt);</span>
-<span class="nc" id="L92">            }</span>
+<span class="nc" id="L82">                etiquetaBtnAgregarComidasActionPerformed(evt);</span>
+<span class="nc" id="L83">            }</span>
         });
-<span class="nc" id="L94">        panelDietaDiaria.add(etiquetaBtnQuitarComida);</span>
-<span class="nc" id="L95">        etiquetaBtnQuitarComida.setBounds(40, 90, 190, 38);</span>
+<span class="nc" id="L85">        panelDietaDiaria.add(etiquetaBtnAgregarComidas);</span>
+<span class="nc" id="L86">        etiquetaBtnAgregarComidas.setBounds(350, 90, 210, 30);</span>
 
-<span class="nc" id="L97">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);</span>
-<span class="nc" id="L98">        this.setLayout(layout);</span>
-<span class="nc" id="L99">        layout.setHorizontalGroup(</span>
-<span class="nc" id="L100">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L101">            .addComponent(panelDietaDiaria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L88">        etiquetaBtnQuitarComida.setBackground(new java.awt.Color(102, 153, 255));</span>
+<span class="nc" id="L89">        etiquetaBtnQuitarComida.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 16)); // NOI18N</span>
+<span class="nc" id="L90">        etiquetaBtnQuitarComida.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L91">        etiquetaBtnQuitarComida.setText(&quot;Quitar Comida&quot;);</span>
+<span class="nc" id="L92">        etiquetaBtnQuitarComida.setContentAreaFilled(false);</span>
+<span class="nc" id="L93">        etiquetaBtnQuitarComida.setOpaque(true);</span>
+<span class="nc" id="L94">        etiquetaBtnQuitarComida.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L96">                etiquetaBtnQuitarComidaActionPerformed(evt);</span>
+<span class="nc" id="L97">            }</span>
+        });
+<span class="nc" id="L99">        panelDietaDiaria.add(etiquetaBtnQuitarComida);</span>
+<span class="nc" id="L100">        etiquetaBtnQuitarComida.setBounds(40, 90, 190, 30);</span>
+
+<span class="nc" id="L102">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);</span>
+<span class="nc" id="L103">        this.setLayout(layout);</span>
+<span class="nc" id="L104">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L105">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L106">            .addComponent(panelDietaDiaria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
         );
-<span class="nc" id="L103">        layout.setVerticalGroup(</span>
-<span class="nc" id="L104">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L105">            .addComponent(panelDietaDiaria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L108">        layout.setVerticalGroup(</span>
+<span class="nc" id="L109">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L110">            .addComponent(panelDietaDiaria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
         );
-<span class="nc" id="L107">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+<span class="nc" id="L112">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
     private void etiquetaBtnQuitarComidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_etiquetaBtnQuitarComidaActionPerformed
-//        if (listaComidasDiarias.getSelectedValue() != null) {
-//            Alimento alimentoABorrar = (Alimento) listaComidasDiarias.getSelectedValue();
-//            int diaActual = interfaz.getUsuarioActual().getHistorialComidas().size();
-//            interfaz.getUsuarioActual().getHistorialDelDia().getComidasIngeridas().remove(alimentoABorrar);
-//            listaComidasDiarias.setListData(interfaz.getUsuarioActual().getHistorialDelDia().getComidasIngeridas().toArray());
-//        }
-<span class="nc" id="L116">    }//GEN-LAST:event_etiquetaBtnQuitarComidaActionPerformed</span>
+<span class="nc bnc" id="L115" title="All 2 branches missed.">      if (listaComidasDiarias.getSelectedValue() != null) {</span>
+<span class="nc" id="L116">           Alimento alimentoABorrar = (Alimento) listaComidasDiarias.getSelectedValue();</span>
+<span class="nc" id="L117">           int diaActual = usuarioActual.getHistorialComidas().size();</span>
+<span class="nc" id="L118">       usuarioActual.getHistorialDelDia().getComidasIngeridas().remove(alimentoABorrar);</span>
+<span class="nc" id="L119">        listaComidasDiarias.setListData(usuarioActual.getHistorialDelDia().getComidasIngeridas().toArray());</span>
+       }
+<span class="nc" id="L121">    }//GEN-LAST:event_etiquetaBtnQuitarComidaActionPerformed</span>
 
     private void etiquetaBtnAgregarComidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_etiquetaBtnAgregarComidasActionPerformed
-        
-        
-        
-        
-//        PanelAgregarComidasADietaDiariaUsuario nuevo = new PanelAgregarComidasADietaDiariaUsuario(sistema, ventana, this);
-//        interfaz.setActual(nuevo);
-//        ventana.add(nuevo);
-//        ventana.pack();
-<span class="nc" id="L127">    }//GEN-LAST:event_etiquetaBtnAgregarComidasActionPerformed</span>
+
+<span class="nc" id="L125">    PanelAgregarComidasADietaDiariaUsuario nuevo = new PanelAgregarComidasADietaDiariaUsuario(sistema,ventana,usuarioActual,this);</span>
+<span class="nc" id="L126">       ventana.setPanelActual(nuevo);</span>
+<span class="nc" id="L127">       ventana.getPanelPrincipal().add(ventana.getPanelActual(), new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 650, 540));</span>
+<span class="nc" id="L128">       ventana.setPreferredSize(new Dimension(400, 400));</span>
+<span class="nc" id="L129">    }//GEN-LAST:event_etiquetaBtnAgregarComidasActionPerformed</span>
+
+    private void panelDietaDiariaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_panelDietaDiariaFocusGained
+      
+<span class="nc" id="L133">    }//GEN-LAST:event_panelDietaDiariaFocusGained</span>
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

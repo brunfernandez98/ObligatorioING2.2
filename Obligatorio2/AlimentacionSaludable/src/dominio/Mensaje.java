@@ -14,9 +14,9 @@ public class Mensaje implements Serializable{
     
     //Constructor
     public Mensaje() {
-        Persona p = (Persona) new Usuario();
-        this.origen = p;
-        this.destino = p;
+        Persona personaInstance = (Persona) new Usuario();
+        this.origen = personaInstance;
+        this.destino = personaInstance;
         this.asunto = "no tiene texto";
         this.mensaje = "no tiene texto";
     }

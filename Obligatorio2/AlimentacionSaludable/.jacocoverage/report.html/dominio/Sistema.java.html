@@ -89,99 +89,97 @@ public class Sistema implements Serializable {
     
     
     
-    
-    
-    
+  
     public ArrayList&lt;Usuario&gt; getListaUsuarios() {
-<span class="fc" id="L96">        return listaUsuarios;</span>
+<span class="fc" id="L94">        return listaUsuarios;</span>
     }
 
     public void setListaUsuarios(ArrayList&lt;Usuario&gt; listaUsuarios) {
-<span class="fc" id="L100">        this.listaUsuarios = listaUsuarios;</span>
-<span class="fc" id="L101">    }</span>
+<span class="fc" id="L98">        this.listaUsuarios = listaUsuarios;</span>
+<span class="fc" id="L99">    }</span>
 
   
     
     public ArrayList&lt;Profesional&gt; getListaProfesionales() {
-<span class="fc" id="L106">        return listaProfesionales;</span>
+<span class="fc" id="L104">        return listaProfesionales;</span>
     }
 
     public void setListaProfesionales(ArrayList&lt;Profesional&gt;
                                       listaProfesionales) {
-<span class="fc" id="L111">        this.listaProfesionales = listaProfesionales;</span>
-<span class="fc" id="L112">    }</span>
+<span class="fc" id="L109">        this.listaProfesionales = listaProfesionales;</span>
+<span class="fc" id="L110">    }</span>
 
     public tipoUsuario getUsuarioActivo() {
-<span class="fc" id="L115">        return usuarioActivo;</span>
+<span class="fc" id="L113">        return usuarioActivo;</span>
     }
 
     public void setUsuarioActivo(tipoUsuario usuarioActivo) {
-<span class="fc" id="L119">        this.usuarioActivo = usuarioActivo;</span>
-<span class="fc" id="L120">    }</span>
+<span class="fc" id="L117">        this.usuarioActivo = usuarioActivo;</span>
+<span class="fc" id="L118">    }</span>
 
-<span class="pc" id="L122">    public enum tipoUsuario {</span>
-<span class="fc" id="L123">        Profesional, Usuario, NoSeleccionado</span>
+<span class="pc" id="L120">    public enum tipoUsuario {</span>
+<span class="fc" id="L121">        Profesional, Usuario, NoSeleccionado</span>
     }
 
     //Metodo para inicializar lista de enums de tipo de usuario
     tipoUsuario[] inicializoListaTiposDeUsuario() {
-<span class="fc" id="L128">        tipoUsuario[] listaPivot = {tipoUsuario.Profesional,</span>
+<span class="fc" id="L126">        tipoUsuario[] listaPivot = {tipoUsuario.Profesional,</span>
             tipoUsuario.Usuario};
-<span class="fc" id="L130">        return listaPivot;</span>
+<span class="fc" id="L128">        return listaPivot;</span>
     }
 
     //CARGAR Y GUARDAR SISTEMA
     public void cargarSistema() {
         try {
-<span class="nc" id="L136">            ObjectInputStream in = new ObjectInputStream</span>
+<span class="nc" id="L134">            ObjectInputStream in = new ObjectInputStream</span>
                                    (new FileInputStream(&quot;repositorio.ser&quot;));
-<span class="nc" id="L138">            ArrayList&lt;Alimento&gt; listAlimentos = (ArrayList&lt;Alimento&gt;)</span>
-<span class="nc" id="L139">                                                in.readObject();</span>
-<span class="nc" id="L140">            listaAlimentos = listAlimentos;</span>
-<span class="nc" id="L141">            ArrayList&lt;Usuario&gt; listUsuarios = (ArrayList&lt;Usuario&gt;)</span>
-<span class="nc" id="L142">                                              in.readObject();</span>
-<span class="nc" id="L143">            listaUsuarios = listUsuarios;</span>
-<span class="nc" id="L144">            ArrayList&lt;Profesional&gt; listProfesionales = (ArrayList&lt;Profesional&gt;)</span>
-<span class="nc" id="L145">                                                        in.readObject();</span>
-<span class="nc" id="L146">            listaProfesionales = listProfesionales;</span>
+<span class="nc" id="L136">            ArrayList&lt;Alimento&gt; listAlimentos = (ArrayList&lt;Alimento&gt;)</span>
+<span class="nc" id="L137">                                                in.readObject();</span>
+<span class="nc" id="L138">            listaAlimentos = listAlimentos;</span>
+<span class="nc" id="L139">            ArrayList&lt;Usuario&gt; listUsuarios = (ArrayList&lt;Usuario&gt;)</span>
+<span class="nc" id="L140">                                              in.readObject();</span>
+<span class="nc" id="L141">            listaUsuarios = listUsuarios;</span>
+<span class="nc" id="L142">            ArrayList&lt;Profesional&gt; listProfesionales = (ArrayList&lt;Profesional&gt;)</span>
+<span class="nc" id="L143">                                                        in.readObject();</span>
+<span class="nc" id="L144">            listaProfesionales = listProfesionales;</span>
             
               
-<span class="nc" id="L149">            in.close();</span>
-<span class="nc" id="L150">        } catch (IOException | ClassNotFoundException ex) {</span>
-<span class="nc" id="L151">            listaAlimentos = new ArrayList&lt;&gt;();</span>
-<span class="nc" id="L152">            listaUsuarios = new ArrayList&lt;&gt;();</span>
-<span class="nc" id="L153">            listaProfesionales = new ArrayList&lt;&gt;();</span>
-<span class="nc" id="L154">            usuarioAdministrador=new HashMap&lt;&gt;();</span>
-<span class="nc" id="L155">            usuarioAdministrador.put(&quot;admin&quot;, &quot;adminalimentacion&quot;);</span>
-<span class="nc" id="L156">        }</span>
-<span class="nc" id="L157">    }</span>
+<span class="nc" id="L147">            in.close();</span>
+<span class="nc" id="L148">        } catch (IOException | ClassNotFoundException ex) {</span>
+<span class="nc" id="L149">            listaAlimentos = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L150">            listaUsuarios = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L151">            listaProfesionales = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L152">            usuarioAdministrador=new HashMap&lt;&gt;();</span>
+<span class="nc" id="L153">            usuarioAdministrador.put(&quot;admin&quot;, &quot;adminalimentacion&quot;);</span>
+<span class="nc" id="L154">        }</span>
+<span class="nc" id="L155">    }</span>
 
     public void guardarSistema() {
         try {
-<span class="nc" id="L161">            ObjectOutputStream out = new ObjectOutputStream</span>
+<span class="nc" id="L159">            ObjectOutputStream out = new ObjectOutputStream</span>
                                          (new FileOutputStream(&quot;repositorio.ser&quot;));
-<span class="nc" id="L163">            out.writeObject(listaAlimentos);</span>
-<span class="nc" id="L164">            out.writeObject(listaUsuarios);</span>
-<span class="nc" id="L165">            out.writeObject(listaProfesionales);</span>
+<span class="nc" id="L161">            out.writeObject(listaAlimentos);</span>
+<span class="nc" id="L162">            out.writeObject(listaUsuarios);</span>
+<span class="nc" id="L163">            out.writeObject(listaProfesionales);</span>
             
-<span class="nc" id="L167">            out.flush();</span>
-<span class="nc" id="L168">            out.close();</span>
-<span class="nc" id="L169">        } catch (IOException ex) {</span>
-<span class="nc" id="L170">        }</span>
-<span class="nc" id="L171">    }</span>
+<span class="nc" id="L165">            out.flush();</span>
+<span class="nc" id="L166">            out.close();</span>
+<span class="nc" id="L167">        } catch (IOException ex) {</span>
+<span class="nc" id="L168">        }</span>
+<span class="nc" id="L169">    }</span>
 
      public String pidoDatoNumerico(int dato, int min, int max) {
-<span class="fc" id="L174">        int datoAVerificar = 0;</span>
-<span class="fc" id="L175">        String severidad = &quot;NO OK&quot;;</span>
+<span class="fc" id="L172">        int datoAVerificar = 0;</span>
+<span class="fc" id="L173">        String severidad = &quot;NO OK&quot;;</span>
         try {
-<span class="fc" id="L177">            datoAVerificar = dato;</span>
-<span class="fc bfc" id="L178" title="All 4 branches covered.">            if ((datoAVerificar &gt;= min) &amp;&amp; (datoAVerificar &lt;= max)) {</span>
-<span class="fc" id="L179">                severidad = &quot;OK&quot;;</span>
+<span class="fc" id="L175">            datoAVerificar = dato;</span>
+<span class="fc bfc" id="L176" title="All 4 branches covered.">            if ((datoAVerificar &gt;= min) &amp;&amp; (datoAVerificar &lt;= max)) {</span>
+<span class="fc" id="L177">                severidad = &quot;OK&quot;;</span>
             }
-<span class="nc" id="L181">        } catch (NumberFormatException ex) {</span>
-<span class="nc" id="L182">            severidad=&quot;ERROR&quot;;</span>
-<span class="fc" id="L183">        }</span>
-<span class="fc" id="L184">        return severidad;</span>
+<span class="nc" id="L179">        } catch (NumberFormatException ex) {</span>
+<span class="nc" id="L180">            severidad=&quot;ERROR&quot;;</span>
+<span class="fc" id="L181">        }</span>
+<span class="fc" id="L182">        return severidad;</span>
     }
     
 

@@ -524,7 +524,7 @@ public class PanelHomeDeProfesional extends javax.swing.JFrame {
                 btn_exitMousePressed(evt);
             }
         });
-        jPanel4.add(btn_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 24, -1, 46));
+        jPanel4.add(btn_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, -1, 46));
 
         etiquetaFoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/profesional.png"))); // NOI18N
         jPanel4.add(etiquetaFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 130, 90));
@@ -532,7 +532,7 @@ public class PanelHomeDeProfesional extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Amos");
-        jPanel4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, 40, 30));
+        jPanel4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, 110, 30));
 
         button1.setBackground(new java.awt.Color(71, 120, 197));
         button1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N

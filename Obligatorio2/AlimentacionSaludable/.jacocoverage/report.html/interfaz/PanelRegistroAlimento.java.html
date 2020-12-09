@@ -11,9 +11,9 @@ import javax.swing.JOptionPane;
 public class PanelRegistroAlimento extends javax.swing.JPanel {
 
     //Atributos
-    private Sistema sistema;
-    private Alimento alimento;
-    private JFrame ventana;
+    private final Sistema sistema;
+    private  Alimento alimento;
+    private final JFrame ventana;
 
     //Cosntructor
 <span class="nc" id="L19">    public PanelRegistroAlimento(Sistema unSistema, JFrame unaVentana) {</span>
@@ -267,38 +267,39 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
 <span class="nc bnc" id="L267" title="All 2 branches missed.">                &amp;&amp; !sistema.getListaAlimentos().contains(comparo);</span>
           
 <span class="nc bnc" id="L269" title="All 2 branches missed.">        if (nombre) {</span>
-<span class="nc" id="L270">            alimento.setNombre(cajaNombreAlim.getText());</span>
+<span class="nc" id="L270">            alimento.setNombre(cajaNombreAlim.getText().trim());</span>
 <span class="nc" id="L271">            alimento.setTipo(alimento.getListaEnumTipoAlimento()[listaTiposAlimentos.getSelectedIndex()]);</span>
-<span class="nc" id="L272">            JOptionPane optionPane</span>
+<span class="nc" id="L272">             sistema.getListaAlimentos().add(alimento);</span>
+<span class="nc" id="L273">            JOptionPane optionPane</span>
                     = new JOptionPane(&quot;Alimento registrado &quot;
                             + &quot;correctamente&quot;, JOptionPane.INFORMATION_MESSAGE);
-<span class="nc" id="L275">            JDialog dialog = optionPane.createDialog(&quot;Registro Alimento&quot;);</span>
-<span class="nc" id="L276">            dialog.setAlwaysOnTop(true);</span>
-<span class="nc" id="L277">            dialog.setVisible(true);</span>
-<span class="nc" id="L278">            limpiarDatos();</span>
-<span class="nc" id="L279">        } else {</span>
-<span class="nc" id="L280">            JOptionPane optionPane</span>
+<span class="nc" id="L276">            JDialog dialog = optionPane.createDialog(&quot;Registro Alimento&quot;);</span>
+<span class="nc" id="L277">            dialog.setAlwaysOnTop(true);</span>
+<span class="nc" id="L278">            dialog.setVisible(true);</span>
+<span class="nc" id="L279">            limpiarDatos();</span>
+<span class="nc" id="L280">        } else {</span>
+<span class="nc" id="L281">            JOptionPane optionPane</span>
                     = new JOptionPane(&quot;Alimento no pudo ser registrado&quot;
                             + &quot;correctamente&quot;, JOptionPane.ERROR_MESSAGE);
-<span class="nc" id="L283">            JDialog dialog = optionPane.createDialog(&quot;Registro Alimento&quot;);</span>
-<span class="nc" id="L284">            dialog.setAlwaysOnTop(true);</span>
-<span class="nc" id="L285">            dialog.setVisible(true);</span>
+<span class="nc" id="L284">            JDialog dialog = optionPane.createDialog(&quot;Registro Alimento&quot;);</span>
+<span class="nc" id="L285">            dialog.setAlwaysOnTop(true);</span>
+<span class="nc" id="L286">            dialog.setVisible(true);</span>
         }
-       
+<span class="nc" id="L288">        alimento = new Alimento();</span>
 
-<span class="nc" id="L289">    }//GEN-LAST:event_btnAceptarRegAlimActionPerformed</span>
+<span class="nc" id="L290">    }//GEN-LAST:event_btnAceptarRegAlimActionPerformed</span>
 
     private void limpiarDatos() {
-<span class="nc" id="L292">        this.checkBoxAgua.setSelected(false);</span>
-<span class="nc" id="L293">        this.checkBoxFibra.setSelected(false);</span>
-<span class="nc" id="L294">        this.checkBoxHidratosDeCarbono.setSelected(false);</span>
-<span class="nc" id="L295">        this.checkBoxLipidos.setSelected(false);</span>
-<span class="nc" id="L296">        this.checkBoxMinerales.setSelected(false);</span>
-<span class="nc" id="L297">        this.checkBoxProteinas.setSelected(false);</span>
-<span class="nc" id="L298">        this.checkBoxVitaminas.setSelected(false);</span>
-<span class="nc" id="L299">        this.cajaNombreAlim.setText(&quot;&quot;);</span>
-<span class="nc" id="L300">        this.listaTiposAlimentos.setSelectedIndex(0);</span>
-<span class="nc" id="L301">    }</span>
+<span class="nc" id="L293">        this.checkBoxAgua.setSelected(false);</span>
+<span class="nc" id="L294">        this.checkBoxFibra.setSelected(false);</span>
+<span class="nc" id="L295">        this.checkBoxHidratosDeCarbono.setSelected(false);</span>
+<span class="nc" id="L296">        this.checkBoxLipidos.setSelected(false);</span>
+<span class="nc" id="L297">        this.checkBoxMinerales.setSelected(false);</span>
+<span class="nc" id="L298">        this.checkBoxProteinas.setSelected(false);</span>
+<span class="nc" id="L299">        this.checkBoxVitaminas.setSelected(false);</span>
+<span class="nc" id="L300">        this.cajaNombreAlim.setText(&quot;&quot;);</span>
+<span class="nc" id="L301">        this.listaTiposAlimentos.setSelectedIndex(0);</span>
+<span class="nc" id="L302">    }</span>
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAceptarRegAlim;

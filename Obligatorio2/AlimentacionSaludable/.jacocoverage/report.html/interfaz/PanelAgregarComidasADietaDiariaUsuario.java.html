@@ -5,89 +5,89 @@ import dominio.Sistema;
 import dominio.Usuario;
 import java.awt.Dimension;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class PanelAgregarComidasADietaDiariaUsuario extends javax.swing.JPanel {
 
     private final Sistema sistema;
-    private final PanelHomeDeProfesional ventana;
+    private final PanelHomeDeUsuario ventana;
     private final Usuario persona;
-    private final JPanel panelRealizarPlanAlimentacion;
+    private PanelDietaDiariaUsuario panelRealizarPlanAlimentacion;
 
     public PanelAgregarComidasADietaDiariaUsuario(Sistema unSistema,
-<span class="nc" id="L20">            PanelHomeDeProfesional unaVentana, Usuario usuario, JPanel panelRealizarPlan) {</span>
-<span class="nc" id="L21">        initComponents();</span>
-<span class="nc" id="L22">        sistema = unSistema;</span>
-<span class="nc" id="L23">        ventana = unaVentana;</span>
-<span class="nc" id="L24">        persona = usuario;</span>
-<span class="nc" id="L25">        panelRealizarPlanAlimentacion = panelRealizarPlan;</span>
-
-<span class="nc" id="L27">    }</span>
+<span class="nc" id="L18">            PanelHomeDeUsuario unaVentana, Usuario usuario, PanelDietaDiariaUsuario panelRealizarPlan) {</span>
+<span class="nc" id="L19">        initComponents();</span>
+<span class="nc" id="L20">        sistema = unSistema;</span>
+<span class="nc" id="L21">        ventana = unaVentana;</span>
+<span class="nc" id="L22">        persona = usuario;</span>
+     
+<span class="nc" id="L24">        listaComidasDiarias.setListData(sistema.getListaAlimentos().toArray());</span>
+<span class="nc" id="L25">    }</span>
 
     @SuppressWarnings(&quot;unchecked&quot;)
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
     private void initComponents() {
 
-<span class="nc" id="L33">        jScrollPane1 = new javax.swing.JScrollPane();</span>
-<span class="nc" id="L34">        listaComidasDiarias = new javax.swing.JList();</span>
-<span class="nc" id="L35">        etiquetaTitulo = new javax.swing.JLabel();</span>
-<span class="nc" id="L36">        btnAgregarComida = new javax.swing.JButton();</span>
-<span class="nc" id="L37">        btnVolver = new javax.swing.JButton();</span>
+<span class="nc" id="L31">        jScrollPane1 = new javax.swing.JScrollPane();</span>
+<span class="nc" id="L32">        listaComidasDiarias = new javax.swing.JList();</span>
+<span class="nc" id="L33">        etiquetaTitulo = new javax.swing.JLabel();</span>
+<span class="nc" id="L34">        btnAgregarComida = new javax.swing.JButton();</span>
+<span class="nc" id="L35">        btnVolver = new javax.swing.JButton();</span>
 
-<span class="nc" id="L39">        setBackground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L40">        setPreferredSize(new java.awt.Dimension(650, 540));</span>
-<span class="nc" id="L41">        setLayout(null);</span>
+<span class="nc" id="L37">        setBackground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L38">        setPreferredSize(new java.awt.Dimension(650, 540));</span>
+<span class="nc" id="L39">        setLayout(null);</span>
 
-<span class="nc" id="L43">        listaComidasDiarias.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
-<span class="nc" id="L44">        jScrollPane1.setViewportView(listaComidasDiarias);</span>
+<span class="nc" id="L41">        listaComidasDiarias.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L42">        jScrollPane1.setViewportView(listaComidasDiarias);</span>
 
-<span class="nc" id="L46">        add(jScrollPane1);</span>
-<span class="nc" id="L47">        jScrollPane1.setBounds(120, 90, 370, 320);</span>
+<span class="nc" id="L44">        add(jScrollPane1);</span>
+<span class="nc" id="L45">        jScrollPane1.setBounds(130, 90, 370, 320);</span>
 
-<span class="nc" id="L49">        etiquetaTitulo.setBackground(new java.awt.Color(102, 153, 255));</span>
-<span class="nc" id="L50">        etiquetaTitulo.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 36)); // NOI18N</span>
-<span class="nc" id="L51">        etiquetaTitulo.setForeground(new java.awt.Color(102, 153, 255));</span>
-<span class="nc" id="L52">        etiquetaTitulo.setText(&quot;Agregar Comida&quot;);</span>
-<span class="nc" id="L53">        add(etiquetaTitulo);</span>
-<span class="nc" id="L54">        etiquetaTitulo.setBounds(170, 10, 280, 50);</span>
+<span class="nc" id="L47">        etiquetaTitulo.setBackground(new java.awt.Color(102, 153, 255));</span>
+<span class="nc" id="L48">        etiquetaTitulo.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 36)); // NOI18N</span>
+<span class="nc" id="L49">        etiquetaTitulo.setForeground(new java.awt.Color(102, 153, 255));</span>
+<span class="nc" id="L50">        etiquetaTitulo.setText(&quot;Agregar Comida&quot;);</span>
+<span class="nc" id="L51">        add(etiquetaTitulo);</span>
+<span class="nc" id="L52">        etiquetaTitulo.setBounds(170, 10, 280, 50);</span>
 
-<span class="nc" id="L56">        btnAgregarComida.setBackground(new java.awt.Color(102, 153, 255));</span>
-<span class="nc" id="L57">        btnAgregarComida.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 14)); // NOI18N</span>
-<span class="nc" id="L58">        btnAgregarComida.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L59">        btnAgregarComida.setText(&quot;Agregar Comida&quot;);</span>
-<span class="nc" id="L60">        btnAgregarComida.setContentAreaFilled(false);</span>
-<span class="nc" id="L61">        btnAgregarComida.setOpaque(true);</span>
-<span class="nc" id="L62">        btnAgregarComida.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L54">        btnAgregarComida.setBackground(new java.awt.Color(102, 153, 255));</span>
+<span class="nc" id="L55">        btnAgregarComida.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 14)); // NOI18N</span>
+<span class="nc" id="L56">        btnAgregarComida.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L57">        btnAgregarComida.setText(&quot;Agregar Comida&quot;);</span>
+<span class="nc" id="L58">        btnAgregarComida.setContentAreaFilled(false);</span>
+<span class="nc" id="L59">        btnAgregarComida.setOpaque(true);</span>
+<span class="nc" id="L60">        btnAgregarComida.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L64">                btnAgregarComidaActionPerformed(evt);</span>
-<span class="nc" id="L65">            }</span>
+<span class="nc" id="L62">                btnAgregarComidaActionPerformed(evt);</span>
+<span class="nc" id="L63">            }</span>
         });
-<span class="nc" id="L67">        add(btnAgregarComida);</span>
-<span class="nc" id="L68">        btnAgregarComida.setBounds(210, 440, 180, 30);</span>
+<span class="nc" id="L65">        add(btnAgregarComida);</span>
+<span class="nc" id="L66">        btnAgregarComida.setBounds(230, 430, 180, 30);</span>
 
-<span class="nc" id="L70">        btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/imagenes/volver.png&quot;))); // NOI18N</span>
-<span class="nc" id="L71">        btnVolver.setToolTipText(&quot;&quot;);</span>
-<span class="nc" id="L72">        btnVolver.setBorderPainted(false);</span>
-<span class="nc" id="L73">        btnVolver.setContentAreaFilled(false);</span>
-<span class="nc" id="L74">        btnVolver.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L68">        btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/imagenes/volver.png&quot;))); // NOI18N</span>
+<span class="nc" id="L69">        btnVolver.setToolTipText(&quot;&quot;);</span>
+<span class="nc" id="L70">        btnVolver.setBorderPainted(false);</span>
+<span class="nc" id="L71">        btnVolver.setContentAreaFilled(false);</span>
+<span class="nc" id="L72">        btnVolver.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L76">                btnVolverActionPerformed(evt);</span>
-<span class="nc" id="L77">            }</span>
+<span class="nc" id="L74">                btnVolverActionPerformed(evt);</span>
+<span class="nc" id="L75">            }</span>
         });
-<span class="nc" id="L79">        add(btnVolver);</span>
-<span class="nc" id="L80">        btnVolver.setBounds(30, 10, 90, 40);</span>
-<span class="nc" id="L81">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+<span class="nc" id="L77">        add(btnVolver);</span>
+<span class="nc" id="L78">        btnVolver.setBounds(30, 10, 90, 40);</span>
+<span class="nc" id="L79">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
     private void btnAgregarComidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarComidaActionPerformed
-<span class="nc" id="L84">        Alimento comidaSeleccionada = (Alimento) listaComidasDiarias.getSelectedValue();</span>
-<span class="nc" id="L85">        persona.getHistorialDelDia().getComidasIngeridas().add(comidaSeleccionada);</span>
-<span class="nc" id="L86">        LocalDate diaActual = LocalDate.now();</span>
-<span class="nc" id="L87">        persona.setFechaUltimaAdicion(diaActual.toString());</span>
-<span class="nc" id="L88">    }//GEN-LAST:event_btnAgregarComidaActionPerformed</span>
+<span class="nc" id="L82">        Alimento comidaSeleccionada = (Alimento) listaComidasDiarias.getSelectedValue();</span>
+<span class="nc" id="L83">        persona.getHistorialDelDia().getComidasIngeridas().add(comidaSeleccionada);</span>
+<span class="nc" id="L84">        LocalDate diaActual = LocalDate.now();</span>
+<span class="nc" id="L85">        persona.setFechaUltimaAdicion(diaActual.toString());</span>
+       
+<span class="nc" id="L87">    }//GEN-LAST:event_btnAgregarComidaActionPerformed</span>
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+<span class="nc" id="L90">        panelRealizarPlanAlimentacion = new PanelDietaDiariaUsuario(sistema,ventana,persona);</span>
 <span class="nc" id="L91">        ventana.setPanelActual(panelRealizarPlanAlimentacion);</span>
 <span class="nc" id="L92">        ventana.getPanelPrincipal().add(ventana.getPanelActual(), new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 650, 540));</span>
 <span class="nc" id="L93">        ventana.setPreferredSize(new Dimension(400, 400));</span>
