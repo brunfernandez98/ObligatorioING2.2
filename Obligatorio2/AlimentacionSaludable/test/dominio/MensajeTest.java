@@ -81,7 +81,7 @@ public class MensajeTest {
       
        @Test
       public void testSetDestino() {
-        System.out.println("GetDestino()");
+        System.out.println("SetDestino()");
         mensaje.setDestino(usuario);
         assertTrue(mensaje.getDestino().equals(usuario));
     }

@@ -5,6 +5,7 @@
  */
 package interfaz;
 
+import dominio.PlanDeAlimentacion;
 import dominio.Sistema;
 import dominio.Usuario;
 import java.awt.Color;
@@ -77,17 +78,22 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
         } catch (NumberFormatException e) {
             this.jLabel12.setText("Error al encontrar el usuario");
         }
-        if(usuarioActual.getProfesionalAsignado()!=null)
-        jLabel6.setText("Plan de Alimentacion asignado por : "+ usuarioActual.getProfesionalAsignado().getNombre()+" "
+        if(usuarioActual.getProfesionalAsignado()!=null){
+              jLabel6.setText("Plan de Alimentacion asignado por : "+ usuarioActual.getProfesionalAsignado().getNombre()+" "
                 + usuarioActual.getProfesionalAsignado().getApellidos() );
-        else
-            jLabel6.setText("No tienes ningun plan de alimentacion:");
+        }else{
+               jLabel6.setText("No tienes ningun plan de alimentacion:");
+        }
+      
+   
+        listaComidasPlan.setListData(usuarioActual.getPlan().getListaLunes().toArray());
         panelConsulta = new PanelRedactarConsulta(sistema, usuarioActual);
         panelComidaAdieta = new PanelDietaDiariaUsuario(sistema, this, usuarioActual);
         panelPerfilUsuario = new PanelPerfilUsuarioDesdeUsuario(sistema, this, usuarioActual);
         panelPlanAlimentacionUsuario = new PanelPlanAlimentacionUsuario(sistema, ventana, usuarioActual);
         buzon = new PanelConsultaProfesional(sistema, ventana, usuarioActual);
         this.labelMensajes.setText(labelMensajes.getText() + usuarioActual.getCasillaDeEntrada().size());
+       
         setLocationRelativeTo(null);
     }
 
@@ -99,7 +105,7 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
         return this.panelHome;
     }
 
-    void actualizarLista() {
+    private void actualizarLista() {
         if (listaDiasDeLaSemana.getSelectedItem().equals("lunes")) {
             listaComidasPlan.setListData(usuarioActual.getPlan().getListaLunes().toArray());
         }
@@ -793,7 +799,7 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_listaDiasDeLaSemanaItemStateChanged
 
     private void listaDiasDeLaSemanaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaDiasDeLaSemanaActionPerformed
-        // TODO add your handling code here:
+       actualizarLista();
     }//GEN-LAST:event_listaDiasDeLaSemanaActionPerformed
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked

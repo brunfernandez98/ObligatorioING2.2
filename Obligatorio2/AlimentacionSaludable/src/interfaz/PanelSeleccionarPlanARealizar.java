@@ -6,7 +6,7 @@ import dominio.Sistema;
 import dominio.Usuario;
 import java.awt.Dimension;
 import java.util.ArrayList;
-import javax.swing.JFrame;
+
 
 public final class PanelSeleccionarPlanARealizar extends javax.swing.JPanel {
 
@@ -72,7 +72,7 @@ public final class PanelSeleccionarPlanARealizar extends javax.swing.JPanel {
     private void btnRealizarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPlanActionPerformed
         if (listaUsuarios.getSelectedValue() != null) {
             Usuario usuarioAModificar = sistema.getListaUsuarios().get(listaUsuarios.getSelectedIndex());
-            ventana.remove(this);
+            
             PanelRealizarPlanAlimentacion nuevoPanel = new PanelRealizarPlanAlimentacion(sistema,ventana, usuarioAModificar);
             
             ventana.setPanelActual(nuevoPanel);

@@ -98,7 +98,8 @@ public class PanelAgregarComidasAPlan extends javax.swing.JPanel {
     }//GEN-LAST:event_btnAgregarComidaActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-        ventana.setPanelActual(realizarPlan);
+ PanelRealizarPlanAlimentacion nuevo = new PanelRealizarPlanAlimentacion(sistema,ventana, usuarioAModificar, plan);
+        ventana.setPanelActual(nuevo);
         ventana.getPanelPrincipal().add(ventana.getPanelActual(), new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 650, 540));
         ventana.setPreferredSize(new Dimension(400, 400));
         realizarPlan.actualizarLista();

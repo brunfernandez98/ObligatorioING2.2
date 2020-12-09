@@ -16,7 +16,7 @@ public class PanelRealizarPlanAlimentacion extends javax.swing.JPanel {
     private  final Sistema sistema;
  
     private final PanelHomeDeProfesional ventana;
-    private final Usuario usuarioAModificar;
+    private static Usuario usuarioAModificar;
     private final PlanDeAlimentacion nuevoPlan;
 
     //Constructor
