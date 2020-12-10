@@ -78,7 +78,7 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
         } catch (NumberFormatException e) {
             this.jLabel12.setText("Error al encontrar el usuario");
         }
-        if(usuarioActual.getProfesionalAsignado()!=null){
+        if(!usuarioActual.getProfesionalAsignado().getNombre().contains("no ingreso nombre")){
               jLabel6.setText("Plan de Alimentacion asignado por : "+ usuarioActual.getProfesionalAsignado().getNombre()+" "
                 + usuarioActual.getProfesionalAsignado().getApellidos() );
         }else{

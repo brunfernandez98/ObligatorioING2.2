@@ -517,7 +517,7 @@ public class PanelHomeDeProfesional extends javax.swing.JFrame {
             }
         });
 
-        labelMensajes.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        labelMensajes.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         labelMensajes.setForeground(new java.awt.Color(255, 255, 255));
         labelMensajes.setText("Mensajes:");
 
