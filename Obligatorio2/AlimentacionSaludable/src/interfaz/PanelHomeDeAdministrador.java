@@ -9,6 +9,8 @@ import dominio.Sistema;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -46,7 +48,10 @@ public class PanelHomeDeAdministrador extends javax.swing.JFrame {
         panelUsuariosRegistrados = new PanelUsuariosRegistrados(sistema, this);
         panelProfesionalRegistrado = new panelProfesionalRegistrado(sistema, this);
         setIconImage(new ImageIcon(getClass().getResource("/imagenes/icono.png")).getImage());
+        Date today = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("EEEE MMMM dd, yyyy"); 
         
+        fechaLabel.setText("                Fecha de hoy: " + sdf.format(today)); 
         this.actual = panelHome;
         setLocationRelativeTo(null);
     }
@@ -99,7 +104,7 @@ public class PanelHomeDeAdministrador extends javax.swing.JFrame {
         btn_exit = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         button1 = new java.awt.Button();
-        jLabel16 = new javax.swing.JLabel();
+        fechaLabel = new javax.swing.JLabel();
         button2 = new java.awt.Button();
         button3 = new java.awt.Button();
         panelHome = new javax.swing.JPanel();
@@ -420,9 +425,9 @@ public class PanelHomeDeAdministrador extends javax.swing.JFrame {
             }
         });
 
-        jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel16.setText("Friday 23 Feb ");
+        fechaLabel.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        fechaLabel.setForeground(new java.awt.Color(255, 255, 255));
+        fechaLabel.setText("Friday 23 Feb ");
 
         button2.setBackground(new java.awt.Color(71, 120, 197));
         button2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -452,24 +457,19 @@ public class PanelHomeDeAdministrador extends javax.swing.JFrame {
             .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(33, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(100, 100, 100))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(button3, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(button2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(button1, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)))
-                        .addGap(33, 33, 33))))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(button3, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
+                    .addComponent(button2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(button1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE))
+                .addGap(33, 33, 33))
+            .addComponent(fechaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                .addComponent(fechaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
@@ -710,6 +710,7 @@ public class PanelHomeDeAdministrador extends javax.swing.JFrame {
     private java.awt.Button button1;
     private java.awt.Button button2;
     private java.awt.Button button3;
+    private javax.swing.JLabel fechaLabel;
     private javax.swing.JPanel ind_1;
     private javax.swing.JPanel ind_4;
     private javax.swing.JPanel ind_6;
@@ -718,7 +719,6 @@ public class PanelHomeDeAdministrador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;

@@ -11,6 +11,8 @@ import dominio.Sistema;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Image;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -65,6 +67,9 @@ public class PanelHomeDeProfesional extends javax.swing.JFrame {
         buzon = new PanelConsultaProfesionalDesdeProfesional(sistema, ventana, usuarioActual);
         panelRealizarPlan = new PanelSeleccionarPlanARealizar(sistema, this, this.getUsuarioActual());
         panelPerfilProfesional = new PanelPerfilProfesionalDesdeProfesional(sistema, this, this.getUsuarioActual());
+        Date today = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("EEEE MMMM dd, yyyy"); 
+        fechaLabel.setText("                Fecha de hoy: " + sdf.format(today)); 
         setLocationRelativeTo(null);
     }
 
@@ -124,7 +129,7 @@ public class PanelHomeDeProfesional extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel15 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
+        fechaLabel = new javax.swing.JLabel();
         btn_exit = new javax.swing.JLabel();
         etiquetaFoto = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -438,6 +443,11 @@ public class PanelHomeDeProfesional extends javax.swing.JFrame {
         });
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icons8_Contacts_25px.png"))); // NOI18N
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel3MousePressed(evt);
+            }
+        });
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icons8_Lock_25px.png"))); // NOI18N
         jLabel15.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -446,9 +456,9 @@ public class PanelHomeDeProfesional extends javax.swing.JFrame {
             }
         });
 
-        jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("May 2018");
+        fechaLabel.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        fechaLabel.setForeground(new java.awt.Color(255, 255, 255));
+        fechaLabel.setText("May 2018");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -466,10 +476,10 @@ public class PanelHomeDeProfesional extends javax.swing.JFrame {
                         .addGap(8, 8, 8))
                     .addComponent(jSeparator1))
                 .addGap(40, 40, 40))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel13)
-                .addGap(116, 116, 116))
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(fechaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -482,7 +492,7 @@ public class PanelHomeDeProfesional extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE)
+                .addComponent(fechaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE)
                 .addGap(22, 22, 22))
         );
 
@@ -695,6 +705,12 @@ public class PanelHomeDeProfesional extends javax.swing.JFrame {
         jPanel9.setPreferredSize(new Dimension(400, 400));
     }//GEN-LAST:event_jLabel1MouseClicked
 
+    private void jLabel3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MousePressed
+       setPanelActual(panelPerfilProfesional);
+        jPanel9.add(this.getPanelActual(), new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 650, 540));
+        jPanel9.setPreferredSize(new Dimension(400, 400));
+    }//GEN-LAST:event_jLabel3MousePressed
+
     /**
      * @param args the command line arguments
      */
@@ -722,6 +738,7 @@ public class PanelHomeDeProfesional extends javax.swing.JFrame {
     private javax.swing.JLabel btn_exit;
     private java.awt.Button button1;
     private javax.swing.JLabel etiquetaFoto;
+    private javax.swing.JLabel fechaLabel;
     private javax.swing.JPanel ind_1;
     private javax.swing.JPanel ind_2;
     private javax.swing.JPanel ind_3;
@@ -731,7 +748,6 @@ public class PanelHomeDeProfesional extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;

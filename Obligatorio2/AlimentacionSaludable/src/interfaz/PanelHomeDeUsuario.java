@@ -11,7 +11,9 @@ import dominio.Usuario;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Image;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -86,6 +88,10 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
         }
       
         setIconImage(new ImageIcon(getClass().getResource("/imagenes/icono.png")).getImage());
+         Date today = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("EEEE MMMM dd, yyyy"); 
+        
+        fechaLabel.setText("                Fecha de hoy: " + sdf.format(today)); 
         listaComidasPlan.setListData(usuarioActual.getPlan().getListaLunes().toArray());
         panelConsulta = new PanelRedactarConsulta(sistema, usuarioActual);
         panelComidaAdieta = new PanelDietaDiariaUsuario(sistema, this, usuarioActual);
@@ -171,7 +177,7 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         labelMensajes = new javax.swing.JLabel();
         button1 = new java.awt.Button();
-        jLabel16 = new javax.swing.JLabel();
+        fechaLabel = new javax.swing.JLabel();
         panelHome = new javax.swing.JPanel();
         btnHistorialDeComidas = new javax.swing.JButton();
         listaDiasDeLaSemana = new javax.swing.JComboBox<>();
@@ -570,9 +576,9 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
             }
         });
 
-        jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel16.setText("Friday 23 Feb ");
+        fechaLabel.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        fechaLabel.setForeground(new java.awt.Color(255, 255, 255));
+        fechaLabel.setText("Friday 23 Feb ");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -582,10 +588,6 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(99, 99, 99))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(72, 72, 72)
                         .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
@@ -593,13 +595,14 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(labelMensajes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addComponent(fechaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE)
+                .addComponent(fechaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE)
                 .addGap(38, 38, 38)
                 .addComponent(labelMensajes, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44)
@@ -862,6 +865,7 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
     private java.awt.Button button1;
     private javax.swing.JLabel etiquetaComidasDelDia;
     private javax.swing.JLabel etiquetaFoto;
+    private javax.swing.JLabel fechaLabel;
     private javax.swing.JPanel ind_1;
     private javax.swing.JPanel ind_2;
     private javax.swing.JPanel ind_3;
@@ -872,7 +876,6 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
