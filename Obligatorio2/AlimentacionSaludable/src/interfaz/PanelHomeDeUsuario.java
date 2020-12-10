@@ -85,7 +85,7 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
                jLabel6.setText("No tienes ningun plan de alimentacion:");
         }
       
-   
+        setIconImage(new ImageIcon(getClass().getResource("/imagenes/icono.png")).getImage());
         listaComidasPlan.setListData(usuarioActual.getPlan().getListaLunes().toArray());
         panelConsulta = new PanelRedactarConsulta(sistema, usuarioActual);
         panelComidaAdieta = new PanelDietaDiariaUsuario(sistema, this, usuarioActual);

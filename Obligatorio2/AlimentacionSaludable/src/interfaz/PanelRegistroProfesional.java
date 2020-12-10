@@ -4,6 +4,7 @@ import dominio.Persona;
 import dominio.Sistema;
 import dominio.Profesional;
 import dominio.Usuario;
+import handlers.ValidacionDeDatos;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.text.SimpleDateFormat;
@@ -373,18 +374,20 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
          Profesional profesional = new Profesional();
         boolean nombreValido = !cajaNombreProf.getText().trim().isEmpty();
          boolean apellidoValido = !cajaApellidosProf.getText().trim().isEmpty();
+         ValidacionDeDatos manejoDeValidacion = new ValidacionDeDatos();
+          boolean passwordCorrecto = manejoDeValidacion.esPasswordCorrecto(cajaPassword.getText());
         Usuario comparoUsr = new Usuario();
         comparoUsr.setNombreUsuario(cajaUsuarioProf.getText());
         Profesional comparoProf = new Profesional();
         comparoProf.setNombreUsuario(cajaUsuarioProf.getText());
         boolean nombreUsuarioValido = !cajaUsuarioProf.getText().trim().isEmpty()
                 && !sistema.getListaUsuarios().contains(comparoUsr)
-                && !sistema.getListaProfesionales().contains(comparoProf);
+                && !sistema.getListaProfesionales().contains(comparoProf ) ;
         boolean fNacimientoValido = fechaNacimiento.getCalendar() != null;
         boolean nombreTituloValido = !cajaNombreTituloProf.getText().trim().isEmpty();
         boolean fGraduacionValido = fechaGraduacion.getCalendar() != null;
         if (nombreValido && nombreUsuarioValido
-                && fNacimientoValido && nombreTituloValido && fGraduacionValido && apellidoValido) {
+                && fNacimientoValido && nombreTituloValido && fGraduacionValido && apellidoValido && passwordCorrecto) {
             profesional.setNombre(cajaNombreProf.getText());
             profesional.setApellidos(cajaApellidosProf.getText());
             profesional.setNombreUsuario(cajaUsuarioProf.getText());
@@ -411,7 +414,7 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
             
             this.manejoDeErrorLogin(nombreValido, apellidoValido, 
                     nombreUsuarioValido, fNacimientoValido, fGraduacionValido,
-                    fGraduacionValido, nombreTituloValido);
+                    nombreTituloValido, passwordCorrecto);
             
 }
         

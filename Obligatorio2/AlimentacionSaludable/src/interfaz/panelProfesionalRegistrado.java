@@ -7,7 +7,6 @@ package interfaz;
 
 import dominio.Profesional;
 import dominio.Sistema;
-import dominio.Usuario;
 import java.awt.Dimension;
 import java.util.ArrayList;
 import javax.swing.JDialog;
@@ -28,6 +27,8 @@ public class panelProfesionalRegistrado extends javax.swing.JPanel {
     
     /**
      * Creates new form panelProfesionalRegistrado
+     * @param unSistema
+     * @param unaVentana
      */
     public panelProfesionalRegistrado(Sistema unSistema,PanelHomeDeAdministrador unaVentana) {
         initComponents();

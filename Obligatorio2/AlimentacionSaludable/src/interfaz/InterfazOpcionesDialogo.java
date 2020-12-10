@@ -33,7 +33,7 @@ public class InterfazOpcionesDialogo {
     }
 
     public int verMensajeOpcionGestionAlimentos() {
-        String[] options = {"Registro Alimento", "Modificacion Alimento", "Baja Alimento"};
+        String[] options = {"Registro Alimento","Baja Alimento"};
 
         int opciones = JOptionPane.showOptionDialog(null, "Seleccione alguna opcion de la gestion de Alimento",
                 "Opciones",
