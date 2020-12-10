@@ -82,7 +82,7 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
               jLabel6.setText("Plan de Alimentacion asignado por : "+ usuarioActual.getProfesionalAsignado().getNombre()+" "
                 + usuarioActual.getProfesionalAsignado().getApellidos() );
         }else{
-               jLabel6.setText("No tienes ningun plan de alimentacion:");
+               jLabel6.setText("No tienes ningun plan de alimentacion");
         }
       
         setIconImage(new ImageIcon(getClass().getResource("/imagenes/icono.png")).getImage());
