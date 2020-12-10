@@ -174,7 +174,7 @@ public class Usuario extends Persona implements Serializable {
     }
 
     public void setSexo(String sexo) {
-<span class="pc bpc" id="L177" title="1 of 4 branches missed.">        if(sexo.equals(&quot;Masculino&quot;) || sexo.equals(&quot;Femenino&quot;)){</span>
+<span class="fc bfc" id="L177" title="All 4 branches covered.">        if(sexo.equals(&quot;Masculino&quot;) || sexo.equals(&quot;Femenino&quot;)){</span>
 <span class="fc" id="L178">            this.sexo = sexo;</span>
         }
 <span class="fc" id="L180">    }</span>
@@ -226,7 +226,7 @@ public class Usuario extends Persona implements Serializable {
 <span class="fc" id="L226">        return listaPaisesPivot;</span>
     }
 
-    public Nacionalidades[] inicializoListaEnum() {
+    public static Nacionalidades[] inicializoListaEnum() {
 <span class="fc" id="L230">        Nacionalidades[] listaEnumPivot = {</span>
             Nacionalidades.Alemana, Nacionalidades.Argentina,
             Nacionalidades.Australiana, Nacionalidades.Austriaca,

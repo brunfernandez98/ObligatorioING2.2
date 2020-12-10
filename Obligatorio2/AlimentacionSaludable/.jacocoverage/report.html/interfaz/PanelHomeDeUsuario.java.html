@@ -78,11 +78,11 @@ public class PanelHomeDeUsuario extends javax.swing.JFrame {
 <span class="nc" id="L78">        } catch (NumberFormatException e) {</span>
 <span class="nc" id="L79">            this.jLabel12.setText(&quot;Error al encontrar el usuario&quot;);</span>
 <span class="nc" id="L80">        }</span>
-<span class="nc bnc" id="L81" title="All 2 branches missed.">        if(usuarioActual.getProfesionalAsignado()!=null){</span>
+<span class="nc bnc" id="L81" title="All 2 branches missed.">        if(!usuarioActual.getProfesionalAsignado().getNombre().contains(&quot;no ingreso nombre&quot;)){</span>
 <span class="nc" id="L82">              jLabel6.setText(&quot;Plan de Alimentacion asignado por : &quot;+ usuarioActual.getProfesionalAsignado().getNombre()+&quot; &quot;</span>
 <span class="nc" id="L83">                + usuarioActual.getProfesionalAsignado().getApellidos() );</span>
         }else{
-<span class="nc" id="L85">               jLabel6.setText(&quot;No tienes ningun plan de alimentacion:&quot;);</span>
+<span class="nc" id="L85">               jLabel6.setText(&quot;No tienes ningun plan de alimentacion&quot;);</span>
         }
       
 <span class="nc" id="L88">        setIconImage(new ImageIcon(getClass().getResource(&quot;/imagenes/icono.png&quot;)).getImage());</span>

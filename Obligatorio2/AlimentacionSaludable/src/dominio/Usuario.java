@@ -226,7 +226,7 @@ public class Usuario extends Persona implements Serializable {
         return listaPaisesPivot;
     }
 
-    public Nacionalidades[] inicializoListaEnum() {
+    public static Nacionalidades[] inicializoListaEnum() {
         Nacionalidades[] listaEnumPivot = {
             Nacionalidades.Alemana, Nacionalidades.Argentina,
             Nacionalidades.Australiana, Nacionalidades.Austriaca,

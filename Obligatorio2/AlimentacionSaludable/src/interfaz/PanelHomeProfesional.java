@@ -25,7 +25,7 @@ public class PanelHomeProfesional extends javax.swing.JPanel {
         ventana = unaVentana;
         panelUsuarioRegistrados=unPanelUsuariosRegistrados;
         jListDatosDelProfesional.setListData(cargoDatosDelProfesional(profesional).toArray());
-        etiquetaFoto.setIcon(profesional.getFotoPerfil());
+        fotoPerfil.setIcon(profesional.getFotoPerfil());
     }
 
     @SuppressWarnings("unchecked")
@@ -35,7 +35,6 @@ public class PanelHomeProfesional extends javax.swing.JPanel {
         etiquetaTitulo = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jListDatosDelProfesional = new javax.swing.JList();
-        etiquetaFoto = new javax.swing.JLabel();
         fotoPerfil = new javax.swing.JLabel();
         btnVolver = new javax.swing.JButton();
 
@@ -61,18 +60,12 @@ public class PanelHomeProfesional extends javax.swing.JPanel {
         add(jScrollPane2);
         jScrollPane2.setBounds(260, 100, 350, 260);
 
-        etiquetaFoto.setMaximumSize(new java.awt.Dimension(210, 240));
-        etiquetaFoto.setMinimumSize(new java.awt.Dimension(210, 240));
-        etiquetaFoto.setPreferredSize(new java.awt.Dimension(210, 240));
-        add(etiquetaFoto);
-        etiquetaFoto.setBounds(20, 110, 210, 290);
-
-        fotoPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/predeterminadaUsuario.jpg"))); // NOI18N
+        fotoPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/profesional.png"))); // NOI18N
         fotoPerfil.setMaximumSize(new java.awt.Dimension(210, 240));
         fotoPerfil.setMinimumSize(new java.awt.Dimension(210, 240));
         fotoPerfil.setPreferredSize(new java.awt.Dimension(210, 240));
         add(fotoPerfil);
-        fotoPerfil.setBounds(20, 120, 210, 220);
+        fotoPerfil.setBounds(20, 110, 210, 220);
 
         btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/volver.png"))); // NOI18N
         btnVolver.setToolTipText("");
@@ -102,7 +95,6 @@ private Profesional getUsuario(){
 }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnVolver;
-    private javax.swing.JLabel etiquetaFoto;
     private javax.swing.JLabel etiquetaTitulo;
     private javax.swing.JLabel fotoPerfil;
     private javax.swing.JList jListDatosDelProfesional;

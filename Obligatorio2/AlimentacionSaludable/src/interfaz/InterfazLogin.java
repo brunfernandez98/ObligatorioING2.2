@@ -7,16 +7,14 @@ package interfaz;
 
 import dominio.Sistema;
 import handlers.GestionLogin;
-import java.awt.Component;
+
 
 import java.util.TimerTask;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
+
 import javax.swing.JDialog;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
+
 import javax.swing.JOptionPane;
 
 /**
@@ -30,13 +28,15 @@ public class InterfazLogin extends javax.swing.JFrame {
      */
     private final Sistema repositorio;
     private final JFrame ventana;
-    private PanelHomeDeUsuario interfazUsuario = null;
+    private PanelHomeDeUsuario interfazUsuario;
 
     public InterfazLogin(JFrame unaVentana,
             Sistema unSistema) {
+        this.interfazUsuario = null;
         repositorio = unSistema;
         initComponents();
         ventana = unaVentana;
+        setIconImage(new ImageIcon(getClass().getResource("/imagenes/icono.png")).getImage());
         setLocationRelativeTo(null);
     }
 

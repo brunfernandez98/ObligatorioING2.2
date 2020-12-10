@@ -17,9 +17,9 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 public class PanelEditarPerfilProfesional extends javax.swing.JPanel {
 
     //Atributos
-    private Sistema sistema;
-    private Profesional profesional;
-    private JFrame ventana;
+    private final Sistema sistema;
+    private final Profesional profesional;
+    private final JFrame ventana;
     
 
     //Constructor
