@@ -1,7 +1,7 @@
 package dominio;
 
 import java.io.Serializable;
-import java.lang.reflect.Array;
+
 import java.util.ArrayList;
 
 public class PlanDeAlimentacion implements Serializable{

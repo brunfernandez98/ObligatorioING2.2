@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package alimentacionsaludable;
+
 import dominio.Sistema;
 import interfaz.InterfazLogin;
 
@@ -22,12 +23,9 @@ public class AlimentacionSaludable {
         Sistema repositorio = new Sistema();
         repositorio.cargarSistema();
         PanelPrincipal panel = new PanelPrincipal(repositorio);
-        //InterfazBotonesAdministrador i = new InterfazBotonesAdministrador(s,p);
-        //InterfazBotonesUsuario i = new InterfazBotonesUsuario(s,p);
-        //InterfazBotonesProfesional i = new InterfazBotonesProfesional(s,p);
-        InterfazLogin comienzo = new InterfazLogin(panel,panel.getSistema());
-       
+
+        InterfazLogin comienzo = new InterfazLogin(panel, panel.getSistema());
+
         comienzo.setVisible(true);
     }
 }
-

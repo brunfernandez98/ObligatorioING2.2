@@ -1,5 +1,7 @@
 package dominio;
 
+import java.awt.Image;
+import javax.swing.ImageIcon;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -21,7 +23,19 @@ public class PersonaTest {
         aux = null;
         instance = null;
     }
-
+    
+    
+     @Test
+    public void testSetFotoPerfil() {
+        System.out.println("setFotoPerfil");
+        
+        instance.setFotoPerfil(new ImageIcon(getClass().getResource("prueba.png")));
+        ImageIcon result = instance.getFotoPerfil();
+       assertEquals(instance.getFotoPerfil(), result);
+    }
+ 
+    
+    
 
     @Test
     public void testGetNombre() {

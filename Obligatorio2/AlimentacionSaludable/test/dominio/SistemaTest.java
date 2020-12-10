@@ -1,14 +1,11 @@
 package dominio;
 
-import static datechooser.beans.pic.Pictures.getResource;
-import java.io.IOException;
-import java.net.URL;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

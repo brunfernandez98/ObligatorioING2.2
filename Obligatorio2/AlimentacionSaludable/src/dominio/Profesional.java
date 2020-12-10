@@ -3,7 +3,7 @@ package dominio;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Optional;
-import javax.swing.ImageIcon;
+
 
 public class Profesional extends Persona implements Serializable {
 
@@ -20,14 +20,11 @@ public class Profesional extends Persona implements Serializable {
     public Profesional() {
         super("no ingreso nombre", "no ingreso apellido", "no ingreso usuario",
               "no ingreso fecha nacimiento", null);
-        this.setFotoPerfil(new javax.swing
-                           .ImageIcon(getClass()
-                           .getResource
-                           ("/imagenes/predeterminadaProfesional.png")));
+        
         this.nombreTituloProf = "no ingreso titulo prof";
         this.fechaGraduacion = "no ingreso fecha graduacion";
         this.paisObtuvoTitulo = Pais.Uruguay;
-        this.casillaDeEntrada = new ArrayList<Mensaje>();
+        this.casillaDeEntrada = new ArrayList<>();
     }
 
     // Metodos de la clase profesional

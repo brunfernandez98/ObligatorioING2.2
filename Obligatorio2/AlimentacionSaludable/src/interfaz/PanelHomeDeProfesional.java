@@ -5,10 +5,9 @@
  */
 package interfaz;
 
-import dominio.Persona;
 import dominio.Profesional;
 import dominio.Sistema;
-import dominio.Usuario;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Image;
@@ -54,17 +53,16 @@ public class PanelHomeDeProfesional extends javax.swing.JFrame {
             this.labelMensajes.setText(labelMensajes.getText() + getUsuarioActual().getCasillaDeEntrada().size());
             ImageIcon imageIcon = scaleImage(usuarioActual.getFotoPerfil(), 200, 200);
             etiquetaFoto.setIcon(imageIcon);
+             this.labelTitulo.setText(usuarioActual.getNombreTituloProf());
+            this.labelPais.setText(usuarioActual.getPaisObtuvoTitulo().toString());
 
-        } catch (NumberFormatException e) {
+        } catch (NumberFormatException | NullPointerException e) {
             jLabel12.setText("Error al encontrar usuario");
-            this.usuarioActual = null;
+            
         }
-
         panelRegistroAlimento = new PanelRegistroAlimento(sistema, ventana);
         panelRedactarConsulta = new PanelRedactarConsultaDesdeProfesional(sistema, usuarioActual, ventana);
         buzon = new PanelConsultaProfesionalDesdeProfesional(sistema, ventana, usuarioActual);
-        this.labelTitulo.setText(usuarioActual.getNombreTituloProf());
-        this.labelPais.setText(usuarioActual.getPaisObtuvoTitulo().toString());
         panelRealizarPlan = new PanelSeleccionarPlanARealizar(sistema, this, this.getUsuarioActual());
         panelPerfilProfesional = new PanelPerfilProfesionalDesdeProfesional(sistema, this, this.getUsuarioActual());
         setLocationRelativeTo(null);
@@ -705,12 +703,11 @@ public class PanelHomeDeProfesional extends javax.swing.JFrame {
     }
 
     private void resetColor(JPanel[] pane, JPanel[] indicators) {
-        for (int i = 0; i < pane.length; i++) {
-            pane[i].setBackground(new Color(23, 35, 51));
-
+        for (JPanel pane1 : pane) {
+            pane1.setBackground(new Color(23, 35, 51));
         }
-        for (int i = 0; i < indicators.length; i++) {
-            indicators[i].setOpaque(false);
+        for (JPanel indicator : indicators) {
+            indicator.setOpaque(false);
         }
 
     }

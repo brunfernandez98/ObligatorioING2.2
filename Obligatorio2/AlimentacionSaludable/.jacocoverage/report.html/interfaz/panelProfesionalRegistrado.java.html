@@ -7,7 +7,6 @@ package interfaz;
 
 import dominio.Profesional;
 import dominio.Sistema;
-import dominio.Usuario;
 import java.awt.Dimension;
 import java.util.ArrayList;
 import javax.swing.JDialog;
@@ -28,12 +27,14 @@ public class panelProfesionalRegistrado extends javax.swing.JPanel {
     
     /**
      * Creates new form panelProfesionalRegistrado
+     * @param unSistema
+     * @param unaVentana
      */
-<span class="nc" id="L32">    public panelProfesionalRegistrado(Sistema unSistema,PanelHomeDeAdministrador unaVentana) {</span>
-<span class="nc" id="L33">        initComponents();</span>
-<span class="nc" id="L34">        sistema=unSistema;</span>
-<span class="nc" id="L35">        ventanaAdministrador=unaVentana;        </span>
-<span class="nc" id="L36">    }</span>
+<span class="nc" id="L33">    public panelProfesionalRegistrado(Sistema unSistema,PanelHomeDeAdministrador unaVentana) {</span>
+<span class="nc" id="L34">        initComponents();</span>
+<span class="nc" id="L35">        sistema=unSistema;</span>
+<span class="nc" id="L36">        ventanaAdministrador=unaVentana;        </span>
+<span class="nc" id="L37">    }</span>
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -45,44 +46,44 @@ dify this code. The content of this method is always
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
     private void initComponents() {
 
-<span class="nc" id="L48">        jButton4 = new javax.swing.JButton();</span>
-<span class="nc" id="L49">        jButton1 = new javax.swing.JButton();</span>
-<span class="nc" id="L50">        jButton2 = new javax.swing.JButton();</span>
-<span class="nc" id="L51">        jScrollPane1 = new javax.swing.JScrollPane();</span>
-<span class="nc" id="L52">        jTable1 = new javax.swing.JTable();</span>
+<span class="nc" id="L49">        jButton4 = new javax.swing.JButton();</span>
+<span class="nc" id="L50">        jButton1 = new javax.swing.JButton();</span>
+<span class="nc" id="L51">        jButton2 = new javax.swing.JButton();</span>
+<span class="nc" id="L52">        jScrollPane1 = new javax.swing.JScrollPane();</span>
+<span class="nc" id="L53">        jTable1 = new javax.swing.JTable();</span>
 
-<span class="nc" id="L54">        setBackground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L55">        setPreferredSize(new java.awt.Dimension(650, 540));</span>
-<span class="nc" id="L56">        setLayout(null);</span>
+<span class="nc" id="L55">        setBackground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L56">        setPreferredSize(new java.awt.Dimension(650, 540));</span>
+<span class="nc" id="L57">        setLayout(null);</span>
 
-<span class="nc" id="L58">        jButton4.setText(&quot;Borrar Usuario&quot;);</span>
-<span class="nc" id="L59">        jButton4.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L59">        jButton4.setText(&quot;Borrar Usuario&quot;);</span>
+<span class="nc" id="L60">        jButton4.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L61">                jButton4ActionPerformed(evt);</span>
-<span class="nc" id="L62">            }</span>
+<span class="nc" id="L62">                jButton4ActionPerformed(evt);</span>
+<span class="nc" id="L63">            }</span>
         });
-<span class="nc" id="L64">        add(jButton4);</span>
-<span class="nc" id="L65">        jButton4.setBounds(30, 50, 210, 34);</span>
+<span class="nc" id="L65">        add(jButton4);</span>
+<span class="nc" id="L66">        jButton4.setBounds(30, 50, 210, 34);</span>
 
-<span class="nc" id="L67">        jButton1.setText(&quot;Editar Usuario&quot;);</span>
-<span class="nc" id="L68">        jButton1.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L68">        jButton1.setText(&quot;Editar Usuario&quot;);</span>
+<span class="nc" id="L69">        jButton1.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L70">                jButton1ActionPerformed(evt);</span>
-<span class="nc" id="L71">            }</span>
+<span class="nc" id="L71">                jButton1ActionPerformed(evt);</span>
+<span class="nc" id="L72">            }</span>
         });
-<span class="nc" id="L73">        add(jButton1);</span>
-<span class="nc" id="L74">        jButton1.setBounds(30, 50, 210, 34);</span>
+<span class="nc" id="L74">        add(jButton1);</span>
+<span class="nc" id="L75">        jButton1.setBounds(30, 50, 210, 34);</span>
 
-<span class="nc" id="L76">        jButton2.setText(&quot;Informacion del Usuario&quot;);</span>
-<span class="nc" id="L77">        jButton2.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L77">        jButton2.setText(&quot;Informacion del Usuario&quot;);</span>
+<span class="nc" id="L78">        jButton2.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L79">                jButton2ActionPerformed(evt);</span>
-<span class="nc" id="L80">            }</span>
+<span class="nc" id="L80">                jButton2ActionPerformed(evt);</span>
+<span class="nc" id="L81">            }</span>
         });
-<span class="nc" id="L82">        add(jButton2);</span>
-<span class="nc" id="L83">        jButton2.setBounds(380, 50, 220, 34);</span>
+<span class="nc" id="L83">        add(jButton2);</span>
+<span class="nc" id="L84">        jButton2.setBounds(380, 50, 220, 34);</span>
 
-<span class="nc" id="L85">        jTable1.setModel(new javax.swing.table.DefaultTableModel(</span>
+<span class="nc" id="L86">        jTable1.setModel(new javax.swing.table.DefaultTableModel(</span>
             new Object [][] {
 
             },
@@ -90,90 +91,90 @@ dify this code. The content of this method is always
                 &quot;Nombre&quot;, &quot;Apellido&quot;, &quot;Nombre Usuario&quot;, &quot;Contraseña&quot;
             }
         ));
-<span class="nc" id="L93">        jScrollPane1.setViewportView(jTable1);</span>
+<span class="nc" id="L94">        jScrollPane1.setViewportView(jTable1);</span>
 
-<span class="nc" id="L95">        add(jScrollPane1);</span>
-<span class="nc" id="L96">        jScrollPane1.setBounds(0, 172, 670, 370);</span>
-<span class="nc" id="L97">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+<span class="nc" id="L96">        add(jScrollPane1);</span>
+<span class="nc" id="L97">        jScrollPane1.setBounds(0, 172, 670, 370);</span>
+<span class="nc" id="L98">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
     public void setModo(int unModo){
         
-<span class="nc bnc" id="L101" title="All 2 branches missed.">        if(unModo==0){</span>
-<span class="nc" id="L102">            this.jButton4.setVisible(true);</span>
-<span class="nc" id="L103">           this.jButton1.setVisible(false);</span>
-<span class="nc bnc" id="L104" title="All 2 branches missed.">        }else if(unModo==1){</span>
-<span class="nc" id="L105">            this.jButton1.setVisible(true);</span>
-<span class="nc" id="L106">            this.jButton4.setVisible(false);</span>
+<span class="nc bnc" id="L102" title="All 2 branches missed.">        if(unModo==0){</span>
+<span class="nc" id="L103">            this.jButton4.setVisible(true);</span>
+<span class="nc" id="L104">           this.jButton1.setVisible(false);</span>
+<span class="nc bnc" id="L105" title="All 2 branches missed.">        }else if(unModo==1){</span>
+<span class="nc" id="L106">            this.jButton1.setVisible(true);</span>
+<span class="nc" id="L107">            this.jButton4.setVisible(false);</span>
         }else{
-<span class="nc" id="L108">            this.jButton1.setVisible(false);</span>
-<span class="nc" id="L109">            this.jButton4.setVisible(false);</span>
+<span class="nc" id="L109">            this.jButton1.setVisible(false);</span>
+<span class="nc" id="L110">            this.jButton4.setVisible(false);</span>
         }
-<span class="nc" id="L111">    }</span>
+<span class="nc" id="L112">    }</span>
      void actualizarTabla(){
       
-<span class="nc" id="L114">         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();</span>
-<span class="nc" id="L115">         model.getDataVector().removeAllElements();</span>
-<span class="nc" id="L116">         Object[] rowData  = new Object[model.getColumnCount()];</span>
+<span class="nc" id="L115">         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();</span>
+<span class="nc" id="L116">         model.getDataVector().removeAllElements();</span>
+<span class="nc" id="L117">         Object[] rowData  = new Object[model.getColumnCount()];</span>
         
-<span class="nc bnc" id="L118" title="All 2 branches missed.">       for (int i=0; i&lt;sistema.getListaProfesionales().size(); i++){</span>
-<span class="nc" id="L119">           Profesional unUsuario=sistema.getListaProfesionales().get(i);</span>
-<span class="nc" id="L120">           rowData[0] = unUsuario.getNombre();</span>
-<span class="nc" id="L121">        rowData[1] = unUsuario.getApellidos();</span>
-<span class="nc" id="L122">        rowData[2] = unUsuario.getNombreUsuario();</span>
-<span class="nc" id="L123">        rowData[3] = unUsuario.getPassword();</span>
-<span class="nc" id="L124">       model.addRow(rowData);</span>
+<span class="nc bnc" id="L119" title="All 2 branches missed.">       for (int i=0; i&lt;sistema.getListaProfesionales().size(); i++){</span>
+<span class="nc" id="L120">           Profesional unUsuario=sistema.getListaProfesionales().get(i);</span>
+<span class="nc" id="L121">           rowData[0] = unUsuario.getNombre();</span>
+<span class="nc" id="L122">        rowData[1] = unUsuario.getApellidos();</span>
+<span class="nc" id="L123">        rowData[2] = unUsuario.getNombreUsuario();</span>
+<span class="nc" id="L124">        rowData[3] = unUsuario.getPassword();</span>
+<span class="nc" id="L125">       model.addRow(rowData);</span>
            }
         
-<span class="nc" id="L127">    }</span>
+<span class="nc" id="L128">    }</span>
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-<span class="nc" id="L130">        int row=jTable1.getSelectedRow();</span>
-<span class="nc" id="L131">        int column=2;</span>
-<span class="nc" id="L132">        String userName=jTable1.getModel().getValueAt(row, column).toString();</span>
+<span class="nc" id="L131">        int row=jTable1.getSelectedRow();</span>
+<span class="nc" id="L132">        int column=2;</span>
+<span class="nc" id="L133">        String userName=jTable1.getModel().getValueAt(row, column).toString();</span>
 
-<span class="nc" id="L134">        Profesional usuarioReal=getUsuarioEspecifico(userName,sistema.getListaProfesionales());</span>
-<span class="nc" id="L135">        panelEditarUsuario=new PanelEditarPerfilProfesional(sistema,ventanaAdministrador,usuarioReal);</span>
-<span class="nc" id="L136">        ventanaAdministrador.setPanelActual(panelEditarUsuario);</span>
+<span class="nc" id="L135">        Profesional usuarioReal=getUsuarioEspecifico(userName,sistema.getListaProfesionales());</span>
+<span class="nc" id="L136">        panelEditarUsuario=new PanelEditarPerfilProfesional(sistema,ventanaAdministrador,usuarioReal);</span>
+<span class="nc" id="L137">        ventanaAdministrador.setPanelActual(panelEditarUsuario);</span>
 
-<span class="nc" id="L138">        ventanaAdministrador.getPanelPrincipal().add(ventanaAdministrador.getPanelActual(), new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 650, 540));</span>
-<span class="nc" id="L139">        ventanaAdministrador.setPreferredSize(new Dimension(400, 400));</span>
-<span class="nc" id="L140">  actualizarTabla();</span>
-<span class="nc" id="L141">    }//GEN-LAST:event_jButton1ActionPerformed</span>
+<span class="nc" id="L139">        ventanaAdministrador.getPanelPrincipal().add(ventanaAdministrador.getPanelActual(), new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 650, 540));</span>
+<span class="nc" id="L140">        ventanaAdministrador.setPreferredSize(new Dimension(400, 400));</span>
+<span class="nc" id="L141">  actualizarTabla();</span>
+<span class="nc" id="L142">    }//GEN-LAST:event_jButton1ActionPerformed</span>
 private Profesional getUsuarioEspecifico(
   String userName, ArrayList&lt;Profesional&gt; profesionales) {
  
-<span class="nc bnc" id="L145" title="All 2 branches missed.">    for (Profesional unProfesional : profesionales) {</span>
-<span class="nc bnc" id="L146" title="All 2 branches missed.">        if (unProfesional.getNombreUsuario().equals(userName)) {</span>
-<span class="nc" id="L147">            return unProfesional;</span>
+<span class="nc bnc" id="L146" title="All 2 branches missed.">    for (Profesional unProfesional : profesionales) {</span>
+<span class="nc bnc" id="L147" title="All 2 branches missed.">        if (unProfesional.getNombreUsuario().equals(userName)) {</span>
+<span class="nc" id="L148">            return unProfesional;</span>
         }
-<span class="nc" id="L149">    }</span>
-<span class="nc" id="L150">    return null;</span>
+<span class="nc" id="L150">    }</span>
+<span class="nc" id="L151">    return null;</span>
 }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-<span class="nc" id="L153">        int row=jTable1.getSelectedRow();</span>
-<span class="nc" id="L154">        int column=2;</span>
-<span class="nc" id="L155">        String userName=jTable1.getModel().getValueAt(row, column).toString();</span>
+<span class="nc" id="L154">        int row=jTable1.getSelectedRow();</span>
+<span class="nc" id="L155">        int column=2;</span>
+<span class="nc" id="L156">        String userName=jTable1.getModel().getValueAt(row, column).toString();</span>
 
-<span class="nc" id="L157">        Profesional usuarioReal=getUsuarioEspecifico(userName,sistema.getListaProfesionales());</span>
-<span class="nc" id="L158">        panelInformacionUsuario=new PanelHomeProfesional(sistema,ventanaAdministrador,usuarioReal,this);</span>
-<span class="nc" id="L159">        ventanaAdministrador.setPanelActual(panelInformacionUsuario);</span>
-<span class="nc" id="L160">      ventanaAdministrador.getPanelPrincipal().add(ventanaAdministrador.getPanelActual(), new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 650, 540));</span>
-<span class="nc" id="L161">        ventanaAdministrador.setPreferredSize(new Dimension(400, 400));</span>
-<span class="nc" id="L162">    }//GEN-LAST:event_jButton2ActionPerformed</span>
+<span class="nc" id="L158">        Profesional usuarioReal=getUsuarioEspecifico(userName,sistema.getListaProfesionales());</span>
+<span class="nc" id="L159">        panelInformacionUsuario=new PanelHomeProfesional(sistema,ventanaAdministrador,usuarioReal,this);</span>
+<span class="nc" id="L160">        ventanaAdministrador.setPanelActual(panelInformacionUsuario);</span>
+<span class="nc" id="L161">      ventanaAdministrador.getPanelPrincipal().add(ventanaAdministrador.getPanelActual(), new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 650, 540));</span>
+<span class="nc" id="L162">        ventanaAdministrador.setPreferredSize(new Dimension(400, 400));</span>
+<span class="nc" id="L163">    }//GEN-LAST:event_jButton2ActionPerformed</span>
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-<span class="nc" id="L165">         int row=jTable1.getSelectedRow();</span>
-<span class="nc" id="L166">        int column=2;</span>
-<span class="nc" id="L167">        String userName=jTable1.getModel().getValueAt(row, column).toString();</span>
-<span class="nc" id="L168">        Profesional usuarioReal=getUsuarioEspecifico(userName,sistema.getListaProfesionales());</span>
-<span class="nc" id="L169">        sistema.getListaProfesionales().remove(usuarioReal);</span>
-<span class="nc" id="L170">        JOptionPane optionPane = new JOptionPane(&quot;Profesional eliminado &quot;</span>
+<span class="nc" id="L166">         int row=jTable1.getSelectedRow();</span>
+<span class="nc" id="L167">        int column=2;</span>
+<span class="nc" id="L168">        String userName=jTable1.getModel().getValueAt(row, column).toString();</span>
+<span class="nc" id="L169">        Profesional usuarioReal=getUsuarioEspecifico(userName,sistema.getListaProfesionales());</span>
+<span class="nc" id="L170">        sistema.getListaProfesionales().remove(usuarioReal);</span>
+<span class="nc" id="L171">        JOptionPane optionPane = new JOptionPane(&quot;Profesional eliminado &quot;</span>
                     + &quot;correctamente&quot;, JOptionPane.INFORMATION_MESSAGE);
-<span class="nc" id="L172">            JDialog dialog = optionPane.createDialog(&quot;Baja Profesional&quot;);</span>
-<span class="nc" id="L173">            dialog.setAlwaysOnTop(true);</span>
-<span class="nc" id="L174">            dialog.setVisible(true);</span>
-<span class="nc" id="L175">         actualizarTabla();</span>
-<span class="nc" id="L176">    }//GEN-LAST:event_jButton4ActionPerformed</span>
+<span class="nc" id="L173">            JDialog dialog = optionPane.createDialog(&quot;Baja Profesional&quot;);</span>
+<span class="nc" id="L174">            dialog.setAlwaysOnTop(true);</span>
+<span class="nc" id="L175">            dialog.setVisible(true);</span>
+<span class="nc" id="L176">         actualizarTabla();</span>
+<span class="nc" id="L177">    }//GEN-LAST:event_jButton4ActionPerformed</span>
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

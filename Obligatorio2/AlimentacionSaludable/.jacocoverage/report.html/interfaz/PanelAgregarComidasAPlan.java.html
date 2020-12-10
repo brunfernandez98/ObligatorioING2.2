@@ -98,11 +98,12 @@ public class PanelAgregarComidasAPlan extends javax.swing.JPanel {
 <span class="nc" id="L98">    }//GEN-LAST:event_btnAgregarComidaActionPerformed</span>
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-<span class="nc" id="L101">        ventana.setPanelActual(realizarPlan);</span>
-<span class="nc" id="L102">        ventana.getPanelPrincipal().add(ventana.getPanelActual(), new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 650, 540));</span>
-<span class="nc" id="L103">        ventana.setPreferredSize(new Dimension(400, 400));</span>
-<span class="nc" id="L104">        realizarPlan.actualizarLista();</span>
-<span class="nc" id="L105">    }//GEN-LAST:event_btnVolverActionPerformed</span>
+<span class="nc" id="L101"> PanelRealizarPlanAlimentacion nuevo = new PanelRealizarPlanAlimentacion(sistema,ventana, usuarioAModificar, plan);</span>
+<span class="nc" id="L102">        ventana.setPanelActual(nuevo);</span>
+<span class="nc" id="L103">        ventana.getPanelPrincipal().add(ventana.getPanelActual(), new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 650, 540));</span>
+<span class="nc" id="L104">        ventana.setPreferredSize(new Dimension(400, 400));</span>
+<span class="nc" id="L105">        realizarPlan.actualizarLista();</span>
+<span class="nc" id="L106">    }//GEN-LAST:event_btnVolverActionPerformed</span>
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

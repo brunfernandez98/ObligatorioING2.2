@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Sistema.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">dominio</a> &gt; <span class="el_source">Sistema.java</span></div><h1>Sistema.java</h1><pre class="source lang-java linenums">package dominio;
 
-import com.toedter.calendar.JDateChooser;
-import java.awt.Graphics2D;
-import java.awt.image.BufferedImage;
+
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Optional;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
+
 
 public class Sistema implements Serializable {
 
@@ -31,157 +27,138 @@ public class Sistema implements Serializable {
     public Sistema(ArrayList&lt;Alimento&gt; listaAlimentos,
             ArrayList&lt;Usuario&gt; listaUsuarios,
             ArrayList&lt;Profesional&gt; listaProfesionales,
-<span class="fc" id="L34">            tipoUsuario usuarioActivo,HashMap&lt;String,String&gt; usuarioAdministrador) {</span>
-<span class="fc" id="L35">        this.listaAlimentos = listaAlimentos;</span>
-<span class="fc" id="L36">        this.listaUsuarios = listaUsuarios;</span>
-<span class="fc" id="L37">        this.listaProfesionales = listaProfesionales;</span>
-<span class="fc" id="L38">        this.usuarioActivo = usuarioActivo;</span>
-<span class="fc" id="L39">        this.usuarioAdministrador= usuarioAdministrador;</span>
-<span class="fc" id="L40">        this.listaTiposDeUsuario = inicializoListaTiposDeUsuario();</span>
-        
-<span class="fc" id="L42">    }</span>
+<span class="fc" id="L30">            tipoUsuario usuarioActivo, HashMap&lt;String, String&gt; usuarioAdministrador) {</span>
+<span class="fc" id="L31">        this.listaAlimentos = listaAlimentos;</span>
+<span class="fc" id="L32">        this.listaUsuarios = listaUsuarios;</span>
+<span class="fc" id="L33">        this.listaProfesionales = listaProfesionales;</span>
+<span class="fc" id="L34">        this.usuarioActivo = usuarioActivo;</span>
+<span class="fc" id="L35">        this.usuarioAdministrador = usuarioAdministrador;</span>
+<span class="fc" id="L36">        this.listaTiposDeUsuario = inicializoListaTiposDeUsuario();</span>
 
-<span class="fc" id="L44">    public Sistema() {</span>
-<span class="fc" id="L45">        this.listaAlimentos = new ArrayList();</span>
-<span class="fc" id="L46">        this.listaUsuarios = new ArrayList();</span>
-<span class="fc" id="L47">        this.listaProfesionales = new ArrayList();</span>
-<span class="fc" id="L48">        this.usuarioActivo = tipoUsuario.NoSeleccionado;</span>
-<span class="fc" id="L49">        this.usuarioAdministrador= new HashMap&lt;&gt;();</span>
-        
-<span class="fc" id="L51">        this.listaTiposDeUsuario = inicializoListaTiposDeUsuario();</span>
-<span class="fc" id="L52">        usuarioAdministrador=new HashMap&lt;&gt;();</span>
-<span class="fc" id="L53">        usuarioAdministrador.put(&quot;admin&quot;, &quot;adminalimentacion&quot;);</span>
-         
-<span class="fc" id="L55">    }</span>
+<span class="fc" id="L38">    }</span>
+
+<span class="fc" id="L40">    public Sistema() {</span>
+<span class="fc" id="L41">        this.listaAlimentos = new ArrayList();</span>
+<span class="fc" id="L42">        this.listaUsuarios = new ArrayList();</span>
+<span class="fc" id="L43">        this.listaProfesionales = new ArrayList();</span>
+<span class="fc" id="L44">        this.usuarioActivo = tipoUsuario.NoSeleccionado;</span>
+<span class="fc" id="L45">        this.usuarioAdministrador = new HashMap&lt;&gt;();</span>
+
+<span class="fc" id="L47">        this.listaTiposDeUsuario = inicializoListaTiposDeUsuario();</span>
+<span class="fc" id="L48">        usuarioAdministrador = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L49">        usuarioAdministrador.put(&quot;admin&quot;, &quot;adminalimentacion&quot;);</span>
+
+<span class="fc" id="L51">    }</span>
     //Metodos de la clase sistema
 
-    
-       public HashMap&lt;String,String&gt; getListaUsuarioAdministador() {
-<span class="fc" id="L60">        return this.usuarioAdministrador;</span>
+    public HashMap&lt;String, String&gt; getListaUsuarioAdministador() {
+<span class="fc" id="L55">        return this.usuarioAdministrador;</span>
     }
-    
-    public void setUsuarioAdministrador(String nombreUsuario,String password){
-<span class="fc" id="L64">        this.usuarioAdministrador.put(nombreUsuario, password);</span>
-<span class="fc" id="L65">    }</span>
-    
-    
-    
+
+    public void setUsuarioAdministrador(String nombreUsuario, String password) {
+<span class="fc" id="L59">        this.usuarioAdministrador.put(nombreUsuario, password);</span>
+<span class="fc" id="L60">    }</span>
+
     public tipoUsuario[] getListaTiposDeUsuario() {
-<span class="fc" id="L70">        tipoUsuario[] lista = listaTiposDeUsuario;</span>
-<span class="fc" id="L71">        return lista;</span>
+<span class="fc" id="L63">        tipoUsuario[] lista = listaTiposDeUsuario;</span>
+<span class="fc" id="L64">        return lista;</span>
     }
 
     public void setListaTiposDeUsuario(tipoUsuario[] listaTiposDeUsuario) {
-<span class="fc" id="L75">        this.listaTiposDeUsuario = Optional</span>
-<span class="fc" id="L76">                .ofNullable(listaTiposDeUsuario)</span>
-<span class="fc" id="L77">                .orElse(null);</span>
-<span class="fc" id="L78">    }</span>
+<span class="fc" id="L68">        this.listaTiposDeUsuario = Optional</span>
+<span class="fc" id="L69">                .ofNullable(listaTiposDeUsuario)</span>
+<span class="fc" id="L70">                .orElse(null);</span>
+<span class="fc" id="L71">    }</span>
 
     public ArrayList&lt;Alimento&gt; getListaAlimentos() {
-<span class="fc" id="L81">        return listaAlimentos;</span>
+<span class="fc" id="L74">        return listaAlimentos;</span>
     }
 
     public void setListaAlimentos(ArrayList&lt;Alimento&gt; listaAlimentos) {
-<span class="fc" id="L85">        this.listaAlimentos = listaAlimentos;</span>
-<span class="fc" id="L86">    }</span>
+<span class="fc" id="L78">        this.listaAlimentos = listaAlimentos;</span>
+<span class="fc" id="L79">    }</span>
 
-    
-    
-    
-    
-  
     public ArrayList&lt;Usuario&gt; getListaUsuarios() {
-<span class="fc" id="L94">        return listaUsuarios;</span>
+<span class="fc" id="L82">        return listaUsuarios;</span>
     }
 
     public void setListaUsuarios(ArrayList&lt;Usuario&gt; listaUsuarios) {
-<span class="fc" id="L98">        this.listaUsuarios = listaUsuarios;</span>
-<span class="fc" id="L99">    }</span>
+<span class="fc" id="L86">        this.listaUsuarios = listaUsuarios;</span>
+<span class="fc" id="L87">    }</span>
 
-  
-    
     public ArrayList&lt;Profesional&gt; getListaProfesionales() {
-<span class="fc" id="L104">        return listaProfesionales;</span>
+<span class="fc" id="L90">        return listaProfesionales;</span>
     }
 
-    public void setListaProfesionales(ArrayList&lt;Profesional&gt;
-                                      listaProfesionales) {
-<span class="fc" id="L109">        this.listaProfesionales = listaProfesionales;</span>
-<span class="fc" id="L110">    }</span>
+    public void setListaProfesionales(ArrayList&lt;Profesional&gt; listaProfesionales) {
+<span class="fc" id="L94">        this.listaProfesionales = listaProfesionales;</span>
+<span class="fc" id="L95">    }</span>
 
     public tipoUsuario getUsuarioActivo() {
-<span class="fc" id="L113">        return usuarioActivo;</span>
+<span class="fc" id="L98">        return usuarioActivo;</span>
     }
 
     public void setUsuarioActivo(tipoUsuario usuarioActivo) {
-<span class="fc" id="L117">        this.usuarioActivo = usuarioActivo;</span>
-<span class="fc" id="L118">    }</span>
+<span class="fc" id="L102">        this.usuarioActivo = usuarioActivo;</span>
+<span class="fc" id="L103">    }</span>
 
-<span class="pc" id="L120">    public enum tipoUsuario {</span>
-<span class="fc" id="L121">        Profesional, Usuario, NoSeleccionado</span>
+<span class="pc" id="L105">    public enum tipoUsuario {</span>
+<span class="fc" id="L106">        Profesional, Usuario, NoSeleccionado</span>
     }
 
     //Metodo para inicializar lista de enums de tipo de usuario
-    tipoUsuario[] inicializoListaTiposDeUsuario() {
-<span class="fc" id="L126">        tipoUsuario[] listaPivot = {tipoUsuario.Profesional,</span>
+    public tipoUsuario[] inicializoListaTiposDeUsuario() {
+<span class="fc" id="L111">        tipoUsuario[] listaPivot = {tipoUsuario.Profesional,</span>
             tipoUsuario.Usuario};
-<span class="fc" id="L128">        return listaPivot;</span>
+<span class="fc" id="L113">        return listaPivot;</span>
     }
 
     //CARGAR Y GUARDAR SISTEMA
     public void cargarSistema() {
         try {
-<span class="nc" id="L134">            ObjectInputStream in = new ObjectInputStream</span>
-                                   (new FileInputStream(&quot;repositorio.ser&quot;));
-<span class="nc" id="L136">            ArrayList&lt;Alimento&gt; listAlimentos = (ArrayList&lt;Alimento&gt;)</span>
-<span class="nc" id="L137">                                                in.readObject();</span>
-<span class="nc" id="L138">            listaAlimentos = listAlimentos;</span>
-<span class="nc" id="L139">            ArrayList&lt;Usuario&gt; listUsuarios = (ArrayList&lt;Usuario&gt;)</span>
-<span class="nc" id="L140">                                              in.readObject();</span>
-<span class="nc" id="L141">            listaUsuarios = listUsuarios;</span>
-<span class="nc" id="L142">            ArrayList&lt;Profesional&gt; listProfesionales = (ArrayList&lt;Profesional&gt;)</span>
-<span class="nc" id="L143">                                                        in.readObject();</span>
-<span class="nc" id="L144">            listaProfesionales = listProfesionales;</span>
-            
-              
-<span class="nc" id="L147">            in.close();</span>
-<span class="nc" id="L148">        } catch (IOException | ClassNotFoundException ex) {</span>
-<span class="nc" id="L149">            listaAlimentos = new ArrayList&lt;&gt;();</span>
-<span class="nc" id="L150">            listaUsuarios = new ArrayList&lt;&gt;();</span>
-<span class="nc" id="L151">            listaProfesionales = new ArrayList&lt;&gt;();</span>
-<span class="nc" id="L152">            usuarioAdministrador=new HashMap&lt;&gt;();</span>
-<span class="nc" id="L153">            usuarioAdministrador.put(&quot;admin&quot;, &quot;adminalimentacion&quot;);</span>
-<span class="nc" id="L154">        }</span>
-<span class="nc" id="L155">    }</span>
+<span class="nc" id="L119">            try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(&quot;repositorio.ser&quot;))) {</span>
+<span class="nc" id="L120">                ArrayList&lt;Alimento&gt; listAlimentos = (ArrayList&lt;Alimento&gt;) in.readObject();</span>
+<span class="nc" id="L121">                listaAlimentos = listAlimentos;</span>
+<span class="nc" id="L122">                ArrayList&lt;Usuario&gt; listUsuarios = (ArrayList&lt;Usuario&gt;) in.readObject();</span>
+<span class="nc" id="L123">                listaUsuarios = listUsuarios;</span>
+<span class="nc" id="L124">                ArrayList&lt;Profesional&gt; listProfesionales = (ArrayList&lt;Profesional&gt;) in.readObject();</span>
+<span class="nc" id="L125">                listaProfesionales = listProfesionales;</span>
+<span class="nc bnc" id="L126" title="All 8 branches missed.">            }</span>
+<span class="nc" id="L127">        } catch (IOException | ClassNotFoundException ex) {</span>
+<span class="nc" id="L128">            listaAlimentos = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L129">            listaUsuarios = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L130">            listaProfesionales = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L131">            usuarioAdministrador = new HashMap&lt;&gt;();</span>
+<span class="nc" id="L132">            usuarioAdministrador.put(&quot;admin&quot;, &quot;adminalimentacion&quot;);</span>
+<span class="nc" id="L133">        }</span>
+<span class="nc" id="L134">    }</span>
 
     public void guardarSistema() {
         try {
-<span class="nc" id="L159">            ObjectOutputStream out = new ObjectOutputStream</span>
-                                         (new FileOutputStream(&quot;repositorio.ser&quot;));
-<span class="nc" id="L161">            out.writeObject(listaAlimentos);</span>
-<span class="nc" id="L162">            out.writeObject(listaUsuarios);</span>
-<span class="nc" id="L163">            out.writeObject(listaProfesionales);</span>
-            
-<span class="nc" id="L165">            out.flush();</span>
-<span class="nc" id="L166">            out.close();</span>
-<span class="nc" id="L167">        } catch (IOException ex) {</span>
-<span class="nc" id="L168">        }</span>
-<span class="nc" id="L169">    }</span>
+<span class="nc" id="L138">            try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(&quot;repositorio.ser&quot;))) {</span>
+<span class="nc" id="L139">                out.writeObject(listaAlimentos);</span>
+<span class="nc" id="L140">                out.writeObject(listaUsuarios);</span>
+<span class="nc" id="L141">                out.writeObject(listaProfesionales);</span>
+                
+<span class="nc" id="L143">                out.flush();</span>
+<span class="nc bnc" id="L144" title="All 8 branches missed.">            }</span>
+<span class="nc" id="L145">        } catch (IOException ex) {</span>
+<span class="nc" id="L146">        }</span>
+<span class="nc" id="L147">    }</span>
 
-     public String pidoDatoNumerico(int dato, int min, int max) {
-<span class="fc" id="L172">        int datoAVerificar = 0;</span>
-<span class="fc" id="L173">        String severidad = &quot;NO OK&quot;;</span>
+    public String pidoDatoNumerico(int dato, int min, int max) {
+        int datoAVerificar;
+<span class="fc" id="L151">        String severidad = &quot;NO OK&quot;;</span>
         try {
-<span class="fc" id="L175">            datoAVerificar = dato;</span>
-<span class="fc bfc" id="L176" title="All 4 branches covered.">            if ((datoAVerificar &gt;= min) &amp;&amp; (datoAVerificar &lt;= max)) {</span>
-<span class="fc" id="L177">                severidad = &quot;OK&quot;;</span>
+<span class="fc" id="L153">            datoAVerificar = dato;</span>
+<span class="fc bfc" id="L154" title="All 4 branches covered.">            if ((datoAVerificar &gt;= min) &amp;&amp; (datoAVerificar &lt;= max)) {</span>
+<span class="fc" id="L155">                severidad = &quot;OK&quot;;</span>
             }
-<span class="nc" id="L179">        } catch (NumberFormatException ex) {</span>
-<span class="nc" id="L180">            severidad=&quot;ERROR&quot;;</span>
-<span class="fc" id="L181">        }</span>
-<span class="fc" id="L182">        return severidad;</span>
+<span class="nc" id="L157">        } catch (NumberFormatException ex) {</span>
+<span class="nc" id="L158">            severidad = &quot;ERROR&quot;;</span>
+<span class="fc" id="L159">        }</span>
+<span class="fc" id="L160">        return severidad;</span>
     }
-    
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

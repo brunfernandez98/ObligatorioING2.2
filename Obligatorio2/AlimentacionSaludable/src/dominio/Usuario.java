@@ -3,7 +3,7 @@ package dominio;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import java.io.Serializable;
-import java.util.Objects;
+
 import java.util.Optional;
 
 public class Usuario extends Persona implements Serializable {
@@ -43,20 +43,17 @@ public class Usuario extends Persona implements Serializable {
         this.necesitoPlan = false;
         this.profesionalAsignado = new Profesional();
         this.sexo = sexo;
-        this.historialComidas = new ArrayList<ComidaPorDia>();
+        this.historialComidas = new ArrayList<>();
         this.historialDelDia = new ComidaPorDia();
         this.listaEnumNac = inicializoListaEnum();
-        this.casillaDeEntrada = new ArrayList<Mensaje>();
+        this.casillaDeEntrada = new ArrayList<>();
         this.fechaUltimaAdicion = "no se ingreso";
     }
 
     public Usuario() {
         super("no ingreso nombre", "no ingreso apellido", "no ingreso usuario",
               "no ingreso fecha nacimiento", null);
-        this.setFotoPerfil(new javax
-                           .swing.ImageIcon(getClass()
-                           .getResource
-                           ("/imagenes/predeterminadaUsuario.jpg")));
+        
         this.nacionalidad = Nacionalidades.Uruguaya;
         this.pesoKg = 0;
         this.alturaCm = 0;
@@ -67,10 +64,10 @@ public class Usuario extends Persona implements Serializable {
         this.profesionalAsignado = new Profesional();
         this.plan = new PlanDeAlimentacion(this);
         this.sexo = "no se ingreso";
-        this.historialComidas = new ArrayList<ComidaPorDia>();
+        this.historialComidas = new ArrayList<>();
         this.historialDelDia = new ComidaPorDia();
         this.listaEnumNac = inicializoListaEnum();
-        this.casillaDeEntrada = new ArrayList<Mensaje>();
+        this.casillaDeEntrada = new ArrayList<>();
         this.fechaUltimaAdicion = "no se ingreso";
     }
 
@@ -270,8 +267,5 @@ public class Usuario extends Persona implements Serializable {
         return "Usuario: " + this.getNombreUsuario();
     }
     
-     @Override
-    public boolean equals(Object obj) {
-      return super.equals(obj);
-    }
+    
 }

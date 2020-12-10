@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>PanelListaAlimentos.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">interfaz</a> &gt; <span class="el_source">PanelListaAlimentos.java</span></div><h1>PanelListaAlimentos.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package interfaz;
+
+import dominio.Alimento;
+import dominio.Profesional;
+import dominio.Sistema;
+import java.util.ArrayList;
+import java.util.Arrays;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
+/**
+ *
+ * @author Dell Latitude e6440
+ */
+
+
+public class PanelListaAlimentos extends javax.swing.JPanel {
+
+      private final Sistema sistema;
+    private final PanelHomeDeAdministrador  ventanaAdministrador;
+    private PanelEditarPerfilUsuario panelEditarUsuario;
+    private JPanel panelInformacionUsuario;
+    /**
+     * Creates new form PanelListaAlimentos
+     * @param unSistema
+     * @param unaVentana
+     */
+<span class="nc" id="L35">    public PanelListaAlimentos(Sistema unSistema,PanelHomeDeAdministrador unaVentana) {</span>
+<span class="nc" id="L36">        sistema=unSistema;</span>
+<span class="nc" id="L37">        ventanaAdministrador=unaVentana;</span>
+       
+<span class="nc" id="L39">        initComponents();</span>
+<span class="nc" id="L40">         actualizarTabla();</span>
+        
+        
+<span class="nc" id="L43">    }</span>
+    
+    private  int[] indexNutrientes(Alimento unAlimento){
+<span class="nc" id="L46">         int[] index = new int[8];</span>
+         
+<span class="nc bnc" id="L48" title="All 2 branches missed.">         for (int i = 0; i &lt; unAlimento.getListaNutrientesSeleccionados().length; i++) {</span>
+<span class="nc bnc" id="L49" title="All 2 branches missed.">             if(unAlimento.getListaNutrientesSeleccionados()[i]){</span>
+<span class="nc" id="L50">                 index[i]=i;</span>
+             }else{
+<span class="nc" id="L52">                 index[i]=-1;</span>
+             }
+            
+        }
+<span class="nc" id="L56">         return index;</span>
+    }
+    
+    
+     private void actualizarTabla(){
+      
+<span class="nc" id="L62">         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();</span>
+<span class="nc" id="L63">         model.getDataVector().removeAllElements();</span>
+<span class="nc" id="L64">         Object[] rowData  = new Object[model.getColumnCount()];</span>
+        
+         
+         
+<span class="nc bnc" id="L68" title="All 2 branches missed.">       for (int i=0; i&lt;sistema.getListaAlimentos().size(); i++){</span>
+<span class="nc" id="L69">            Alimento unAlimento=sistema.getListaAlimentos().get(i);</span>
+<span class="nc" id="L70">            String[] array=new String[8];</span>
+<span class="nc" id="L71">            int[]index=indexNutrientes(unAlimento);</span>
+<span class="nc bnc" id="L72" title="All 2 branches missed.">           for (int j = 0; j &lt; index.length; j++) {</span>
+<span class="nc bnc" id="L73" title="All 2 branches missed.">               if(index[j]!=-1)</span>
+<span class="nc" id="L74">            array[j]=unAlimento.getListaEnumNutrientes()[index[j]].toString();</span>
+               else
+<span class="nc" id="L76">                  array[j]=&quot;&quot;; </span>
+              }
+<span class="nc" id="L78">        rowData[0] = unAlimento.getNombre();  </span>
+<span class="nc" id="L79">        rowData[1] = unAlimento.getTipo();</span>
+<span class="nc" id="L80">        rowData[2] = Arrays.toString(array);</span>
+        
+<span class="nc" id="L82">       model.addRow(rowData);</span>
+           }
+        
+<span class="nc" id="L85">    }</span>
+
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings(&quot;unchecked&quot;)
+    // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+<span class="nc" id="L96">        jScrollPane1 = new javax.swing.JScrollPane();</span>
+<span class="nc" id="L97">        jTable1 = new javax.swing.JTable();</span>
+<span class="nc" id="L98">        jButton4 = new javax.swing.JButton();</span>
+
+<span class="nc" id="L100">        setBackground(new java.awt.Color(255, 255, 255));</span>
+
+<span class="nc" id="L102">        jTable1.setModel(new javax.swing.table.DefaultTableModel(</span>
+            new Object [][] {
+
+            },
+            new String [] {
+                &quot;Nombre Alimento&quot;, &quot;Tipo Alimento&quot;, &quot;Nutrientes&quot;
+            }
+        ));
+<span class="nc" id="L110">        jTable1.setToolTipText(&quot;&quot;);</span>
+<span class="nc" id="L111">        jTable1.setGridColor(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L112">        jScrollPane1.setViewportView(jTable1);</span>
+
+<span class="nc" id="L114">        jButton4.setText(&quot;BorrarAlimento&quot;);</span>
+<span class="nc" id="L115">        jButton4.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L117">                jButton4ActionPerformed(evt);</span>
+<span class="nc" id="L118">            }</span>
+        });
+
+<span class="nc" id="L121">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);</span>
+<span class="nc" id="L122">        this.setLayout(layout);</span>
+<span class="nc" id="L123">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L124">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L125">            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)</span>
+<span class="nc" id="L126">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L127">                .addContainerGap()</span>
+<span class="nc" id="L128">                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L129">                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
+        );
+<span class="nc" id="L131">        layout.setVerticalGroup(</span>
+<span class="nc" id="L132">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L133">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L134">                .addContainerGap(60, Short.MAX_VALUE)</span>
+<span class="nc" id="L135">                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L136">                .addGap(47, 47, 47)</span>
+<span class="nc" id="L137">                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+        );
+<span class="nc" id="L139">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+private Alimento getAlimentoEspecifico(
+  String nombreAlimento, ArrayList&lt;Alimento&gt; alimentos) {
+ 
+<span class="nc bnc" id="L143" title="All 2 branches missed.">    for (Alimento unAlimento : alimentos) {</span>
+<span class="nc bnc" id="L144" title="All 2 branches missed.">        if (unAlimento.getNombre().equals(nombreAlimento)) {</span>
+<span class="nc" id="L145">            return unAlimento;</span>
+        }
+<span class="nc" id="L147">    }</span>
+<span class="nc" id="L148">    return null;</span>
+     }
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+<span class="nc" id="L151">        int row=jTable1.getSelectedRow();</span>
+<span class="nc" id="L152">        int column=0;</span>
+<span class="nc" id="L153">        String nombreAlimento=jTable1.getModel().getValueAt(row, column).toString();</span>
+<span class="nc" id="L154">        Alimento alimentoReal =getAlimentoEspecifico(nombreAlimento,sistema.getListaAlimentos());</span>
+<span class="nc" id="L155">        sistema.getListaAlimentos().remove(alimentoReal);</span>
+<span class="nc" id="L156">        JOptionPane optionPane = new JOptionPane(&quot;Alimento eliminado &quot;</span>
+                    + &quot;correctamente&quot;, JOptionPane.INFORMATION_MESSAGE);
+<span class="nc" id="L158">            JDialog dialog = optionPane.createDialog(&quot;Baja Alimento&quot;);</span>
+<span class="nc" id="L159">            dialog.setAlwaysOnTop(true);</span>
+<span class="nc" id="L160">            dialog.setVisible(true);</span>
+<span class="nc" id="L161">         actualizarTabla();</span>
+         
+       
+<span class="nc" id="L164">    }//GEN-LAST:event_jButton4ActionPerformed</span>
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
+    // End of variables declaration//GEN-END:variables
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package alimentacionsaludable;
+
 import dominio.Sistema;
 import interfaz.InterfazLogin;
 
@@ -13,22 +14,19 @@ import interfaz.PanelPrincipal;
  *
  * @author ale
  */
-<span class="nc" id="L16">public class AlimentacionSaludable {</span>
+<span class="nc" id="L17">public class AlimentacionSaludable {</span>
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-<span class="nc" id="L22">        Sistema repositorio = new Sistema();</span>
-<span class="nc" id="L23">        repositorio.cargarSistema();</span>
-<span class="nc" id="L24">        PanelPrincipal panel = new PanelPrincipal(repositorio);</span>
-        //InterfazBotonesAdministrador i = new InterfazBotonesAdministrador(s,p);
-        //InterfazBotonesUsuario i = new InterfazBotonesUsuario(s,p);
-        //InterfazBotonesProfesional i = new InterfazBotonesProfesional(s,p);
-<span class="nc" id="L28">        InterfazLogin comienzo = new InterfazLogin(panel,panel.getSistema());</span>
-       
-<span class="nc" id="L30">        comienzo.setVisible(true);</span>
-<span class="nc" id="L31">    }</span>
-}
+<span class="nc" id="L23">        Sistema repositorio = new Sistema();</span>
+<span class="nc" id="L24">        repositorio.cargarSistema();</span>
+<span class="nc" id="L25">        PanelPrincipal panel = new PanelPrincipal(repositorio);</span>
 
+<span class="nc" id="L27">        InterfazLogin comienzo = new InterfazLogin(panel, panel.getSistema());</span>
+
+<span class="nc" id="L29">        comienzo.setVisible(true);</span>
+<span class="nc" id="L30">    }</span>
+}
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

@@ -1,20 +1,16 @@
 package dominio;
 
-import com.toedter.calendar.JDateChooser;
-import java.awt.Graphics2D;
-import java.awt.image.BufferedImage;
+
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Optional;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
+
 
 public class Sistema implements Serializable {
 
@@ -111,7 +107,7 @@ public class Sistema implements Serializable {
     }
 
     //Metodo para inicializar lista de enums de tipo de usuario
-    tipoUsuario[] inicializoListaTiposDeUsuario() {
+    public tipoUsuario[] inicializoListaTiposDeUsuario() {
         tipoUsuario[] listaPivot = {tipoUsuario.Profesional,
             tipoUsuario.Usuario};
         return listaPivot;
@@ -120,15 +116,14 @@ public class Sistema implements Serializable {
     //CARGAR Y GUARDAR SISTEMA
     public void cargarSistema() {
         try {
-            ObjectInputStream in = new ObjectInputStream(new FileInputStream("repositorio.ser"));
-            ArrayList<Alimento> listAlimentos = (ArrayList<Alimento>) in.readObject();
-            listaAlimentos = listAlimentos;
-            ArrayList<Usuario> listUsuarios = (ArrayList<Usuario>) in.readObject();
-            listaUsuarios = listUsuarios;
-            ArrayList<Profesional> listProfesionales = (ArrayList<Profesional>) in.readObject();
-            listaProfesionales = listProfesionales;
-
-            in.close();
+            try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("repositorio.ser"))) {
+                ArrayList<Alimento> listAlimentos = (ArrayList<Alimento>) in.readObject();
+                listaAlimentos = listAlimentos;
+                ArrayList<Usuario> listUsuarios = (ArrayList<Usuario>) in.readObject();
+                listaUsuarios = listUsuarios;
+                ArrayList<Profesional> listProfesionales = (ArrayList<Profesional>) in.readObject();
+                listaProfesionales = listProfesionales;
+            }
         } catch (IOException | ClassNotFoundException ex) {
             listaAlimentos = new ArrayList<>();
             listaUsuarios = new ArrayList<>();
@@ -140,19 +135,19 @@ public class Sistema implements Serializable {
 
     public void guardarSistema() {
         try {
-            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("repositorio.ser"));
-            out.writeObject(listaAlimentos);
-            out.writeObject(listaUsuarios);
-            out.writeObject(listaProfesionales);
-
-            out.flush();
-            out.close();
+            try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("repositorio.ser"))) {
+                out.writeObject(listaAlimentos);
+                out.writeObject(listaUsuarios);
+                out.writeObject(listaProfesionales);
+                
+                out.flush();
+            }
         } catch (IOException ex) {
         }
     }
 
     public String pidoDatoNumerico(int dato, int min, int max) {
-        int datoAVerificar = 0;
+        int datoAVerificar;
         String severidad = "NO OK";
         try {
             datoAVerificar = dato;

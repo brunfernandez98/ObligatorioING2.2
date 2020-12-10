@@ -1,7 +1,7 @@
 package dominio;
 
 import java.io.Serializable;
-import java.util.Objects;
+
 import java.util.Optional;
 
 public class Alimento implements Serializable {

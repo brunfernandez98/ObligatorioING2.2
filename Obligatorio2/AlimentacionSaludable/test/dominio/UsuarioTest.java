@@ -1,9 +1,10 @@
 package dominio;
 
-import dominio.Usuario.Nacionalidades;
+
+import dominio.Usuario.Preferencias;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
-import org.junit.After;
+
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -12,11 +13,13 @@ import static org.junit.Assert.*;
 
 public class UsuarioTest {
 
-    public UsuarioTest() {
-    }
+   private static ArrayList<Mensaje> casillaDeEntrada;
+private static Mensaje unMensaje;
 
     @BeforeClass
     public static void setUpClass() {
+        casillaDeEntrada=new ArrayList();
+        
     }
 
     @AfterClass
@@ -25,12 +28,22 @@ public class UsuarioTest {
 
     @Before
     public void setUp() {
+        unMensaje=new Mensaje();
+        unMensaje.setMensaje("unMensaje");
+        casillaDeEntrada.add(unMensaje);
     }
-
-    @After
-    public void tearDown() {
+    
+      @Test
+    public void testSetPreferenciasAlimentarias() {
+        System.out.println("setPreferenciasAlimentarias");
+        Usuario instance = new Usuario();
+       instance.setPreferenciasAlimentarias(Preferencias.Macrobiotico);
+        Preferencias result = instance.getPreferenciasAlimentarias();
+        assertEquals(instance.getPreferenciasAlimentarias(), result);
     }
-
+    
+    
+    
     @Test
     public void testGetFechaUltimaAdicion() {
         System.out.println("getFechaUltimaAdicion");
@@ -75,6 +88,63 @@ public class UsuarioTest {
         instance.setPesoKg(peso);
         assertEquals(peso, instance.getPesoKg(),0);
     }
+    
+       @Test
+    public void testSetPesoInvalidoKg() {
+        System.out.println("setPesoKg");
+        double peso=600;
+        Usuario instance = new Usuario();
+        instance.setPesoKg(peso);
+        assertNotEquals(peso, instance.getPesoKg(),0);
+    }
+    
+       @Test
+    public void testSetAlturaInvalidoCm() {
+        System.out.println("setAlturaCm");
+        double altura=600;
+        Usuario instance = new Usuario();
+        instance.setAlturaCm(altura);
+        assertNotEquals(altura, instance.getAlturaCm(),0);
+    }
+    
+        @Test
+    public void testSetSexoInvalido() {
+        System.out.println("setSexo");
+        
+        Usuario instance = new Usuario();
+        instance.setSexo("test");
+        assertNotEquals("Masculino", instance.getSexo());
+    }
+    
+      @Test
+    public void testSetSexoInvalido2() {
+        System.out.println("setSexo");
+        
+        Usuario instance = new Usuario();
+        instance.setSexo("test");
+        assertNotEquals("Femenino", instance.getSexo());
+    }
+    
+      @Test
+    public void testSetSexo2() {
+        System.out.println("setSexo");
+        
+        Usuario instance = new Usuario();
+        instance.setSexo("Femenino");
+        assertEquals("Femenino", instance.getSexo());
+    }
+    
+       @Test
+    public void testSetSexo3() {
+        System.out.println("setSexo");
+        
+        Usuario instance = new Usuario();
+        instance.setSexo("Masculino");
+        assertEquals("Masculino", instance.getSexo());
+    }
+    
+    
+    
     
         @Test
     public void testGetPesoKg() {
@@ -650,7 +720,7 @@ public class UsuarioTest {
     public void testGetHistorialComidas() {
         System.out.println("getHistorialComidas");
         Usuario instance = new Usuario();
-        ArrayList<ComidaPorDia> expResult = new ArrayList<ComidaPorDia>();
+        ArrayList<ComidaPorDia> expResult = new ArrayList<>();
         ArrayList<ComidaPorDia> result = instance.getHistorialComidas();
         assertEquals(expResult, result);
     }
@@ -658,7 +728,7 @@ public class UsuarioTest {
     @Test
     public void testSetHistorialComidas() {
         System.out.println("setHistorialComidas");
-        ArrayList<ComidaPorDia> historialComidas = new ArrayList<ComidaPorDia>();
+        ArrayList<ComidaPorDia> historialComidas = new ArrayList<>();
         Usuario instance = new Usuario();
         instance.setHistorialComidas(historialComidas);
         assertEquals(instance.getHistorialComidas(),historialComidas);
@@ -734,6 +804,31 @@ public class UsuarioTest {
         Usuario nuevo = new Usuario(nacionalidad,peso,altura,preferencias,restricciones,plan,sexo,nombre,apellido,usuario,fNacimiento,fotoPerfil);
        
     }
+    
+        @Test
+    public void testSetCasillaDeMensaje() {
+        System.out.println("SetCasillaDeMensaje");
+        Usuario instance = new Usuario();
+         
+        instance.setCasillaDeEntrada(casillaDeEntrada);
+        assertEquals(instance.getCasillaDeEntrada(), casillaDeEntrada);
+    }
+    
+         @Test
+    public void testGetCasillaDeMensaje() {
+        System.out.println("GetCasillaDeMensaje");
+        Usuario instance = new Usuario();
+         
+        instance.setCasillaDeEntrada(casillaDeEntrada);
+        assertTrue(instance.getCasillaDeEntrada().equals(casillaDeEntrada));
+    }
+    
+    
+    
+    
+    
+    
+    
     
     @Test
     public void pruebaValues(){

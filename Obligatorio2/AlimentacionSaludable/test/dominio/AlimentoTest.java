@@ -1,6 +1,7 @@
 package dominio;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -15,7 +16,7 @@ public class AlimentoTest {
     private static ArrayList<Alimento> alimento;
     private static Alimento.TipoAlimento[] enumTipoAlimento;
     private static Alimento.Nutrientes[]  enumTipoNutrientes;
-    
+    private static boolean[] nutrientesSeleccionados;
     
     @BeforeClass
     public static void setUpClass() {
@@ -55,7 +56,16 @@ public class AlimentoTest {
         assertFalse(test);
     }
     
-   
+    @Test
+      public void testSetListaNutrientes() {
+        System.out.println("SetListaNutrientes");
+        nutrientesSeleccionados= new boolean[1];
+        nutrientesSeleccionados[0] = true;
+
+        instance.setListaNutrientesSeleccionados(nutrientesSeleccionados);
+        assertTrue(Arrays.equals(instance.getListaNutrientesSeleccionados(), nutrientesSeleccionados));
+        
+    }
     
     
     
